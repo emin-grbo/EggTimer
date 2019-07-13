@@ -5,4 +5,3 @@
 
 # EggTimer
 Quick test/example for lottie animaations.
-# EggTimer
