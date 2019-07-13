@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="RobotoMono-Bold.ttf">
+            <string>RobotoMono-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-sr-kid">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-IB-RbI" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                <rect key="frame" x="80" y="478" width="160" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vA1-F9-KLn"/>
+                                    <constraint firstAttribute="width" constant="160" id="w1r-hc-qS1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="24"/>
+                                <size key="titleShadowOffset" width="0.0" height="5"/>
+                                <state key="normal" title="start">
+                                    <color key="titleColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimerBTN:" destination="BYZ-38-t0r" eventType="touchUpInside" id="byj-9x-t0N"/>
+                                </connections>
+                            </button>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="wvX-9w-Vz0" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvi-51-3mB">
+                                        <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                        <connections>
+                                            <action selector="InfoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BiT-ik-4Q3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="3y7-Gx-ejD"/>
+                                    <constraint firstItem="Mvi-51-3mB" firstAttribute="leading" secondItem="wvX-9w-Vz0" secondAttribute="leading" id="Zkx-vE-GSp"/>
+                                    <constraint firstItem="Mvi-51-3mB" firstAttribute="top" secondItem="wvX-9w-Vz0" secondAttribute="top" id="euP-Y7-axM"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mvi-51-3mB" secondAttribute="trailing" id="kCt-Mw-g5k"/>
+                                    <constraint firstAttribute="height" constant="48" id="mWI-u3-KLC"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mvi-51-3mB" secondAttribute="bottom" id="voW-Xp-PZx"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t88-g5-dvn">
+                                <rect key="frame" x="272" y="36" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="RCW-V7-Kx6"/>
+                                    <constraint firstAttribute="height" constant="32" id="osg-TV-Txv"/>
+                                </constraints>
+                                <color key="tintColor" red="0.45882352941176469" green="0.27843137254901962" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="info"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtE-Tf-awr">
+                                <rect key="frame" x="100" y="52" width="120.5" height="53"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.21176470588235294" green="0.035294117647058823" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wtE-Tf-awr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="2gl-nv-h3X"/>
+                            <constraint firstItem="wtE-Tf-awr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JF2-t2-PbH"/>
+                            <constraint firstItem="t88-g5-dvn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Og1-bE-Ux3"/>
+                            <constraint firstAttribute="bottom" secondItem="dd7-IB-RbI" secondAttribute="bottom" constant="40" id="Q3D-Ga-pM5"/>
+                            <constraint firstItem="Azb-sr-kid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U8T-o9-Zy9"/>
+                            <constraint firstItem="wvX-9w-Vz0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="X6C-1j-Krl"/>
+                            <constraint firstItem="Azb-sr-kid" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="XMV-uo-Ymb"/>
+                            <constraint firstItem="Azb-sr-kid" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fSi-rT-51y"/>
+                            <constraint firstItem="Azb-sr-kid" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kNg-0f-6P5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t88-g5-dvn" secondAttribute="trailing" constant="16" id="nUU-BR-Lp4"/>
+                            <constraint firstItem="dd7-IB-RbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v95-b2-qxS"/>
+                            <constraint firstItem="wvX-9w-Vz0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ve3-uj-9gz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationButtonView" destination="wvX-9w-Vz0" id="maY-xf-sbC"/>
+                        <outlet property="scrollView" destination="Azb-sr-kid" id="8oJ-IL-mq8"/>
+                        <outlet property="startButton" destination="dd7-IB-RbI" id="16l-eR-U0y"/>
+                        <outlet property="timerLabel" destination="wtE-Tf-awr" id="x8F-bd-mJZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="63.75" y="32.74647887323944"/>
+        </scene>
+        <!--AlertVC-->
+        <scene sceneID="zAY-aB-HBJ">
+            <objects>
+                <viewController storyboardIdentifier="alert" id="dex-d5-bl0" customClass="AlertVC" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="234-gV-44w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-qG-Ge8">
+                                <rect key="frame" x="40" y="60" width="240" height="450"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-xs-I3a" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="183.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" placeholder="YES" id="NTT-Te-ckZ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8L-AG-suX" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="40" y="366" width="160" height="50"/>
+                                        <color key="backgroundColor" red="0.21176470588235294" green="0.035294117647058823" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="160" id="ASR-MR-7e4"/>
+                                            <constraint firstAttribute="height" constant="50" id="dmS-XE-H25"/>
+                                        </constraints>
+                                        <state key="normal" title="Yum!">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="tIZ-u9-fWv"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bear says you eggs are done!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-K8-2Cw">
+                                        <rect key="frame" x="24" y="207.5" width="192" height="53"/>
+                                        <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bears really like eggs, they just lack the ability to grow them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14I-vF-b67">
+                                        <rect key="frame" x="16" y="276.5" width="208" height="55.5"/>
+                                        <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="14"/>
+                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="14I-vF-b67" firstAttribute="leading" secondItem="ddc-qG-Ge8" secondAttribute="leading" constant="16" id="Aua-qq-sZo"/>
+                                    <constraint firstItem="7Gk-xs-I3a" firstAttribute="width" secondItem="ddc-qG-Ge8" secondAttribute="width" id="EJY-kX-SlO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ywl-K8-2Cw" secondAttribute="trailing" constant="24" id="FYU-Yd-TWK"/>
+                                    <constraint firstItem="7Gk-xs-I3a" firstAttribute="centerX" secondItem="ddc-qG-Ge8" secondAttribute="centerX" id="IaQ-VN-eGG"/>
+                                    <constraint firstItem="c8L-AG-suX" firstAttribute="top" secondItem="14I-vF-b67" secondAttribute="bottom" constant="34" id="PZS-s4-U9O"/>
+                                    <constraint firstItem="ywl-K8-2Cw" firstAttribute="top" secondItem="7Gk-xs-I3a" secondAttribute="bottom" constant="24" id="VCE-Hm-JWP"/>
+                                    <constraint firstItem="c8L-AG-suX" firstAttribute="centerX" secondItem="ddc-qG-Ge8" secondAttribute="centerX" id="WsT-Va-18N"/>
+                                    <constraint firstItem="7Gk-xs-I3a" firstAttribute="top" secondItem="ddc-qG-Ge8" secondAttribute="top" id="aTm-EP-IBs"/>
+                                    <constraint firstAttribute="trailing" secondItem="14I-vF-b67" secondAttribute="trailing" constant="16" id="gLA-89-E9t"/>
+                                    <constraint firstAttribute="bottom" secondItem="c8L-AG-suX" secondAttribute="bottom" constant="34" id="gtM-at-cP7"/>
+                                    <constraint firstItem="ywl-K8-2Cw" firstAttribute="leading" secondItem="ddc-qG-Ge8" secondAttribute="leading" constant="24" id="i9A-m0-vbf"/>
+                                    <constraint firstItem="14I-vF-b67" firstAttribute="top" secondItem="ywl-K8-2Cw" secondAttribute="bottom" constant="16" id="x5H-XM-E1A"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ywl-K8-2Cw" firstAttribute="centerY" secondItem="WBz-Fe-zQa" secondAttribute="centerY" id="0oZ-X2-uym"/>
+                            <constraint firstItem="ywl-K8-2Cw" firstAttribute="centerX" secondItem="WBz-Fe-zQa" secondAttribute="centerX" id="9J0-hB-Ga5"/>
+                            <constraint firstItem="ddc-qG-Ge8" firstAttribute="top" secondItem="WBz-Fe-zQa" secondAttribute="top" constant="40" id="CMA-Vg-lLa"/>
+                            <constraint firstItem="ddc-qG-Ge8" firstAttribute="leading" secondItem="WBz-Fe-zQa" secondAttribute="leading" constant="40" id="VCu-4u-qkp"/>
+                            <constraint firstItem="WBz-Fe-zQa" firstAttribute="trailing" secondItem="ddc-qG-Ge8" secondAttribute="trailing" constant="40" id="q6t-Aa-vjM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="WBz-Fe-zQa"/>
+                    </view>
+                    <connections>
+                        <outlet property="alertView" destination="ddc-qG-Ge8" id="RkG-2N-8yd"/>
+                        <outlet property="animationView" destination="7Gk-xs-I3a" id="PgE-Pf-rKB"/>
+                        <outlet property="cancelBtn" destination="c8L-AG-suX" id="F5s-Xl-xRS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SsH-UZ-TDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="32.74647887323944"/>
+        </scene>
+        <!--InfoVC-->
+        <scene sceneID="tJe-bz-ywa">
+            <objects>
+                <viewController storyboardIdentifier="info" id="Fbb-vA-6qS" customClass="InfoVC" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Ok-Z5-MwX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qds-Hp-AvG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="TSp-os-Wgh" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="UBc-Mw-dhq"/>
+                                    <constraint firstAttribute="height" constant="48" id="b6H-yR-DTy"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="tu6-SX-EAP"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mL-QP-FLM">
+                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <connections>
+                                    <action selector="InfoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8YP-td-219"/>
+                                    <action selector="closeTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="f5C-aN-wYZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="zlY-bC-1v9" firstAttribute="trailing" secondItem="Qds-Hp-AvG" secondAttribute="trailing" id="0Io-6i-BzD"/>
+                            <constraint firstItem="7mL-QP-FLM" firstAttribute="centerY" secondItem="TSp-os-Wgh" secondAttribute="centerY" id="8o0-z5-may"/>
+                            <constraint firstItem="7mL-QP-FLM" firstAttribute="width" secondItem="TSp-os-Wgh" secondAttribute="width" id="Fkt-Ok-UfK"/>
+                            <constraint firstItem="TSp-os-Wgh" firstAttribute="top" secondItem="zlY-bC-1v9" secondAttribute="top" constant="8" id="JNc-yH-YgP"/>
+                            <constraint firstItem="TSp-os-Wgh" firstAttribute="leading" secondItem="zlY-bC-1v9" secondAttribute="leading" constant="8" id="LTA-u3-N0j"/>
+                            <constraint firstAttribute="bottom" secondItem="Qds-Hp-AvG" secondAttribute="bottom" id="PMr-fr-nxA"/>
+                            <constraint firstItem="7mL-QP-FLM" firstAttribute="centerX" secondItem="TSp-os-Wgh" secondAttribute="centerX" id="RqD-4n-6RB"/>
+                            <constraint firstItem="7mL-QP-FLM" firstAttribute="height" secondItem="TSp-os-Wgh" secondAttribute="height" id="b4U-Hf-KWs"/>
+                            <constraint firstItem="Qds-Hp-AvG" firstAttribute="leading" secondItem="zlY-bC-1v9" secondAttribute="leading" id="b4o-Fj-H9V"/>
+                            <constraint firstItem="Qds-Hp-AvG" firstAttribute="top" secondItem="6Ok-Z5-MwX" secondAttribute="top" id="uTy-kr-93G"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zlY-bC-1v9"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationButtonView" destination="TSp-os-Wgh" id="MfL-6J-TxO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gYb-G1-mKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1622" y="33"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="info" width="36" height="36"/>
+    </resources>
+</document>
