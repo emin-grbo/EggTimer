@@ -11,3 +11,7 @@ import Foundation
 protocol InfoVCDelegate: AnyObject {
     func animate()
 }
+
+protocol AlertVCDelegate: AnyObject {
+    func reset()
+}

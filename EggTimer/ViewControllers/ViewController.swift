@@ -34,10 +34,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
   }
     
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
     }
-  
+
+    
     @objc func tickTock() {
         if timeRemaining != 0 {
             timeRemaining -= 1
@@ -65,11 +67,25 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     func eggDone() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let customAlert = storyboard.instantiateViewController(withIdentifier: "alert")
+        let customAlert = storyboard.instantiateViewController(withIdentifier: "alert") as! AlertVC
         customAlert.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        present(customAlert, animated: true)
+        customAlert.delegate = self
+        self.present(customAlert, animated: true)
     }
+
+    #warning("THIS")
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToInfo" {
+//            segue.destination.modalTransitionStyle = .crossDissolve
+//        }
+//    }
+    
+//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+//        if identifier == "goToInfo" {
+//            performSegue(withIdentifier: "goToInfo", sender: self)
+//        }
+//    }
   
   
   
@@ -148,27 +164,42 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBAction func startTimerBTN(_ sender: Any) {
     if !timer.isValid {
     timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTock), userInfo: nil, repeats: true)
+        startButton.setTitle("cancel", for: .normal)
+        scrollView.isScrollEnabled = false
     } else {
+        startButton.setTitle("start", for: .normal)
+        scrollView.isScrollEnabled = true
+        timer.invalidate()
+        setupTimer()
       print("Fok OF")
     }
   }
 
+    
     @IBAction func InfoButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let customAlert = storyboard.instantiateViewController(withIdentifier: "info") as! InfoVC
-        customAlert.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        let infoPage = storyboard.instantiateViewController(withIdentifier: "info") as! InfoVC
+        infoPage.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        infoPage.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        #warning("Vrlo bitno za boju statusBara. Koristi se zato sto presentation style nije .fullscreen")
+        infoPage.modalPresentationCapturesStatusBarAppearance = true
         
-        customAlert.delegate = self
+        infoPage.delegate = self
         
-        present(customAlert, animated: true)
+        present(infoPage, animated: true)
     }
     
 }
 
-extension ViewController: InfoVCDelegate {
+
+extension ViewController: InfoVCDelegate, AlertVCDelegate {
     func animate() {
         animationButtonView.play(fromProgress: 0.5, toProgress: 1, loopMode: .playOnce, completion: nil)
+    }
+    
+    func reset() {
+        timer.invalidate()
+        setupTimer()
     }
     
     

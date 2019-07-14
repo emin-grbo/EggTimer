@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-sr-kid">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-sr-kid">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-IB-RbI" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
@@ -116,17 +116,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-qG-Ge8">
-                                <rect key="frame" x="40" y="60" width="240" height="450"/>
+                                <rect key="frame" x="40" y="60" width="240" height="424.5"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-xs-I3a" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="183.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="186.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" placeholder="YES" id="NTT-Te-ckZ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8L-AG-suX" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="366" width="160" height="50"/>
+                                        <rect key="frame" x="40" y="340.5" width="160" height="50"/>
                                         <color key="backgroundColor" red="0.21176470588235294" green="0.035294117647058823" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="ASR-MR-7e4"/>
@@ -140,13 +140,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bear says you eggs are done!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-K8-2Cw">
-                                        <rect key="frame" x="24" y="207.5" width="192" height="53"/>
+                                        <rect key="frame" x="24" y="210.5" width="192" height="47"/>
                                         <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bears really like eggs, they just lack the ability to grow them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14I-vF-b67">
-                                        <rect key="frame" x="16" y="276.5" width="208" height="55.5"/>
+                                        <rect key="frame" x="16" y="273.5" width="208" height="33"/>
                                         <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="14"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -186,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SsH-UZ-TDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="840" y="32.74647887323944"/>
+            <point key="canvasLocation" x="64" y="765"/>
         </scene>
         <!--InfoVC-->
         <scene sceneID="tJe-bz-ywa">
@@ -198,11 +198,46 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qds-Hp-AvG">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4bm-SJ-2Pr" customClass="AnimationView" customModule="Lottie">
+                                        <rect key="frame" x="130" y="300" width="60" height="16"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="eLi-Oo-nWF"/>
+                                            <constraint firstAttribute="height" constant="16" id="ebJ-Fb-cKI"/>
+                                        </constraints>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-ge-oae">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="292"/>
+                                    </scrollView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vE-yX-PT0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="118" y="486" width="84" height="50"/>
+                                        <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8M7-BS-HrK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="buy me a drink">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="wj2-qS-13s"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="eeH-ge-oae" firstAttribute="leading" secondItem="Qds-Hp-AvG" secondAttribute="leading" id="4ux-Ta-N2T"/>
+                                    <constraint firstItem="eeH-ge-oae" firstAttribute="bottom" secondItem="4bm-SJ-2Pr" secondAttribute="bottom" constant="68" id="IDj-uO-Eiw"/>
+                                    <constraint firstAttribute="bottom" secondItem="4vE-yX-PT0" secondAttribute="bottom" constant="32" id="Iid-Q4-7tf"/>
+                                    <constraint firstAttribute="trailing" secondItem="eeH-ge-oae" secondAttribute="trailing" id="Jle-Vy-XPo"/>
+                                    <constraint firstItem="4bm-SJ-2Pr" firstAttribute="centerX" secondItem="Qds-Hp-AvG" secondAttribute="centerX" id="ipa-8s-N60"/>
+                                    <constraint firstItem="4vE-yX-PT0" firstAttribute="centerX" secondItem="Qds-Hp-AvG" secondAttribute="centerX" id="jDd-Xi-Rsy"/>
+                                    <constraint firstAttribute="centerY" secondItem="eeH-ge-oae" secondAttribute="bottom" constant="-100" id="mpC-RV-7qJ"/>
+                                </constraints>
                             </view>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="TSp-os-Wgh" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="8" y="28" width="48" height="48"/>
-                                <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.0" green="0.98039215686274506" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="UBc-Mw-dhq"/>
                                     <constraint firstAttribute="height" constant="48" id="b6H-yR-DTy"/>
@@ -217,6 +252,7 @@
                                 </connections>
                             </button>
                         </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zlY-bC-1v9" firstAttribute="trailing" secondItem="Qds-Hp-AvG" secondAttribute="trailing" id="0Io-6i-BzD"/>
                             <constraint firstItem="7mL-QP-FLM" firstAttribute="centerY" secondItem="TSp-os-Wgh" secondAttribute="centerY" id="8o0-z5-may"/>
@@ -227,17 +263,21 @@
                             <constraint firstItem="7mL-QP-FLM" firstAttribute="centerX" secondItem="TSp-os-Wgh" secondAttribute="centerX" id="RqD-4n-6RB"/>
                             <constraint firstItem="7mL-QP-FLM" firstAttribute="height" secondItem="TSp-os-Wgh" secondAttribute="height" id="b4U-Hf-KWs"/>
                             <constraint firstItem="Qds-Hp-AvG" firstAttribute="leading" secondItem="zlY-bC-1v9" secondAttribute="leading" id="b4o-Fj-H9V"/>
+                            <constraint firstItem="eeH-ge-oae" firstAttribute="top" secondItem="7mL-QP-FLM" secondAttribute="bottom" constant="16" id="tXi-EV-x1g"/>
                             <constraint firstItem="Qds-Hp-AvG" firstAttribute="top" secondItem="6Ok-Z5-MwX" secondAttribute="top" id="uTy-kr-93G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zlY-bC-1v9"/>
                     </view>
                     <connections>
                         <outlet property="animationButtonView" destination="TSp-os-Wgh" id="MfL-6J-TxO"/>
+                        <outlet property="animationStepperView" destination="4bm-SJ-2Pr" id="USV-Yc-g34"/>
+                        <outlet property="buyMeDrinksBtn" destination="4vE-yX-PT0" id="qBO-Km-hWT"/>
+                        <outlet property="scrollView" destination="eeH-ge-oae" id="jAt-f5-i9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gYb-G1-mKq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="33"/>
+            <point key="canvasLocation" x="877.5" y="32.74647887323944"/>
         </scene>
     </scenes>
     <resources>

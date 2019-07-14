@@ -15,6 +15,8 @@ class AlertVC: UIViewController {
     @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var animationView: AnimationView!
     
+    weak var delegate: AlertVCDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
@@ -50,6 +52,7 @@ class AlertVC: UIViewController {
     
     
     @IBAction func cancelTapped(_ sender: Any) {
+        delegate?.reset()
         self.dismiss(animated: true)
     }
     
