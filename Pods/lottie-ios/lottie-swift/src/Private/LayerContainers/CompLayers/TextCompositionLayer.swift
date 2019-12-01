@@ -1,5 +1,5 @@
 //
-//  TestCompositionLayer.swift
+//  TextCompositionLayer.swift
 //  lottie-swift
 //
 //  Created by Brandon Withrow on 1/25/19.
@@ -23,7 +23,32 @@ class DisabledTextLayer: CATextLayer {
   }
 }
 
-class TextCompositionLayer: CompositionLayer {
+extension TextJustification {
+  var textAlignment: NSTextAlignment {
+    switch self {
+    case .left:
+      return .left
+    case .right:
+      return .right
+    case .center:
+      return .center
+    }
+  }
+  
+  var caTextAlignement: CATextLayerAlignmentMode {
+    switch self {
+    case .left:
+      return .left
+    case .right:
+      return .right
+    case .center:
+      return .center
+    }
+  }
+  
+}
+
+final class TextCompositionLayer: CompositionLayer {
   
   let rootNode: TextAnimatorNode?
   let textDocument: KeyframeInterpolator<TextDocument>?
@@ -31,6 +56,7 @@ class TextCompositionLayer: CompositionLayer {
   let interpolatableScale: KeyframeInterpolator<Vector3D>?
   
   let textLayer: DisabledTextLayer = DisabledTextLayer()
+  let textStrokeLayer: DisabledTextLayer = DisabledTextLayer()
   var textProvider: AnimationTextProvider
   
   init(textLayer: TextLayerModel, textProvider: AnimationTextProvider) {
@@ -40,9 +66,9 @@ class TextCompositionLayer: CompositionLayer {
     }
     self.rootNode = rootNode
     self.textDocument = KeyframeInterpolator(keyframes: textLayer.text.keyframes)
-
+    
     self.textProvider = textProvider
-
+    
     // TODO: this has to be somewhere that can be interpolated
     // TODO: look for inspiration from other composite layer
     self.interpolatableAnchorPoint = KeyframeInterpolator(keyframes: textLayer.transform.anchorPoint.keyframes)
@@ -50,8 +76,11 @@ class TextCompositionLayer: CompositionLayer {
     
     super.init(layer: textLayer, size: .zero)
     contentsLayer.addSublayer(self.textLayer)
+    contentsLayer.addSublayer(self.textStrokeLayer)
     self.textLayer.masksToBounds = false
-    
+    self.textStrokeLayer.masksToBounds = false
+    self.textLayer.isWrapped = true
+    self.textStrokeLayer.isWrapped = true
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -65,17 +94,21 @@ class TextCompositionLayer: CompositionLayer {
     }
     self.rootNode = nil
     self.textDocument = nil
-
+    
     self.textProvider = DefaultTextProvider()
-
+    
     self.interpolatableAnchorPoint = nil
     self.interpolatableScale = nil
-
+    
     super.init(layer: layer)
   }
   
   override func displayContentsWithFrame(frame: CGFloat, forceUpdates: Bool) {
     guard let textDocument = textDocument else { return }
+    
+    textLayer.contentsScale = self.renderScale
+    textStrokeLayer.contentsScale = self.renderScale
+    
     let documentUpdate = textDocument.hasUpdate(frame: frame)
     let animatorUpdate = rootNode?.updateContents(frame, forceLocalUpdate: forceUpdates) ?? false
     guard documentUpdate == true || animatorUpdate == true else { return }
@@ -89,62 +122,93 @@ class TextCompositionLayer: CompositionLayer {
     let strokeColor = rootNode?.textOutputNode.strokeColor ?? text.strokeColorData?.cgColorValue
     let strokeWidth = rootNode?.textOutputNode.strokeWidth ?? CGFloat(text.strokeWidth ?? 0)
     let tracking = (CGFloat(text.fontSize) * (rootNode?.textOutputNode.tracking ?? CGFloat(text.tracking))) / 1000.0
-    // TODO LINE HEIGHT
     
     let matrix = rootNode?.textOutputNode.xform ?? CATransform3DIdentity
     let ctFont = CTFontCreateWithName(text.fontFamily as CFString, CGFloat(text.fontSize), nil)
+    
+    let textString = textProvider.textFor(keypathName: self.keypathName, sourceText: text.text)
     
     var attributes: [NSAttributedString.Key : Any] = [
       NSAttributedString.Key.font: ctFont,
       NSAttributedString.Key.foregroundColor: fillColor,
       NSAttributedString.Key.kern: tracking,
-      ]
+    ]
     
-    if let strokeColor = strokeColor {
-      attributes[NSAttributedString.Key.strokeColor] = strokeColor
-      attributes[NSAttributedString.Key.strokeWidth] = strokeWidth
-    }
-    
-
-    let textString = textProvider.textFor(keypathName: self.keypathName, sourceText: text.text)
-    let attributedString = NSAttributedString(string: textString, attributes: attributes )
-
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineSpacing = CGFloat(text.lineHeight)
+    paragraphStyle.alignment = text.justification.textAlignment
     attributes[NSAttributedString.Key.paragraphStyle] = paragraphStyle
     
-
-    let framesetter = CTFramesetterCreateWithAttributedString(attributedString)
-    let size = CTFramesetterSuggestFrameSizeWithConstraints(framesetter,
-                                                            CFRange(location: 0,length: 0),
-                                                            nil,
-                                                            CGSize(width: CGFloat.greatestFiniteMagnitude,
-                                                                   height: CGFloat.greatestFiniteMagnitude),
-                                                            nil)
+    let baseAttributedString = NSAttributedString(string: textString, attributes: attributes )
     
-    textLayer.anchorPoint = self.calculateAnchor(withAnchorPoint: anchorPoint, justification: text.justification, scale: scale, andSize: size)
+    if let strokeColor = strokeColor {
+      textStrokeLayer.isHidden = false
+      attributes[NSAttributedString.Key.strokeColor] = strokeColor
+      attributes[NSAttributedString.Key.strokeWidth] = strokeWidth
+    } else {
+      textStrokeLayer.isHidden = true
+    }
+    
+    let size: CGSize
+    let attributedString: NSAttributedString = NSAttributedString(string: textString, attributes: attributes )
+    
+    if let frameSize = text.textFrameSize {
+      size = CGSize(width: frameSize.x, height: frameSize.y)
+    } else {
+      let framesetter = CTFramesetterCreateWithAttributedString(attributedString)
+      
+      size = CTFramesetterSuggestFrameSizeWithConstraints(framesetter,
+                                                          CFRange(location: 0,length: 0),
+                                                          nil,
+                                                          CGSize(width: CGFloat.greatestFiniteMagnitude,
+                                                                 height: CGFloat.greatestFiniteMagnitude),
+                                                          nil)
+    }
+    
+    let baselinePosition = CTFontGetAscent(ctFont)
+    let textAnchor: CGPoint
+    switch text.justification {
+    case .left:
+      textAnchor = CGPoint(x: 0, y: baselinePosition)
+    case .right:
+      textAnchor = CGPoint(x: size.width, y: baselinePosition)
+    case .center:
+      textAnchor = CGPoint(x: size.width * 0.5, y: baselinePosition)
+    }
+    let anchor = textAnchor + anchorPoint.pointValue
+    let normalizedAnchor = CGPoint(x: anchor.x.remap(fromLow: 0, fromHigh: size.width, toLow: 0, toHigh: 1),
+                                   y: anchor.y.remap(fromLow: 0, fromHigh: size.height, toLow: 0, toHigh: 1))
+    
+    if textStrokeLayer.isHidden == false {
+      if text.strokeOverFill ?? false {
+        textStrokeLayer.removeFromSuperlayer()
+        contentsLayer.addSublayer(textStrokeLayer)
+      } else {
+        textLayer.removeFromSuperlayer()
+        contentsLayer.addSublayer(textLayer)
+      }
+      textStrokeLayer.anchorPoint = normalizedAnchor
+      textStrokeLayer.opacity = Float(rootNode?.textOutputNode.opacity ?? 1)
+      textStrokeLayer.transform = CATransform3DIdentity
+      textStrokeLayer.frame = CGRect(origin: .zero, size: size)
+      textStrokeLayer.position = text.textFramePosition?.pointValue ?? CGPoint.zero
+      textStrokeLayer.transform = matrix
+      textStrokeLayer.string = attributedString
+      textStrokeLayer.alignmentMode = text.justification.caTextAlignement
+    }
+    
+    textLayer.anchorPoint = normalizedAnchor
     textLayer.opacity = Float(rootNode?.textOutputNode.opacity ?? 1)
     textLayer.transform = CATransform3DIdentity
     textLayer.frame = CGRect(origin: .zero, size: size)
-    textLayer.position = CGPoint.zero
+    textLayer.position = text.textFramePosition?.pointValue ?? CGPoint.zero
     textLayer.transform = matrix
-    textLayer.string = attributedString
+    textLayer.string = baseAttributedString
+    textLayer.alignmentMode = text.justification.caTextAlignement
   }
   
-  private func calculateAnchor(withAnchorPoint anchorPoint: Vector3D, justification: TextJustification, scale: Vector3D, andSize size: CGSize) -> CGPoint {
-    let calibratedAnchorPoint = CGPoint(x: (anchorPoint.x / Double(size.width) * (scale.x / 100.0)),
-                                        y: (anchorPoint.y / Double(size.height) * (scale.y / 100.0)))
-    
-    let justificationAnchorPoint: CGPoint
-    switch justification {
-    case .left:
-      justificationAnchorPoint = CGPoint(x: 0, y: 1)
-    case .right:
-      justificationAnchorPoint = CGPoint(x: 1, y: 1)
-    case .center:
-      justificationAnchorPoint = CGPoint(x: 0.5, y: 1)
-    }
-
-    return calibratedAnchorPoint + justificationAnchorPoint
+  override func updateRenderScale() {
+    super.updateRenderScale()
+    textLayer.contentsScale = self.renderScale
   }
 }

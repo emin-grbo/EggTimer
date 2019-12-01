@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,16 +22,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-sr-kid">
-                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="85" width="320" height="393"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-IB-RbI" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                <rect key="frame" x="80" y="478" width="160" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="40" y="478" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vA1-F9-KLn"/>
-                                    <constraint firstAttribute="width" constant="160" id="w1r-hc-qS1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="24"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="titleShadowOffset" width="0.0" height="5"/>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,7 +40,7 @@
                                 </connections>
                             </button>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="wvX-9w-Vz0" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvi-51-3mB">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
@@ -63,7 +60,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t88-g5-dvn">
-                                <rect key="frame" x="272" y="36" width="32" height="32"/>
+                                <rect key="frame" x="272" y="16" width="32" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="RCW-V7-Kx6"/>
                                     <constraint firstAttribute="height" constant="32" id="osg-TV-Txv"/>
@@ -72,7 +69,7 @@
                                 <state key="normal" image="info"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtE-Tf-awr">
-                                <rect key="frame" x="100" y="52" width="120.5" height="53"/>
+                                <rect key="frame" x="100" y="32" width="120.5" height="53"/>
                                 <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -82,17 +79,19 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wtE-Tf-awr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="2gl-nv-h3X"/>
+                            <constraint firstItem="dd7-IB-RbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Isv-7P-5cb"/>
                             <constraint firstItem="wtE-Tf-awr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JF2-t2-PbH"/>
                             <constraint firstItem="t88-g5-dvn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Og1-bE-Ux3"/>
                             <constraint firstAttribute="bottom" secondItem="dd7-IB-RbI" secondAttribute="bottom" constant="40" id="Q3D-Ga-pM5"/>
                             <constraint firstItem="Azb-sr-kid" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="U8T-o9-Zy9"/>
                             <constraint firstItem="wvX-9w-Vz0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="X6C-1j-Krl"/>
-                            <constraint firstItem="Azb-sr-kid" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="XMV-uo-Ymb"/>
-                            <constraint firstItem="Azb-sr-kid" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="fSi-rT-51y"/>
+                            <constraint firstItem="Azb-sr-kid" firstAttribute="bottom" secondItem="dd7-IB-RbI" secondAttribute="top" id="XMV-uo-Ymb"/>
+                            <constraint firstItem="Azb-sr-kid" firstAttribute="top" secondItem="wtE-Tf-awr" secondAttribute="bottom" id="fSi-rT-51y"/>
                             <constraint firstItem="Azb-sr-kid" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kNg-0f-6P5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t88-g5-dvn" secondAttribute="trailing" constant="16" id="nUU-BR-Lp4"/>
                             <constraint firstItem="dd7-IB-RbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v95-b2-qxS"/>
                             <constraint firstItem="wvX-9w-Vz0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ve3-uj-9gz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dd7-IB-RbI" secondAttribute="trailing" constant="40" id="w83-Uw-AGP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -116,17 +115,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-qG-Ge8">
-                                <rect key="frame" x="40" y="60" width="240" height="424.5"/>
+                                <rect key="frame" x="40" y="40" width="240" height="460"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-xs-I3a" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="186.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="193.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" placeholder="YES" id="NTT-Te-ckZ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8L-AG-suX" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="340.5" width="160" height="50"/>
+                                        <rect key="frame" x="40" y="376" width="160" height="50"/>
                                         <color key="backgroundColor" red="0.21176470588235294" green="0.035294117647058823" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="ASR-MR-7e4"/>
@@ -140,13 +139,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bear says you eggs are done!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-K8-2Cw">
-                                        <rect key="frame" x="24" y="210.5" width="192" height="47"/>
+                                        <rect key="frame" x="24" y="217.5" width="192" height="53"/>
                                         <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bears really like eggs, they just lack the ability to grow them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14I-vF-b67">
-                                        <rect key="frame" x="16" y="273.5" width="208" height="33"/>
+                                        <rect key="frame" x="16" y="286.5" width="208" height="55.5"/>
                                         <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="14"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -207,13 +206,14 @@
                                         </constraints>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-ge-oae">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="292"/>
+                                        <rect key="frame" x="0.0" y="72" width="320" height="312"/>
                                     </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vE-yX-PT0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                        <rect key="frame" x="118" y="486" width="84" height="50"/>
+                                        <rect key="frame" x="60" y="486" width="200" height="50"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8M7-BS-HrK"/>
+                                            <constraint firstAttribute="width" constant="200" id="f9w-Bb-YJe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <state key="normal" title="buy me a drink">
@@ -236,7 +236,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="TSp-os-Wgh" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
                                 <color key="backgroundColor" red="0.0" green="0.98039215686274506" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="UBc-Mw-dhq"/>
@@ -245,7 +245,7 @@
                                 <viewLayoutGuide key="safeArea" id="tu6-SX-EAP"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mL-QP-FLM">
-                                <rect key="frame" x="8" y="28" width="48" height="48"/>
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
                                 <connections>
                                     <action selector="InfoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8YP-td-219"/>
                                     <action selector="closeTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="f5C-aN-wYZ"/>

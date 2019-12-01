@@ -18,7 +18,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet var animationButtonView: AnimationView!
     
   let animationView = AnimationView(name: "data")
-  let eggStates = ["s o f t", "m e d i u m", "h a r d"]
+  let eggStates = ["r u n n y", "m e d i u m", "h a r d"]
   var timeRemaining = 60
   var timer = Timer()
   
@@ -27,10 +27,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    setupAnimation()
     setupScrollView()
     setupTimer()
     addMenuAnimation()
+    setupAnimation()
+    
+    startButton.setTitle("start", for: .normal)
+    startButton.setTitle("cancel", for: .selected)
     
   }
     
@@ -59,9 +62,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         animationButtonView.backgroundColor = .clear
         animationButtonView.contentMode = .scaleAspectFit
         animationButtonView.play(fromProgress: 0.5, toProgress: 1, loopMode: .playOnce, completion: nil)
-        
-        self.view.addSubview(animationView)
-        self.view.sendSubviewToBack(animationView)
     }
     
     
@@ -104,9 +104,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     for item in 0 ... eggStates.count-1 {
       let label = UILabel(frame: CGRect(x: (scrollView.contentSize.width / CGFloat(eggStates.count)) * CGFloat(item),
-                                        y: self.view.frame.height - (self.view.bounds.size.height - 90),
+                                        y: 0,
                                         width: self.scrollView.contentSize.width / CGFloat(eggStates.count),
-                                        height: 15))
+                                        height: 24))
       label.text = eggStates[item]
       label.textAlignment = .center
       label.textColor = UIColor.white
@@ -114,12 +114,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       
       scrollView.addSubview(label)
     }
-  
   }
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
     let progress = scrollView.contentOffset.x / scrollView.contentSize.width
-    //animationView.animationProgress = CGFloat(progress)
     animationView.currentProgress = AnimationProgressTime(progress)
     setupTimer()
   }
@@ -127,11 +125,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
   
   func setupAnimation() {
+    view.addSubview(animationView)
+    self.view.sendSubviewToBack(animationView)
+    
+    animationView.sizeTo(superView: scrollView)
+
     animationView.loopMode = .loop
     
-    animationView.frame = CGRect(x: 0, y: 80, width: view.bounds.size.width , height: view.bounds.size.height)
-    animationView.bounds.size.width = view.bounds.size.width * 0.8
-    animationView.contentMode = .scaleAspectFit
+    animationView.frame = CGRect(x: 0, y: 80, width: view.bounds.size.width , height: scrollView.frame.height)
+    animationView.bounds.size.width = view.bounds.size.width * 0.5
+    animationView.contentMode = .center
   }
   
   
@@ -142,7 +145,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     switch scrollView.currentPage {
     case 1:
         #warning("testing time")
-      timeRemaining = 1
+      timeRemaining = 10
     case 2:
       timeRemaining = 420
     case 3:
@@ -152,28 +155,29 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     timerLabel.text = formattedTime(timeRemaining)
   }
-    
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        self.view.layoutSubviews()
-    }
+
   
   
   
   @IBAction func startTimerBTN(_ sender: Any) {
+    startButton.isSelected.toggle()
     if !timer.isValid {
-    timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTock), userInfo: nil, repeats: true)
-        startButton.setTitle("cancel", for: .normal)
-        scrollView.isScrollEnabled = false
+        startTimer()
     } else {
-        startButton.setTitle("start", for: .normal)
+        resetTimer()
+    }
+  }
+    
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTock), userInfo: nil, repeats: true)
+        scrollView.isScrollEnabled = false
+    }
+    
+    func resetTimer() {
         scrollView.isScrollEnabled = true
         timer.invalidate()
         setupTimer()
-      print("Fok OF")
     }
-  }
 
     
     @IBAction func InfoButtonTapped(_ sender: Any) {
@@ -188,7 +192,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         present(infoPage, animated: true)
     }
-    
 }
 
 
@@ -198,10 +201,7 @@ extension ViewController: InfoVCDelegate, AlertVCDelegate {
     }
     
     func reset() {
-        timer.invalidate()
-        setupTimer()
+        resetTimer()
     }
-    
-    
 }
 

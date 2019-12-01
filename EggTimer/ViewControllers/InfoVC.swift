@@ -55,8 +55,8 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     
     func setupSlides() {
         let slide1 = Slide(image: "step1", text: "Eggs in water, 1inch(2.5cm)  deeper than the eggs height.")
-        let slide2 = Slide(image: "step2", text: "Let the come to a boil and then REMOVE from the stove.")
-        let slide3 = Slide(image: "step3", text: "Start the timer and wait for the notification.")
+        let slide2 = Slide(image: "step2", text: "Let the water come to a boil and then REMOVE from the stove.")
+        let slide3 = Slide(image: "step3", text: "Start the timer and wait for the notification or a sound.")
 //        instructionSlides = []
         instructionSlides += [slide1, slide2, slide3]
         

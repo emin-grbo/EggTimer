@@ -22,7 +22,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VjF-wf-zoN" customClass="AnimationView" customModule="Lottie">
-                    <rect key="frame" x="0.0" y="44" width="414" height="715.5"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="735.5"/>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eggs in water, 1&quot; / 2.5cm  deeper than the eggs height" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12R-G0-pKN">
                     <rect key="frame" x="40" y="819.5" width="334" height="42.5"/>
@@ -38,7 +38,7 @@
                 <constraint firstItem="12R-G0-pKN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="VXr-CS-eHM"/>
                 <constraint firstItem="VjF-wf-zoN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="d7g-a9-S4N"/>
                 <constraint firstItem="VjF-wf-zoN" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mDV-Lp-vJT"/>
-                <constraint firstItem="12R-G0-pKN" firstAttribute="top" secondItem="VjF-wf-zoN" secondAttribute="bottom" constant="60" id="mS1-tf-Ng2"/>
+                <constraint firstItem="12R-G0-pKN" firstAttribute="top" secondItem="VjF-wf-zoN" secondAttribute="bottom" constant="40" id="mS1-tf-Ng2"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>

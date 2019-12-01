@@ -9,7 +9,7 @@ import Foundation
 import QuartzCore
 // MARK: - Properties
 
-class StrokeNodeProperties: NodePropertyMap, KeypathSearchable {
+final class StrokeNodeProperties: NodePropertyMap, KeypathSearchable {
   
   init(stroke: Stroke) {
     self.keypathName = stroke.name
@@ -70,7 +70,7 @@ class StrokeNodeProperties: NodePropertyMap, KeypathSearchable {
 // MARK: - Node
 
 /// Node that manages stroking a path
-class StrokeNode: AnimatorNode, RenderNode {
+final class StrokeNode: AnimatorNode, RenderNode {
   
   let strokeRender: StrokeRenderer
   var renderer: NodeOutput & Renderable {
@@ -95,6 +95,11 @@ class StrokeNode: AnimatorNode, RenderNode {
   var hasLocalUpdates: Bool = false
   var hasUpstreamUpdates: Bool = false
   var lastUpdateFrame: CGFloat? = nil
+  var isEnabled: Bool = true {
+    didSet {
+      strokeRender.isEnabled = isEnabled
+    }
+  }
   
   func localUpdatesPermeateDownstream() -> Bool {
     return false

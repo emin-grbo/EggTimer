@@ -10,7 +10,7 @@ import CoreGraphics
 
 // MARK: - Properties
 
-class GradientStrokeProperties: NodePropertyMap, KeypathSearchable {
+final class GradientStrokeProperties: NodePropertyMap, KeypathSearchable {
   
   var keypathName: String
   
@@ -78,7 +78,7 @@ class GradientStrokeProperties: NodePropertyMap, KeypathSearchable {
 
 // MARK: - Node
 
-class GradientStrokeNode: AnimatorNode, RenderNode {
+final class GradientStrokeNode: AnimatorNode, RenderNode {
   
   let strokeRender: GradientStrokeRenderer
   
@@ -104,6 +104,11 @@ class GradientStrokeNode: AnimatorNode, RenderNode {
   var hasLocalUpdates: Bool = false
   var hasUpstreamUpdates: Bool = false
   var lastUpdateFrame: CGFloat? = nil
+  var isEnabled: Bool = true {
+    didSet {
+      strokeRender.isEnabled = isEnabled
+    }
+  }
   
   func localUpdatesPermeateDownstream() -> Bool {
     return false
