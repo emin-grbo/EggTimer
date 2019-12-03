@@ -44,9 +44,6 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvi-51-3mB">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
-                                        <connections>
-                                            <action selector="InfoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BiT-ik-4Q3"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -67,6 +64,9 @@
                                 </constraints>
                                 <color key="tintColor" red="0.45882352941176469" green="0.27843137254901962" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="info"/>
+                                <connections>
+                                    <action selector="InfoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jmt-6P-mH9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtE-Tf-awr">
                                 <rect key="frame" x="100" y="32" width="120.5" height="53"/>
@@ -209,34 +209,36 @@
                                         <rect key="frame" x="0.0" y="72" width="320" height="312"/>
                                     </scrollView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vE-yX-PT0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="486" width="200" height="50"/>
+                                        <rect key="frame" x="40" y="478" width="240" height="50"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="8M7-BS-HrK"/>
-                                            <constraint firstAttribute="width" constant="200" id="f9w-Bb-YJe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="buy me a drink">
+                                        <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="wj2-qS-13s"/>
+                                            <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="NFi-9m-gty"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4vE-yX-PT0" secondAttribute="trailing" constant="40" id="3lS-Td-Sx6"/>
                                     <constraint firstItem="eeH-ge-oae" firstAttribute="leading" secondItem="Qds-Hp-AvG" secondAttribute="leading" id="4ux-Ta-N2T"/>
                                     <constraint firstItem="eeH-ge-oae" firstAttribute="bottom" secondItem="4bm-SJ-2Pr" secondAttribute="bottom" constant="68" id="IDj-uO-Eiw"/>
-                                    <constraint firstAttribute="bottom" secondItem="4vE-yX-PT0" secondAttribute="bottom" constant="32" id="Iid-Q4-7tf"/>
+                                    <constraint firstAttribute="bottom" secondItem="4vE-yX-PT0" secondAttribute="bottom" constant="40" id="Iid-Q4-7tf"/>
                                     <constraint firstAttribute="trailing" secondItem="eeH-ge-oae" secondAttribute="trailing" id="Jle-Vy-XPo"/>
                                     <constraint firstItem="4bm-SJ-2Pr" firstAttribute="centerX" secondItem="Qds-Hp-AvG" secondAttribute="centerX" id="ipa-8s-N60"/>
                                     <constraint firstItem="4vE-yX-PT0" firstAttribute="centerX" secondItem="Qds-Hp-AvG" secondAttribute="centerX" id="jDd-Xi-Rsy"/>
+                                    <constraint firstItem="4vE-yX-PT0" firstAttribute="leading" secondItem="Qds-Hp-AvG" secondAttribute="leading" constant="40" id="lx6-7j-Ld4"/>
                                     <constraint firstAttribute="centerY" secondItem="eeH-ge-oae" secondAttribute="bottom" constant="-100" id="mpC-RV-7qJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="TSp-os-Wgh" customClass="AnimationView" customModule="Lottie">
-                                <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                <rect key="frame" x="264" y="8" width="48" height="48"/>
                                 <color key="backgroundColor" red="0.0" green="0.98039215686274506" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="UBc-Mw-dhq"/>
@@ -245,7 +247,7 @@
                                 <viewLayoutGuide key="safeArea" id="tu6-SX-EAP"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7mL-QP-FLM">
-                                <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                <rect key="frame" x="264" y="8" width="48" height="48"/>
                                 <connections>
                                     <action selector="InfoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8YP-td-219"/>
                                     <action selector="closeTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="f5C-aN-wYZ"/>
@@ -258,7 +260,7 @@
                             <constraint firstItem="7mL-QP-FLM" firstAttribute="centerY" secondItem="TSp-os-Wgh" secondAttribute="centerY" id="8o0-z5-may"/>
                             <constraint firstItem="7mL-QP-FLM" firstAttribute="width" secondItem="TSp-os-Wgh" secondAttribute="width" id="Fkt-Ok-UfK"/>
                             <constraint firstItem="TSp-os-Wgh" firstAttribute="top" secondItem="zlY-bC-1v9" secondAttribute="top" constant="8" id="JNc-yH-YgP"/>
-                            <constraint firstItem="TSp-os-Wgh" firstAttribute="leading" secondItem="zlY-bC-1v9" secondAttribute="leading" constant="8" id="LTA-u3-N0j"/>
+                            <constraint firstItem="zlY-bC-1v9" firstAttribute="trailing" secondItem="TSp-os-Wgh" secondAttribute="trailing" constant="8" id="LTA-u3-N0j"/>
                             <constraint firstAttribute="bottom" secondItem="Qds-Hp-AvG" secondAttribute="bottom" id="PMr-fr-nxA"/>
                             <constraint firstItem="7mL-QP-FLM" firstAttribute="centerX" secondItem="TSp-os-Wgh" secondAttribute="centerX" id="RqD-4n-6RB"/>
                             <constraint firstItem="7mL-QP-FLM" firstAttribute="height" secondItem="TSp-os-Wgh" secondAttribute="height" id="b4U-Hf-KWs"/>
@@ -271,7 +273,8 @@
                     <connections>
                         <outlet property="animationButtonView" destination="TSp-os-Wgh" id="MfL-6J-TxO"/>
                         <outlet property="animationStepperView" destination="4bm-SJ-2Pr" id="USV-Yc-g34"/>
-                        <outlet property="buyMeDrinksBtn" destination="4vE-yX-PT0" id="qBO-Km-hWT"/>
+                        <outlet property="containerView" destination="Qds-Hp-AvG" id="hb3-q8-QLh"/>
+                        <outlet property="gotItBtn" destination="4vE-yX-PT0" id="BSC-kS-Xl8"/>
                         <outlet property="scrollView" destination="eeH-ge-oae" id="jAt-f5-i9h"/>
                     </connections>
                 </viewController>

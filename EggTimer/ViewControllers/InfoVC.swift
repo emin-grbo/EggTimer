@@ -12,11 +12,14 @@ import Lottie
 class InfoVC: UIViewController, UIScrollViewDelegate {
 
 
-    @IBOutlet var scrollView: UIScrollView!
-    @IBOutlet var animationButtonView: AnimationView!
-    @IBOutlet var animationStepperView: AnimationView!
-    @IBOutlet var buyMeDrinksBtn: RBbutton!
-    weak var delegate: InfoVCDelegate?
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet var scrollView            : UIScrollView!
+    @IBOutlet var animationButtonView   : AnimationView!
+    @IBOutlet var animationStepperView  : AnimationView!
+    @IBOutlet var gotItBtn              : RBbutton! { didSet {
+        gotItBtn.setTitle("i think i got it", for: .normal)
+        }}
+    weak var delegate                   : InfoVCDelegate?
     
     var instructionSlides: [Slide] = []
     var instructionSlideViews: [InstructionsSlide] = []
@@ -40,8 +43,13 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     
     
     private func setupViews() {
-        buyMeDrinksBtn.backgroundColor = UIColor(displayP3Red: 54/255, green: 9/255, blue: 178/255, alpha: 1)
-        buyMeDrinksBtn.titleLabel?.font = UIFont(name: "RobotoMono-Regular", size: 16)
+        containerView.backgroundColor = .background
+        gotItBtn.primary = .primaryWhite
+        gotItBtn.primaryDark = .primaryWhite
+        gotItBtn.lightShadow = .lightWhiteShadow
+        gotItBtn.darkShadow = .darkWhiteShadow
+        gotItBtn.setTitleColor(.primary, for: .normal)
+//        buyMeDrinksBtn.titleLabel?.font = UIFont(name: "RobotoMono-Regular", size: 16)
     }
     
     func addMenuAnimation() {
@@ -98,6 +106,13 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         delegate?.animate()
         self.dismiss(animated: true)
     }
+    
+    @IBAction func gitItBtnTapped(_ sender: Any) {
+        animationButtonView.play(toProgress: 1)
+        delegate?.animate()
+        self.dismiss(animated: true)
+    }
+    
     
 
 }

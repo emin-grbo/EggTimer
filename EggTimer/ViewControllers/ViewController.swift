@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import AVFoundation
+import UserNotifications
 
 class ViewController: UIViewController, UIScrollViewDelegate {
  
@@ -21,7 +22,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   let eggStates = ["r u n n y", "m e d i u m", "h a r d"]
   var timeRemaining = 60
   var timer = Timer()
-  
+  let circleView = UIView(frame: CGRect(x: UIScreen.main.bounds.width - 60, y: 50, width: 50, height: 50))
   
   
   override func viewDidLoad() {
@@ -31,18 +32,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     setupTimer()
     addMenuAnimation()
     setupAnimation()
+    addCircleAnim()
     
     startButton.setTitle("start", for: .normal)
     startButton.setTitle("cancel", for: .selected)
-    
   }
-    
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
     }
 
-    
     @objc func tickTock() {
         if timeRemaining != 0 {
             timeRemaining -= 1
@@ -64,7 +63,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         animationButtonView.play(fromProgress: 0.5, toProgress: 1, loopMode: .playOnce, completion: nil)
     }
     
-    
     func eggDone() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let customAlert = storyboard.instantiateViewController(withIdentifier: "alert") as! AlertVC
@@ -73,29 +71,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         customAlert.delegate = self
         self.present(customAlert, animated: true)
     }
-
-    #warning("THIS")
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "goToInfo" {
-//            segue.destination.modalTransitionStyle = .crossDissolve
-//        }
-//    }
-    
-//    override func performSegue(withIdentifier identifier: String, sender: Any?) {
-//        if identifier == "goToInfo" {
-//            performSegue(withIdentifier: "goToInfo", sender: self)
-//        }
-//    }
   
-  
-  
-  func formattedTime(_ totalSeconds: Int) -> String {
-    let seconds = totalSeconds % 60
-    let minutes = (totalSeconds / 60) % 60
-    return String(format: "%02d:%02d", minutes, seconds)
-  }
-  
-  
+    func formattedTime(_ totalSeconds: Int) -> String {
+        let seconds = totalSeconds % 60
+        let minutes = (totalSeconds / 60) % 60
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
   
   func setupScrollView() {
     scrollView.delegate = self
@@ -155,6 +136,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     timerLabel.text = formattedTime(timeRemaining)
   }
+    
+    func addCircleAnim() {
+        circleView.alpha = 0
+        circleView.isUserInteractionEnabled = false
+        circleView.backgroundColor = .background
+        circleView.layer.cornerRadius = 25
+        self.view.addSubview(circleView)
+    }
 
   
   
@@ -171,6 +160,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTock), userInfo: nil, repeats: true)
         scrollView.isScrollEnabled = false
+        registerLocalNotification()
     }
     
     func resetTimer() {
@@ -190,7 +180,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         infoPage.delegate = self
         
-        present(infoPage, animated: true)
+        // MARK: Animate circleThing
+        UIView.animate(withDuration: 0.3) {
+            self.circleView.alpha = 1
+            self.circleView.transform = CGAffineTransform(scaleX: 40, y: 40)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.present(infoPage, animated: true)
+        }
+        
     }
 }
 
@@ -198,10 +197,40 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 extension ViewController: InfoVCDelegate, AlertVCDelegate {
     func animate() {
         animationButtonView.play(fromProgress: 0.5, toProgress: 1, loopMode: .playOnce, completion: nil)
+        circleView.alpha = 0
+        circleView.transform = .identity
     }
     
     func reset() {
         resetTimer()
     }
+}
+
+
+
+extension ViewController {
+    
+    func registerLocalNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+            if granted {
+                print("Yay!")
+                self.scheduleNotification()
+            } else {
+                DispatchQueue.main.async {
+                    let ac = UIAlertController(title: "Permission needed", message: "To schedule an alarm for the timer, you need to grant us permission to send alerts", preferredStyle: .alert)
+                    ac.addAction(UIAlertAction(title: "OK", style: .default))
+                    self.present(ac, animated: true)
+                }
+            }
+        }
+    }
+    
+    func scheduleNotification() {
+        print("Scheduling...")
+    }
+    
+    
 }
 

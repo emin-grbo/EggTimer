@@ -9,11 +9,16 @@
 import UIKit
 
 extension UIColor {
-    class var primary:      UIColor { return UIColor(hex: "#3804B6FF")! }
-    class var stroke:      UIColor { return UIColor(hex: "#4109C7FF")! }
+    class var primary:          UIColor { return UIColor(hex: "#3804B6FF")! }
+    class var primaryDark:      UIColor { return UIColor(hex: "#2E05A0FF")! }
+    class var textOnWhite:      UIColor { return UIColor(hex: "#2C3B51FF")! }
+    class var stroke:           UIColor { return UIColor(hex: "#4109C7FF")! }
     class var lightShadow:      UIColor { return UIColor(hex: "#6C42E2FF")! }
-    class var darkShadow:      UIColor { return UIColor(hex: "#2E04A2FF")! }
-
+    class var darkShadow:       UIColor { return UIColor(hex: "#2E04A2FF")! }
+    class var background:       UIColor { return UIColor(hex: "#DCE8F5FF")! }
+    class var darkWhiteShadow:  UIColor { return UIColor(hex: "#CBD8ECFF")! }
+    class var lightWhiteShadow: UIColor { return UIColor(hex: "#EFF8FCFF")! }
+    class var primaryWhite:     UIColor { return UIColor(hex: "#E1ECF7FF")! }
 }
 
 // MARK: Getting the colors from HEX value

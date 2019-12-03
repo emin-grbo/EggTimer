@@ -12,6 +12,8 @@ import Lottie
 class InstructionsSlide: UIView {
 
     @IBOutlet var animationView: AnimationView!
-    @IBOutlet var instructionLabel: UILabel!
+    @IBOutlet var instructionLabel: UILabel! { didSet {
+        instructionLabel.textColor = .textOnWhite
+        }}
 
 }
