@@ -18,6 +18,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var startButton: UIButton!
   @IBOutlet var animationButtonView: AnimationView!
     
+  let notificationCenter = UNUserNotificationCenter.current()
+    
   let animationView = AnimationView(name: "data")
   let eggStates = ["r u n n y", "m e d i u m", "h a r d"]
   var timeRemaining = 60
@@ -46,6 +48,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         if timeRemaining != 0 {
             timeRemaining -= 1
         } else {
+            resetTimer()
             #warning("sound here")
             // to play sound
             eggDone()
@@ -126,7 +129,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     switch scrollView.currentPage {
     case 1:
         #warning("testing time")
-      timeRemaining = 10
+      timeRemaining = 5
     case 2:
       timeRemaining = 420
     case 3:
@@ -208,12 +211,13 @@ extension ViewController: InfoVCDelegate, AlertVCDelegate {
 
 
 
-extension ViewController {
+extension ViewController: UNUserNotificationCenterDelegate {
+    
+    
     
     func registerLocalNotification() {
-        let center = UNUserNotificationCenter.current()
         
-        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+        notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 print("Yay!")
                 self.scheduleNotification()
@@ -228,7 +232,67 @@ extension ViewController {
     }
     
     func scheduleNotification() {
+        registerCategories()
         print("Scheduling...")
+        
+        // not required, but useful for testing!
+        notificationCenter.removeAllPendingNotificationRequests()
+        
+        // Modifying content to show on the alert
+        let content = UNMutableNotificationContent()
+        content.title = "Your eggs are ready!"
+        content.body = "Get them out of the hot water for Christs sake!"
+        content.categoryIdentifier = "alarm"
+        content.userInfo = ["customData": "show"]
+        content.sound = UNNotificationSound.default
+        
+        let date = Date()
+        var dateComponents = DateComponents()
+        let calendar = Calendar.current
+        
+        let seconds = calendar.component(.second, from: date)
+        
+        #warning("testing seconds")
+        dateComponents.second = seconds + 5
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        print(dateComponents)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        notificationCenter.add(request)
+    }
+    
+    func registerCategories() {
+        notificationCenter.delegate = self
+        
+        let show = UNNotificationAction(identifier: "show", title: "Tell me more…", options: .foreground)
+        let category = UNNotificationCategory(identifier: "alarm", actions: [show], intentIdentifiers: [])
+        
+        notificationCenter.setNotificationCategories([category])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // pull out the buried userInfo dictionary
+        let userInfo = response.notification.request.content.userInfo
+        
+        if let customData = userInfo["customData"] as? String {
+            print("Custom data received: \(customData)")
+            
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier:
+                // the user swiped to unlock; do nothing
+                print("Default identifier")
+                notificationCenter.removeAllDeliveredNotifications()
+                notificationCenter.removeAllPendingNotificationRequests()
+            case "show":
+                print("Show more information…")
+                
+            default:
+                break
+            }
+        }
+        // you need to call the completion handler when you're done
+        completionHandler()
     }
     
     

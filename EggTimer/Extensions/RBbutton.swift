@@ -75,12 +75,12 @@ class RBbutton: UIButton {
 
         layerBase.addGradinet(startColor: primaryDark, endColor: primary)
         
-        layerLight.addShadow(offset: CGSize.init(width: -3, height: -3), color: lightShadow, radius: radius, opacity: 1)
+        layerLight.addShadow(offset: CGSize.init(width: -3, height: -3), color: lightShadow, radius: radius, opacity: 0.7)
         layerDark.addShadow(offset: CGSize.init(width: 5, height: 5), color: darkShadow, radius: radius, opacity: 1)
 
         path.append(cutout)
         innerShadow.shadowPath = path.cgPath
-        innerShadow.addShadow(offset: CGSize(width: 0, height: 2), color: .black, radius: radius, opacity: 0.3, maskToBounds: true)
+        innerShadow.addShadow(offset: CGSize(width: 0, height: 2), color: .black, radius: radius, opacity: 0.5, maskToBounds: true)
 
         self.bringSubviewToFront(titleLabel!)
     }
