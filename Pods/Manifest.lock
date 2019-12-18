@@ -1,16 +1,20 @@
 PODS:
   - lottie-ios (3.1.5)
+  - SwiftDate (6.1.0)
 
 DEPENDENCIES:
   - lottie-ios
+  - SwiftDate
 
 SPEC REPOS:
   trunk:
     - lottie-ios
+    - SwiftDate
 
 SPEC CHECKSUMS:
   lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
 
-PODFILE CHECKSUM: 0db5e411b8d91caf61640d491726f52423972a56
+PODFILE CHECKSUM: b80321b0547fc12d250b8a728c53da9f3aeaa781
 
 COCOAPODS: 1.8.4

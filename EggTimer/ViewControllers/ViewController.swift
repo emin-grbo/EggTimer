@@ -10,6 +10,7 @@ import UIKit
 import Lottie
 import AVFoundation
 import UserNotifications
+import SwiftDate
 
 class ViewController: UIViewController, UIScrollViewDelegate {
  
@@ -44,19 +45,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return .lightContent // .default
     }
 
-    @objc func tickTock() {
-        if timeRemaining != 0 {
-            timeRemaining -= 1
-        } else {
-            resetTimer()
-            #warning("sound here")
-            // to play sound
-            eggDone()
-//            AudioServicesPlaySystemSound (1329)
-            timer.invalidate()
-        }
-        timerLabel.text = "\(formattedTime(timeRemaining))"
-    }
+
     
     
     func addMenuAnimation() {
@@ -160,6 +149,20 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
   }
     
+        @objc func tickTock() {
+            if timeRemaining != 0 {
+                timeRemaining -= 1
+            } else {
+                resetTimer()
+                #warning("sound here")
+                // to play sound
+                eggDone()
+    //            AudioServicesPlaySystemSound (1329)
+                timer.invalidate()
+            }
+            timerLabel.text = "\(formattedTime(timeRemaining))"
+        }
+    
     func startTimer(){
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTock), userInfo: nil, repeats: true)
         scrollView.isScrollEnabled = false
@@ -195,6 +198,40 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
     }
 }
+
+
+#warning("Izvaditi klasu odavde kada se sredi")
+//class FitTimer {
+//    static var currentProgress : Float = 0.0
+//    static var durationInSeconds = Float(0)
+//
+//    private static var startTime: Date = Date()
+//    private static var timer: Timer?
+//
+//    static func initTimer(_ durationInSeconds: Int) {
+//        FitTimer.startTime = Date()
+//        FitTimer.currentProgress = Float(durationInSeconds)
+//        FitTimer.durationInSeconds = Float(durationInSeconds)
+//        FitTimer.timer?.invalidate()
+//    }
+//
+//    static func startResetTimer(_ durationInSeconds: Int) {
+//        FitTimer.initTimer(durationInSeconds)
+//        FitTimer.timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: {(_) in
+//            let d = Date() - FitTimer.startTime
+//            let newValue = FitTimer.durationInSeconds - (Float(d.second!) + Float((d.minute ?? 0) * 60) + Float((d.hour ?? 0) * 60*60))
+//            if newValue <= 0 {
+//                FitTimer.currentProgress = 0.0
+//                FitTimer.timer?.invalidate()
+////                NotificationCenter.default.post(name: .timerEnd, object: nil, userInfo: nil)
+//                return
+//            }
+////            FitTimer.currentProgress.value = newValue
+//        })
+//    }
+//}
+
+
 
 
 extension ViewController: InfoVCDelegate, AlertVCDelegate {

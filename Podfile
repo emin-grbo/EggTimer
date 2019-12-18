@@ -7,5 +7,6 @@ target 'EggTimer' do
 
   # Pods for EggTimer
 pod 'lottie-ios'
+pod 'SwiftDate'
 
 end
