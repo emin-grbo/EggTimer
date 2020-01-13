@@ -19,6 +19,7 @@
 		D76A878022DA453D002E9999 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A877F22DA453D002E9999 /* InfoVC.swift */; };
 		D76A878222DA4B16002E9999 /* menuBlack.json in Resources */ = {isa = PBXBuildFile; fileRef = D76A878122DA4B16002E9999 /* menuBlack.json */; };
 		D76A878422DA5118002E9999 /* InfoVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A878322DA5118002E9999 /* InfoVCDelegate.swift */; };
+		D7857B6323CCE32A006262DE /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7857B6223CCE32A006262DE /* MenuVC.swift */; };
 		D7B077722393F69A00DEF34F /* CALayer+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B077712393F69A00DEF34F /* CALayer+Ex.swift */; };
 		D7BDB6F923931AC5003AD316 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDB6F823931AC5003AD316 /* UIView+Ex.swift */; };
 		D7BDB6FB23931C0D003AD316 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */; };
@@ -56,6 +57,7 @@
 		D76A877F22DA453D002E9999 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		D76A878122DA4B16002E9999 /* menuBlack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menuBlack.json; sourceTree = "<group>"; };
 		D76A878322DA5118002E9999 /* InfoVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVCDelegate.swift; sourceTree = "<group>"; };
+		D7857B6223CCE32A006262DE /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		D7B077712393F69A00DEF34F /* CALayer+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Ex.swift"; sourceTree = "<group>"; };
 		D7BDB6F823931AC5003AD316 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				D7260D3B21AAD88600AC7EA3 /* ViewController.swift */,
 				D72205A422D9D4C7000C2FD7 /* AlertVC.swift */,
 				D76A877F22DA453D002E9999 /* InfoVC.swift */,
+				D7857B6223CCE32A006262DE /* MenuVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				D7DAE83E22DB6D1800C19308 /* ScrollViewPager.swift in Sources */,
 				D7B077722393F69A00DEF34F /* CALayer+Ex.swift in Sources */,
 				D72205A522D9D4C7000C2FD7 /* AlertVC.swift in Sources */,
+				D7857B6323CCE32A006262DE /* MenuVC.swift in Sources */,
 				D72205A722D9DA04000C2FD7 /* RBbutton.swift in Sources */,
 				D7DAE83A22DB60AE00C19308 /* CustomObjects.swift in Sources */,
 				D76A878422DA5118002E9999 /* InfoVCDelegate.swift in Sources */,
@@ -496,7 +500,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimerDEV;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -515,7 +520,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimerDEV;
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

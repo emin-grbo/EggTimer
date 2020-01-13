@@ -10,6 +10,8 @@ import UIKit
 import Lottie
 import AVFoundation
 import UserNotifications
+import SwiftDate
+import SwiftyTimer
 
 class ViewController: UIViewController, UIScrollViewDelegate {
  
@@ -23,9 +25,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   let animationView = AnimationView(name: "data")
   let eggStates = ["r u n n y", "m e d i u m", "h a r d"]
   var timeRemaining = 60
-  var timer = Timer()
   let circleView = UIView(frame: CGRect(x: UIScreen.main.bounds.width - 60, y: 50, width: 50, height: 50))
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -38,27 +38,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     startButton.setTitle("start", for: .normal)
     startButton.setTitle("cancel", for: .selected)
+    startButton.layoutSubviews()
   }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
     }
 
-    @objc func tickTock() {
-        if timeRemaining != 0 {
-            timeRemaining -= 1
-        } else {
-            resetTimer()
-            #warning("sound here")
-            // to play sound
-            eggDone()
-//            AudioServicesPlaySystemSound (1329)
-            timer.invalidate()
-        }
-        timerLabel.text = "\(formattedTime(timeRemaining))"
-    }
-    
-    
     func addMenuAnimation() {
         animationButtonView.animation = Animation.named("menu")
         animationButtonView.backgroundColor = .clear
@@ -67,10 +53,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func eggDone() {
+        // removing InfoVC if its active
+        if let window = UIApplication.shared.delegate?.window {
+            if let viewController = window?.rootViewController {
+                viewController.dismiss(animated: true)
+                animate(menuClosed: false)
+            }
+        }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let customAlert = storyboard.instantiateViewController(withIdentifier: "alert") as! AlertVC
         customAlert.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        
         customAlert.delegate = self
         self.present(customAlert, animated: true)
     }
@@ -106,8 +101,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     setupTimer()
   }
   
-  
-  
   func setupAnimation() {
     view.addSubview(animationView)
     self.view.sendSubviewToBack(animationView)
@@ -124,8 +117,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
   
   func setupTimer() {
-    timer.invalidate()
-    
     switch scrollView.currentPage {
     case 1:
         #warning("testing time")
@@ -148,40 +139,71 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.view.addSubview(circleView)
     }
 
-  
-  
-  
   @IBAction func startTimerBTN(_ sender: Any) {
     startButton.isSelected.toggle()
-    if !timer.isValid {
-        startTimer()
-    } else {
-        resetTimer()
-    }
+    tickTock()
   }
     
-    func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tickTock), userInfo: nil, repeats: true)
+    func tickTock() {
+        let startDate = Date()
+        let duration = timeRemaining
         scrollView.isScrollEnabled = false
         registerLocalNotification()
-    }
-    
-    func resetTimer() {
-        scrollView.isScrollEnabled = true
-        timer.invalidate()
-        setupTimer()
+        
+        Timer.every(0.1.second) { (timer: Timer) in
+            
+            let elapsed = Date() - startDate
+            self.timeRemaining = duration - (elapsed.second ?? 0)
+            self.timerLabel.text = "\(self.formattedTime(self.timeRemaining))"
+            
+            if self.startButton.isSelected == false {
+                self.scrollView.isScrollEnabled = true
+                self.setupTimer()
+                timer.invalidate()
+            }
+            // MARK: Egg Done
+            if self.timeRemaining <= 0 {
+                timer.invalidate()
+                self.scrollView.isScrollEnabled = true
+                self.setupTimer()
+                self.eggDone()
+                self.startButton.isSelected = false
+            }
+        }
     }
 
+    
+    
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let menuPage = storyboard.instantiateViewController(withIdentifier: "menu") as! MenuVC
+        menuPage.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        menuPage.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        // Important to use since presentation style does not go fullScreen
+        menuPage.modalPresentationCapturesStatusBarAppearance = true
+        menuPage.delegate = self
+        circleView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        
+        // MARK: Animate circleThing
+        UIView.animate(withDuration: 0.3) {
+            self.circleView.alpha = 1
+            self.circleView.transform = CGAffineTransform(scaleX: 40, y: 40)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        self.present(menuPage, animated: true)
+        }
+    }
     
     @IBAction func InfoButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let infoPage = storyboard.instantiateViewController(withIdentifier: "info") as! InfoVC
         infoPage.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         infoPage.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        #warning("Vrlo bitno za boju statusBara. Koristi se zato sto presentation style nije .fullscreen")
+        // Important to use since presentation style does not go fullScreen
         infoPage.modalPresentationCapturesStatusBarAppearance = true
-        
         infoPage.delegate = self
+        circleView.frame = CGRect(x: UIScreen.main.bounds.width - 60, y: 50, width: 50, height: 50)
         
         // MARK: Animate circleThing
         UIView.animate(withDuration: 0.3) {
@@ -192,34 +214,33 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.present(infoPage, animated: true)
         }
-        
     }
 }
 
 
 extension ViewController: InfoVCDelegate, AlertVCDelegate {
-    func animate() {
+    func animate(menuClosed: Bool) {
+        if menuClosed {
         animationButtonView.play(fromProgress: 0.5, toProgress: 1, loopMode: .playOnce, completion: nil)
+        }
         circleView.alpha = 0
         circleView.transform = .identity
     }
     
     func reset() {
-        resetTimer()
+        self.scrollView.isScrollEnabled = true
+        self.setupTimer()
     }
 }
 
 
 
 extension ViewController: UNUserNotificationCenterDelegate {
-    
-    
-    
+
     func registerLocalNotification() {
         
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
-                print("Yay!")
                 self.scheduleNotification()
             } else {
                 DispatchQueue.main.async {
@@ -253,7 +274,7 @@ extension ViewController: UNUserNotificationCenterDelegate {
         let seconds = calendar.component(.second, from: date)
         
         #warning("testing seconds")
-        dateComponents.second = seconds + 5
+        dateComponents.second = seconds + timeRemaining
         
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         print(dateComponents)
