@@ -8,6 +8,8 @@
 
 import UIKit
 
+var timerValue = Date()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,8 +11,105 @@
         <array key="RobotoMono-Bold.ttf">
             <string>RobotoMono-Bold</string>
         </array>
+        <array key="RobotoMono-Regular.ttf">
+            <string>RobotoMono-Regular</string>
+        </array>
     </customFonts>
     <scenes>
+        <!--MenuVC-->
+        <scene sceneID="meB-um-Wnv">
+            <objects>
+                <viewController storyboardIdentifier="menu" id="cKW-xj-aXR" customClass="MenuVC" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5s4-Ow-9uu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="whh-rK-Cm8" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.0" green="0.98039215690000003" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="hQi-Rw-vWc"/>
+                                    <constraint firstAttribute="width" constant="48" id="rs6-CM-iYi"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="6jz-HN-yzE"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPy-cZ-JmC">
+                                <rect key="frame" x="8" y="8" width="48" height="48"/>
+                                <connections>
+                                    <action selector="InfoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gOd-y7-xjf"/>
+                                    <action selector="closeTapped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="My0-hz-3rH"/>
+                                    <action selector="closeTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="iyu-3q-yiR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-os-hs9">
+                                <rect key="frame" x="24" y="275" width="272" height="18.5"/>
+                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-iK-4o0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                <rect key="frame" x="40" y="478" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="APg-F8-P46"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="x3L-e7-9yM"/>
+                                    <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="VLi-XP-PWa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-Oi-VXc" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                <rect key="frame" x="40" y="396" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="v1S-0F-bB1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="rlG-9w-TMG"/>
+                                    <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="frY-j4-kJj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CPy-cZ-JmC" firstAttribute="centerX" secondItem="whh-rK-Cm8" secondAttribute="centerX" id="2hO-9T-z5y"/>
+                            <constraint firstItem="CPy-cZ-JmC" firstAttribute="height" secondItem="whh-rK-Cm8" secondAttribute="height" id="Gxg-Z8-oBb"/>
+                            <constraint firstItem="CPy-cZ-JmC" firstAttribute="centerY" secondItem="whh-rK-Cm8" secondAttribute="centerY" id="Q7a-hi-Pzf"/>
+                            <constraint firstAttribute="trailing" secondItem="LIa-iK-4o0" secondAttribute="trailing" constant="40" id="QGQ-YA-fIa"/>
+                            <constraint firstItem="LIa-iK-4o0" firstAttribute="leading" secondItem="5s4-Ow-9uu" secondAttribute="leading" constant="40" id="UGh-l6-88d"/>
+                            <constraint firstItem="CtY-os-hs9" firstAttribute="leading" secondItem="GGx-2s-eRD" secondAttribute="leading" constant="24" id="WJi-DB-Ujx"/>
+                            <constraint firstAttribute="bottom" secondItem="LIa-iK-4o0" secondAttribute="bottom" constant="40" id="YTh-iH-S1Z"/>
+                            <constraint firstItem="CtY-os-hs9" firstAttribute="centerY" secondItem="5s4-Ow-9uu" secondAttribute="centerY" id="dGs-hI-9NL"/>
+                            <constraint firstItem="GGx-2s-eRD" firstAttribute="trailing" secondItem="LOi-Oi-VXc" secondAttribute="trailing" constant="40" id="ei4-7c-cjL"/>
+                            <constraint firstItem="LOi-Oi-VXc" firstAttribute="leading" secondItem="GGx-2s-eRD" secondAttribute="leading" constant="40" id="mN4-y1-7DK"/>
+                            <constraint firstItem="whh-rK-Cm8" firstAttribute="leading" secondItem="GGx-2s-eRD" secondAttribute="leading" constant="8" id="ntJ-zL-ZhZ"/>
+                            <constraint firstItem="CPy-cZ-JmC" firstAttribute="width" secondItem="whh-rK-Cm8" secondAttribute="width" id="sCy-KU-0Up"/>
+                            <constraint firstItem="CtY-os-hs9" firstAttribute="centerX" secondItem="5s4-Ow-9uu" secondAttribute="centerX" id="uUT-aC-keF"/>
+                            <constraint firstAttribute="trailing" secondItem="CtY-os-hs9" secondAttribute="trailing" constant="24" id="xXE-i3-Had"/>
+                            <constraint firstItem="LIa-iK-4o0" firstAttribute="top" secondItem="LOi-Oi-VXc" secondAttribute="bottom" constant="32" id="xb2-EP-pdf"/>
+                            <constraint firstItem="whh-rK-Cm8" firstAttribute="top" secondItem="GGx-2s-eRD" secondAttribute="top" constant="8" id="zYG-l8-u5s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GGx-2s-eRD"/>
+                    </view>
+                    <connections>
+                        <outlet property="animationButtonView" destination="whh-rK-Cm8" id="wtu-vN-sh8"/>
+                        <outlet property="getBeerButton" destination="LIa-iK-4o0" id="wEb-1n-zbe"/>
+                        <outlet property="getCoffeeButton" destination="LOi-Oi-VXc" id="tx8-cd-Ane"/>
+                        <outlet property="infoLabel" destination="CtY-os-hs9" id="gho-WV-klU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6LO-i6-tLQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-737" y="33"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -44,6 +141,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mvi-51-3mB">
                                         <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                        <connections>
+                                            <action selector="menuButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5pI-EV-UB2"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

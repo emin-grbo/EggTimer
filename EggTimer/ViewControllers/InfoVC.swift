@@ -11,13 +11,17 @@ import Lottie
 
 class InfoVC: UIViewController, UIScrollViewDelegate {
 
-
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var scrollView            : UIScrollView!
     @IBOutlet var animationButtonView   : AnimationView!
     @IBOutlet var animationStepperView  : AnimationView!
     @IBOutlet var gotItBtn              : RBbutton! { didSet {
         gotItBtn.setTitle("i think i got it", for: .normal)
+        gotItBtn.primary = .primaryWhite
+        gotItBtn.primaryDark = .primaryWhite
+        gotItBtn.lightShadow = .lightWhiteShadow
+        gotItBtn.darkShadow = .darkWhiteShadow
+        gotItBtn.setTitleColor(.primary, for: .normal)
         }}
     weak var delegate                   : InfoVCDelegate?
     
@@ -44,11 +48,6 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     
     private func setupViews() {
         containerView.backgroundColor = .background
-        gotItBtn.primary = .primaryWhite
-        gotItBtn.primaryDark = .primaryWhite
-        gotItBtn.lightShadow = .lightWhiteShadow
-        gotItBtn.darkShadow = .darkWhiteShadow
-        gotItBtn.setTitleColor(.primary, for: .normal)
 //        buyMeDrinksBtn.titleLabel?.font = UIFont(name: "RobotoMono-Regular", size: 16)
     }
     
@@ -103,13 +102,13 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
 
     @IBAction func closeTapped(_ sender: Any) {
         animationButtonView.play(toProgress: 1)
-        delegate?.animate()
+        delegate?.animate(menuClosed: false)
         self.dismiss(animated: true)
     }
     
     @IBAction func gitItBtnTapped(_ sender: Any) {
         animationButtonView.play(toProgress: 1)
-        delegate?.animate()
+        delegate?.animate(menuClosed: false)
         self.dismiss(animated: true)
     }
     

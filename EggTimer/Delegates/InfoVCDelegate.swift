@@ -9,7 +9,7 @@
 import Foundation
 
 protocol InfoVCDelegate: AnyObject {
-    func animate()
+    func animate(menuClosed: Bool)
 }
 
 protocol AlertVCDelegate: AnyObject {
