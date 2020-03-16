@@ -94,8 +94,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
       scrollView.addSubview(label)
     }
   }
-  
-  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    scrollView.contentOffset.y = 0.0
     let progress = scrollView.contentOffset.x / scrollView.contentSize.width
     animationView.currentProgress = AnimationProgressTime(progress)
     setupTimer()
@@ -112,6 +113,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     animationView.frame = CGRect(x: 0, y: 80, width: view.bounds.size.width , height: scrollView.frame.height)
     animationView.bounds.size.width = view.bounds.size.width * 0.5
     animationView.contentMode = .center
+    animationView.clipsToBounds = false
   }
   
   

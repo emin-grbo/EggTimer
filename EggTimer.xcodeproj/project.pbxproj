@@ -20,10 +20,13 @@
 		D76A878222DA4B16002E9999 /* menuBlack.json in Resources */ = {isa = PBXBuildFile; fileRef = D76A878122DA4B16002E9999 /* menuBlack.json */; };
 		D76A878422DA5118002E9999 /* InfoVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A878322DA5118002E9999 /* InfoVCDelegate.swift */; };
 		D7857B6323CCE32A006262DE /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7857B6223CCE32A006262DE /* MenuVC.swift */; };
+		D79F092F241ED3FF00F2BA85 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79F092E241ED3FF00F2BA85 /* IAPHelper.swift */; };
+		D79F0931241ED9BF00F2BA85 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79F0930241ED9BF00F2BA85 /* StoreKit.framework */; };
 		D7B077722393F69A00DEF34F /* CALayer+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B077712393F69A00DEF34F /* CALayer+Ex.swift */; };
 		D7BDB6F923931AC5003AD316 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDB6F823931AC5003AD316 /* UIView+Ex.swift */; };
 		D7BDB6FB23931C0D003AD316 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */; };
 		D7CF508A21B6D28300A3CF32 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7CF508921B6D28300A3CF32 /* RobotoMono-Bold.ttf */; };
+		D7D6601E24202164005E9610 /* ShopProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6601D24202164005E9610 /* ShopProducts.swift */; };
 		D7DAE83422DB5B3200C19308 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DAE83322DB5B3200C19308 /* RobotoMono-Regular.ttf */; };
 		D7DAE83622DB5EA800C19308 /* InstructionsSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DAE83522DB5EA800C19308 /* InstructionsSlide.swift */; };
 		D7DAE83822DB5EC700C19308 /* InstructionsSlide.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7DAE83722DB5EC700C19308 /* InstructionsSlide.xib */; };
@@ -58,10 +61,13 @@
 		D76A878122DA4B16002E9999 /* menuBlack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menuBlack.json; sourceTree = "<group>"; };
 		D76A878322DA5118002E9999 /* InfoVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVCDelegate.swift; sourceTree = "<group>"; };
 		D7857B6223CCE32A006262DE /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		D79F092E241ED3FF00F2BA85 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		D79F0930241ED9BF00F2BA85 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D7B077712393F69A00DEF34F /* CALayer+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Ex.swift"; sourceTree = "<group>"; };
 		D7BDB6F823931AC5003AD316 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		D7CF508921B6D28300A3CF32 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
+		D7D6601D24202164005E9610 /* ShopProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopProducts.swift; sourceTree = "<group>"; };
 		D7DAE83322DB5B3200C19308 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		D7DAE83522DB5EA800C19308 /* InstructionsSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsSlide.swift; sourceTree = "<group>"; };
 		D7DAE83722DB5EC700C19308 /* InstructionsSlide.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InstructionsSlide.xib; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F33B51B7970452147E9B5948 /* Pods_EggTimer.framework in Frameworks */,
+				D79F0931241ED9BF00F2BA85 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +98,7 @@
 		60271F36AE211814969D8111 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D79F0930241ED9BF00F2BA85 /* StoreKit.framework */,
 				54C6108927BC1D202ABB025B /* Pods_EggTimer.framework */,
 			);
 			name = Frameworks;
@@ -145,6 +153,8 @@
 				D7260D3D21AAD88600AC7EA3 /* Main.storyboard */,
 				D7260D3921AAD88600AC7EA3 /* AppDelegate.swift */,
 				D7DAE83922DB60AE00C19308 /* CustomObjects.swift */,
+				D7D6601D24202164005E9610 /* ShopProducts.swift */,
+				D79F092E241ED3FF00F2BA85 /* IAPHelper.swift */,
 				D7DAE83B22DB611800C19308 /* ViewControllers */,
 				D7DAE83C22DB612600C19308 /* Slides */,
 				D7DAE83F22DB6D3100C19308 /* Extensions */,
@@ -335,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7DAE83622DB5EA800C19308 /* InstructionsSlide.swift in Sources */,
+				D79F092F241ED3FF00F2BA85 /* IAPHelper.swift in Sources */,
 				D7BDB6FB23931C0D003AD316 /* UIColor+Ex.swift in Sources */,
 				D7260D3C21AAD88600AC7EA3 /* ViewController.swift in Sources */,
 				D7DAE83E22DB6D1800C19308 /* ScrollViewPager.swift in Sources */,
@@ -345,6 +356,7 @@
 				D7DAE83A22DB60AE00C19308 /* CustomObjects.swift in Sources */,
 				D76A878422DA5118002E9999 /* InfoVCDelegate.swift in Sources */,
 				D76A878022DA453D002E9999 /* InfoVC.swift in Sources */,
+				D7D6601E24202164005E9610 /* ShopProducts.swift in Sources */,
 				D7260D3A21AAD88600AC7EA3 /* AppDelegate.swift in Sources */,
 				D7BDB6F923931AC5003AD316 /* UIView+Ex.swift in Sources */,
 			);
@@ -494,8 +506,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -514,8 +528,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

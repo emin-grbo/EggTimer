@@ -8,9 +8,11 @@
 
 import UIKit
 import Lottie
+import StoreKit
 
 class MenuVC: UIViewController {
     
+    var products: [SKProduct] = []
     
     @IBOutlet weak var getCoffeeButton: RBbutton! { didSet {
            getCoffeeButton.setTitle("☕️ coffee's on me! 1$", for: .normal)
@@ -35,13 +37,11 @@ class MenuVC: UIViewController {
         infoLabel.textColor = .textOnWhite
         infoLabel.text =
         """
-        Hi! I am Emin and thank you SO MUCH for downloading my first app! 🥇
+        Hi! I am Emin and thank you SO MUCH for downloading my first app!
         You rock! 🤘
         
-        It is kinda simple, but hopefully a feast for your eyeballs.
-        🍖 👀
-        
-        Including ads would be quite a douche move for such a small app, but if you appreciate what i did here, you can get me a beer or a coffee below.
+        If you want to send me some ♥️,
+        do so below ⬇️
         
         I will love you either way
         because you know . . . you rock! 🤘
@@ -54,7 +54,12 @@ class MenuVC: UIViewController {
         super.viewDidLoad()
 
         setupViews()
+        setupIAP()
         // Do any additional setup after loading the view.
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func setupViews() {
@@ -62,11 +67,50 @@ class MenuVC: UIViewController {
         self.view.backgroundColor = .background
         getBeerButton.layoutSubviews()
         getCoffeeButton.layoutSubviews()
+        
+        if view.frame.width > 320 {
+            infoLabel.font = UIFont(name: "RobotoMono-Regular", size: 16)
+        } else {
+            infoLabel.font = UIFont(name: "RobotoMono-Regular", size: 12)
+        }
+        
+        // Disabling buttons
+        getCoffeeButton.isEnabled = false
+        getCoffeeButton.alpha = 0.5
+        getBeerButton.isEnabled = false
+        getBeerButton.alpha = 0.5
+        
     }
     
-    @IBAction func closeTapped(_ sender: Any) {
-        delegate?.animate(menuClosed: true)
-        self.dismiss(animated: true)
+    func setupIAP() {
+        ShopProducts.store.requestProducts { [weak self] success, products in
+        guard let self = self else { return }
+        if success {
+            // manage button separately
+            self.products = products!
+            DispatchQueue.main.async {
+                self.enableButtons()
+            }
+        }
+    }
+    }
+    
+    func enableButtons() {
+        getCoffeeButton.isEnabled = true
+        getCoffeeButton.alpha = 1
+    }
+    
+    func purchaseInitiated() {
+        let coverView = UIView(frame: view.frame)
+        let spinnerView = UIActivityIndicatorView(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
+        spinnerView.style = UIActivityIndicatorView.Style.whiteLarge
+        spinnerView.center = view.center
+        spinnerView.startAnimating()
+        coverView.backgroundColor = .black
+        coverView.alpha = 0.5
+        
+        view.addSubview(coverView)
+        view.addSubview(spinnerView)
     }
     
     func addMenuAnimation() {
@@ -76,15 +120,19 @@ class MenuVC: UIViewController {
         animationButtonView.play(toProgress: 0.5)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func closeTapped(_ sender: Any) {
+        delegate?.animate(menuClosed: true)
+        self.dismiss(animated: true)
     }
-    */
+    
+    @IBAction func buyCoffeeTaped(_ sender: Any) {
+        purchaseInitiated()
+        ShopProducts.store.buyProduct(products.first!)
+    }
+    
+    @IBAction func buyBeerTapped(_ sender: Any) {
+    }
+    
+
 
 }

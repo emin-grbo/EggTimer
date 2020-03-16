@@ -12,10 +12,9 @@ import Lottie
 class InstructionsSlide: UIView {
 
     @IBOutlet var animationView: AnimationView! { didSet {
-        animationView.backgroundColor = .red
+//        animationView.backgroundColor = .red
         }}
     @IBOutlet var instructionLabel: UILabel! { didSet {
         instructionLabel.textColor = .textOnWhite
         }}
-
 }

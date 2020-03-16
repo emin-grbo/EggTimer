@@ -35,14 +35,14 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         addMenuAnimation()
         setupSlides()
         setupScrollView()
-        
+        gotItBtn.layoutSubviews()
         scrollView.delegate = self
         
     }
     
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default // .default
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     

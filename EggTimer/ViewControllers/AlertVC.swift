@@ -15,6 +15,10 @@ class AlertVC: UIViewController {
     @IBOutlet var cancelBtn: UIButton!
     @IBOutlet var animationView: AnimationView!
     
+    @IBOutlet weak var alertTitleLabel: UILabel! { didSet {
+        alertTitleLabel.textColor = .black
+        }}
+    
     weak var delegate: AlertVCDelegate?
     
     override func viewDidLoad() {
@@ -27,7 +31,6 @@ class AlertVC: UIViewController {
         alertView.layer.cornerRadius = 10
         cancelBtn.titleLabel?.textColor = .white
         cancelBtn.backgroundColor = UIColor(displayP3Red: 54/255, green: 9/255, blue: 178/255, alpha: 1)
-//        cancelBtn.backgroundColor = .orange
         animationView.backgroundColor = .clear
     }
     
