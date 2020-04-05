@@ -34,7 +34,7 @@ class MenuVC: UIViewController {
     
     @IBOutlet weak var animationButtonView: AnimationView!
     @IBOutlet weak var infoLabel: UILabel! { didSet {
-        infoLabel.textColor = .textOnWhite
+        infoLabel.textColor = .primary
         infoLabel.text =
         """
         Hi! I am Emin and thank you SO MUCH for downloading my first app!
@@ -43,10 +43,32 @@ class MenuVC: UIViewController {
         If you want to send me some ♥️,
         do so below ⬇️
         
-        I will love you either way
-        because you know . . . you rock! 🤘
+        In return, i will provide with a new app Icon 🤘
         """
         }}
+    
+    @IBOutlet weak var coffeeIcon: IconButton! { didSet {
+        coffeeIcon.primary = .primaryWhite
+        coffeeIcon.primaryDark = .primaryWhite
+        coffeeIcon.lightShadow = .lightWhiteShadow
+        coffeeIcon.darkShadow = .darkWhiteShadow
+        coffeeIcon.layer.cornerRadius = 5
+        coffeeIcon.setTitleColor(.primary, for: .normal)
+        }}
+    @IBOutlet weak var coffinatedLabel: UILabel! { didSet {
+        coffinatedLabel.textColor = .primary
+        coffinatedLabel.text = "coffienated appIcon"
+        }
+    }
+    @IBOutlet weak var coffienatedStatus: UILabel! { didSet {
+        coffienatedStatus.font = UIFont(name: "RobotoMono-Regular", size: 12)
+        coffienatedStatus.textColor = .primaryDark
+        coffienatedStatus.alpha = 0.5
+        coffienatedStatus.text = "LOCKED"
+        }
+    }
+    
+    
     
     weak var delegate                   : InfoVCDelegate?
 
@@ -67,6 +89,7 @@ class MenuVC: UIViewController {
         self.view.backgroundColor = .background
         getBeerButton.layoutSubviews()
         getCoffeeButton.layoutSubviews()
+        coffeeIcon.layoutSubviews()
         
         if view.frame.width > 320 {
             infoLabel.font = UIFont(name: "RobotoMono-Regular", size: 16)
@@ -110,7 +133,7 @@ class MenuVC: UIViewController {
         coverView.alpha = 0.5
         
         view.addSubview(coverView)
-        view.addSubview(spinnerView)
+        coverView.addSubview(spinnerView)
     }
     
     func addMenuAnimation() {

@@ -30,4 +30,18 @@ extension CALayer {
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         
     }
+    
+    func addIconGradinet(startColor: UIColor, endColor: UIColor, radius: CGFloat) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.cornerRadius = radius
+        addSublayer(gradientLayer)
+        gradientLayer.colors = [
+            startColor.cgColor,
+            endColor.cgColor
+        ]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 1)
+        
+    }
 }
