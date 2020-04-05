@@ -34,7 +34,7 @@ class MenuVC: UIViewController {
     
     @IBOutlet weak var animationButtonView: AnimationView!
     @IBOutlet weak var infoLabel: UILabel! { didSet {
-        infoLabel.textColor = .primary
+        infoLabel.textColor = .textOnWhite
         infoLabel.text =
         """
         Hi! I am Emin and thank you SO MUCH for downloading my first app!
@@ -47,6 +47,12 @@ class MenuVC: UIViewController {
         """
         }}
     
+    @IBOutlet weak var coffeeIconImage: UIImageView! { didSet {
+        coffeeIconImage.image = UIImage(named: "coffeeIcon")?.noir()
+        coffeeIconImage.alpha = 0.5
+        coffeeIconImage.layer.cornerRadius = 5
+        coffeeIconImage.clipsToBounds = true
+        }}
     @IBOutlet weak var coffeeIcon: IconButton! { didSet {
         coffeeIcon.primary = .primaryWhite
         coffeeIcon.primaryDark = .primaryWhite
@@ -56,17 +62,46 @@ class MenuVC: UIViewController {
         coffeeIcon.setTitleColor(.primary, for: .normal)
         }}
     @IBOutlet weak var coffinatedLabel: UILabel! { didSet {
+        coffinatedLabel.font = UIFont(name: "RobotoMono-Regular", size: 12)
         coffinatedLabel.textColor = .primary
         coffinatedLabel.text = "coffienated appIcon"
         }
     }
     @IBOutlet weak var coffienatedStatus: UILabel! { didSet {
         coffienatedStatus.font = UIFont(name: "RobotoMono-Regular", size: 12)
-        coffienatedStatus.textColor = .primaryDark
-        coffienatedStatus.alpha = 0.5
+        coffienatedStatus.textColor = .primary
         coffienatedStatus.text = "LOCKED"
         }
     }
+    
+    
+    @IBOutlet weak var beerIconImage: UIImageView! { didSet {
+        beerIconImage.image = UIImage(named: "beerIcon")?.noir()
+        beerIconImage.alpha = 0.5
+        beerIconImage.layer.cornerRadius = 5
+        beerIconImage.clipsToBounds = true
+        }}
+    @IBOutlet weak var beerIcon: IconButton! { didSet {
+        beerIcon.primary = .primaryWhite
+        beerIcon.primaryDark = .primaryWhite
+        beerIcon.lightShadow = .lightWhiteShadow
+        beerIcon.darkShadow = .darkWhiteShadow
+        beerIcon.layer.cornerRadius = 5
+        beerIcon.setTitleColor(.primary, for: .normal)
+        }}
+    @IBOutlet weak var beernatedLAbel: UILabel! { didSet {
+        beernatedLAbel.font = UIFont(name: "RobotoMono-Regular", size: 12)
+        beernatedLAbel.textColor = .primary
+        beernatedLAbel.text = "beernated appIcon"
+        }
+    }
+    @IBOutlet weak var beernatedStatus: UILabel! { didSet {
+        beernatedStatus.font = UIFont(name: "RobotoMono-Regular", size: 12)
+        beernatedStatus.textColor = .primary
+        beernatedStatus.text = "LOCKED"
+        }
+    }
+    
     
     
     
@@ -87,9 +122,16 @@ class MenuVC: UIViewController {
     func setupViews() {
         addMenuAnimation()
         self.view.backgroundColor = .background
+        
         getBeerButton.layoutSubviews()
         getCoffeeButton.layoutSubviews()
         coffeeIcon.layoutSubviews()
+        beerIcon.layoutSubviews()
+        
+        coffinatedLabel.alpha = 1
+        beernatedLAbel.alpha = 1
+        coffienatedStatus.alpha = 0.3
+        beernatedStatus.alpha = 0.3
         
         if view.frame.width > 320 {
             infoLabel.font = UIFont(name: "RobotoMono-Regular", size: 16)
@@ -113,6 +155,7 @@ class MenuVC: UIViewController {
             self.products = products!
             DispatchQueue.main.async {
                 self.enableButtons()
+                self.setupBoughtButtons()
             }
         }
     }
@@ -121,6 +164,23 @@ class MenuVC: UIViewController {
     func enableButtons() {
         getCoffeeButton.isEnabled = true
         getCoffeeButton.alpha = 1
+    }
+    
+    func setupBoughtButtons() {
+        for product in products {
+            if ShopProducts.store.isProductPurchased(product.productIdentifier) {
+                if product.localizedTitle.contains("Coffee") {
+                    coffienatedStatus.text = "✅ UNLOCKED! Thank you!"
+                    coffeeIconImage.alpha = 1
+                    coffienatedStatus.alpha = 1
+                } else if product.localizedTitle.contains("Beer") {
+                    beernatedStatus.text = "✅ UNLOCKED! Thank you!"
+                    beerIconImage.alpha = 1
+                    beernatedStatus.alpha = 1
+                }
+                
+            }
+        }
     }
     
     func purchaseInitiated() {

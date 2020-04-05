@@ -27,6 +27,7 @@
 		D7BDB6FB23931C0D003AD316 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */; };
 		D7CF508A21B6D28300A3CF32 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7CF508921B6D28300A3CF32 /* RobotoMono-Bold.ttf */; };
 		D7D58509243A1413006ED158 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D58508243A1413006ED158 /* IconButton.swift */; };
+		D7D5850B243A37D1006ED158 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5850A243A37D1006ED158 /* UIImage+Ex.swift */; };
 		D7D6601E24202164005E9610 /* ShopProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6601D24202164005E9610 /* ShopProducts.swift */; };
 		D7DAE83422DB5B3200C19308 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DAE83322DB5B3200C19308 /* RobotoMono-Regular.ttf */; };
 		D7DAE83622DB5EA800C19308 /* InstructionsSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DAE83522DB5EA800C19308 /* InstructionsSlide.swift */; };
@@ -69,6 +70,7 @@
 		D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		D7CF508921B6D28300A3CF32 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
 		D7D58508243A1413006ED158 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
+		D7D5850A243A37D1006ED158 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		D7D6601D24202164005E9610 /* ShopProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopProducts.swift; sourceTree = "<group>"; };
 		D7DAE83322DB5B3200C19308 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		D7DAE83522DB5EA800C19308 /* InstructionsSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsSlide.swift; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 				D7BDB6F823931AC5003AD316 /* UIView+Ex.swift */,
 				D7B077712393F69A00DEF34F /* CALayer+Ex.swift */,
 				D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */,
+				D7D5850A243A37D1006ED158 /* UIImage+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				D7DAE83A22DB60AE00C19308 /* CustomObjects.swift in Sources */,
 				D76A878422DA5118002E9999 /* InfoVCDelegate.swift in Sources */,
 				D76A878022DA453D002E9999 /* InfoVC.swift in Sources */,
+				D7D5850B243A37D1006ED158 /* UIImage+Ex.swift in Sources */,
 				D7D6601E24202164005E9610 /* ShopProducts.swift in Sources */,
 				D7260D3A21AAD88600AC7EA3 /* AppDelegate.swift in Sources */,
 				D7BDB6F923931AC5003AD316 /* UIView+Ex.swift in Sources */,

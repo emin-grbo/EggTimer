@@ -80,8 +80,7 @@ class IconButton: UIButton {
         path.append(cutout)
         innerShadow.shadowPath = path.cgPath
         innerShadow.addShadow(offset: CGSize(width: 0, height: 2), color: .black, radius: radius, opacity: 0.5, maskToBounds: true)
-
-        self.bringSubviewToFront(titleLabel!)
+//        self.bringSubviewToFront(titleLabel!)
     }
 
 }

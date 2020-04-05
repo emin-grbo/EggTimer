@@ -33,6 +33,150 @@
                                 </constraints>
                                 <viewLayoutGuide key="safeArea" id="6jz-HN-yzE"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KMm-EZ-EiM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ks1-B9-fde">
+                                        <rect key="frame" x="20" y="0.0" width="280" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="AeH-eM-u3U"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="24" verticalHuggingPriority="251" text="label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-os-hs9">
+                                        <rect key="frame" x="16" y="181.5" width="288" height="16"/>
+                                        <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITN-cx-v4W">
+                                        <rect key="frame" x="16" y="229" width="288" height="176"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inw-YF-bNK" customClass="IconButton" customModule="EggTimer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="16" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="F4S-S5-EFC"/>
+                                                    <constraint firstAttribute="width" secondItem="inw-YF-bNK" secondAttribute="height" multiplier="1:1" id="Q89-ht-jfn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeC-Yr-uQ6" customClass="IconButton" customModule="EggTimer" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="100" width="60" height="60"/>
+                                                <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="oeC-Yr-uQ6" secondAttribute="height" multiplier="1:1" id="pYI-uz-zvT"/>
+                                                    <constraint firstAttribute="height" constant="60" id="xxZ-aD-XT5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffeinated Egg AppIcon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdo-uB-ru9">
+                                                <rect key="frame" x="76" y="26" width="191.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffeinated Egg AppIcon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-D5-PrD">
+                                                <rect key="frame" x="76" y="50.5" width="191.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffeinated Egg AppIcon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hy-vG-xRG">
+                                                <rect key="frame" x="76" y="110" width="191.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffeinated Egg AppIcon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS5-xE-HH1">
+                                                <rect key="frame" x="76" y="134.5" width="191.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PTB-TN-Rb3">
+                                                <rect key="frame" x="0.0" y="16" width="60" height="60"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7VO-zd-Qcv">
+                                                <rect key="frame" x="0.0" y="100" width="60" height="60"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="oeC-Yr-uQ6" firstAttribute="leading" secondItem="ITN-cx-v4W" secondAttribute="leading" id="3Bf-be-h4W"/>
+                                            <constraint firstItem="oeC-Yr-uQ6" firstAttribute="top" secondItem="inw-YF-bNK" secondAttribute="bottom" constant="24" id="4qL-KK-aK7"/>
+                                            <constraint firstItem="7VO-zd-Qcv" firstAttribute="centerX" secondItem="oeC-Yr-uQ6" secondAttribute="centerX" id="9Nm-Tc-mnG"/>
+                                            <constraint firstAttribute="bottom" secondItem="oeC-Yr-uQ6" secondAttribute="bottom" constant="16" id="BUL-3f-JA6"/>
+                                            <constraint firstItem="oeC-Yr-uQ6" firstAttribute="width" secondItem="oeC-Yr-uQ6" secondAttribute="height" multiplier="1:1" id="Cjl-zC-5LX"/>
+                                            <constraint firstItem="PTB-TN-Rb3" firstAttribute="centerY" secondItem="inw-YF-bNK" secondAttribute="centerY" id="HwB-Jc-GpQ"/>
+                                            <constraint firstItem="inw-YF-bNK" firstAttribute="leading" secondItem="ITN-cx-v4W" secondAttribute="leading" id="LAn-ma-cty"/>
+                                            <constraint firstItem="0Hy-vG-xRG" firstAttribute="leading" secondItem="oeC-Yr-uQ6" secondAttribute="trailing" constant="16" id="Rr3-Xx-v4X"/>
+                                            <constraint firstItem="w8Y-D5-PrD" firstAttribute="top" secondItem="Wdo-uB-ru9" secondAttribute="bottom" constant="4" id="TWF-Mi-x8h"/>
+                                            <constraint firstItem="7VO-zd-Qcv" firstAttribute="centerY" secondItem="oeC-Yr-uQ6" secondAttribute="centerY" id="Tft-bE-HUD"/>
+                                            <constraint firstItem="7VO-zd-Qcv" firstAttribute="width" secondItem="oeC-Yr-uQ6" secondAttribute="width" id="W3o-7Q-Hhb"/>
+                                            <constraint firstItem="w8Y-D5-PrD" firstAttribute="leading" secondItem="Wdo-uB-ru9" secondAttribute="leading" id="YuV-OV-mo1"/>
+                                            <constraint firstItem="eS5-xE-HH1" firstAttribute="top" secondItem="0Hy-vG-xRG" secondAttribute="bottom" constant="4" id="a08-yX-Ked"/>
+                                            <constraint firstItem="inw-YF-bNK" firstAttribute="top" secondItem="ITN-cx-v4W" secondAttribute="top" constant="16" id="chX-eR-Diz"/>
+                                            <constraint firstItem="PTB-TN-Rb3" firstAttribute="centerX" secondItem="inw-YF-bNK" secondAttribute="centerX" id="d0A-xz-rZ4"/>
+                                            <constraint firstItem="PTB-TN-Rb3" firstAttribute="width" secondItem="inw-YF-bNK" secondAttribute="width" id="deq-h2-6aR"/>
+                                            <constraint firstItem="0Hy-vG-xRG" firstAttribute="centerY" secondItem="oeC-Yr-uQ6" secondAttribute="centerY" constant="-10" id="fAj-K6-aIL"/>
+                                            <constraint firstItem="Wdo-uB-ru9" firstAttribute="leading" secondItem="inw-YF-bNK" secondAttribute="trailing" constant="16" id="lNz-mI-rQZ"/>
+                                            <constraint firstItem="7VO-zd-Qcv" firstAttribute="height" secondItem="oeC-Yr-uQ6" secondAttribute="height" id="mVn-hT-c0z"/>
+                                            <constraint firstItem="Wdo-uB-ru9" firstAttribute="centerY" secondItem="inw-YF-bNK" secondAttribute="centerY" constant="-10" id="n93-zi-Scs"/>
+                                            <constraint firstItem="PTB-TN-Rb3" firstAttribute="height" secondItem="inw-YF-bNK" secondAttribute="height" id="uzN-fX-UQj"/>
+                                            <constraint firstItem="eS5-xE-HH1" firstAttribute="leading" secondItem="0Hy-vG-xRG" secondAttribute="leading" id="xPa-M8-PPG"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-Oi-VXc" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="436.5" width="288" height="50"/>
+                                        <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="v1S-0F-bB1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buyCoffeeTaped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="Yh2-QJ-fTe"/>
+                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="rlG-9w-TMG"/>
+                                            <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="frY-j4-kJj"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-iK-4o0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="518" width="288" height="50"/>
+                                        <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="APg-F8-P46"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buyBeerTapped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="00M-4N-t0j"/>
+                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="x3L-e7-9yM"/>
+                                            <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="VLi-XP-PWa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ITN-cx-v4W" firstAttribute="leading" secondItem="KMm-EZ-EiM" secondAttribute="leading" constant="16" id="4il-GZ-3bp"/>
+                                    <constraint firstItem="Ks1-B9-fde" firstAttribute="width" secondItem="KMm-EZ-EiM" secondAttribute="width" constant="-40" id="CcO-QX-Z3r"/>
+                                    <constraint firstItem="CtY-os-hs9" firstAttribute="leading" secondItem="KMm-EZ-EiM" secondAttribute="leading" constant="16" id="Ler-zX-EEl"/>
+                                    <constraint firstAttribute="trailing" secondItem="LOi-Oi-VXc" secondAttribute="trailing" constant="16" id="V85-79-Q9E"/>
+                                    <constraint firstItem="LIa-iK-4o0" firstAttribute="width" secondItem="LOi-Oi-VXc" secondAttribute="width" id="X9h-e7-kUJ"/>
+                                    <constraint firstItem="LOi-Oi-VXc" firstAttribute="leading" secondItem="KMm-EZ-EiM" secondAttribute="leading" constant="16" id="pwW-2c-FZB"/>
+                                    <constraint firstAttribute="trailing" secondItem="CtY-os-hs9" secondAttribute="trailing" constant="16" id="pyt-P4-3tj"/>
+                                    <constraint firstItem="Ks1-B9-fde" firstAttribute="centerX" secondItem="KMm-EZ-EiM" secondAttribute="centerX" id="s20-U3-qRJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ITN-cx-v4W" secondAttribute="trailing" constant="16" id="xsj-aD-RKR"/>
+                                </constraints>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CPy-cZ-JmC">
                                 <rect key="frame" x="8" y="8" width="48" height="48"/>
                                 <connections>
@@ -41,109 +185,30 @@
                                     <action selector="closeTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="iyu-3q-yiR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-iK-4o0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                <rect key="frame" x="24" y="486" width="272" height="50"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="APg-F8-P46"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buyBeerTapped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="00M-4N-t0j"/>
-                                    <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="x3L-e7-9yM"/>
-                                    <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="VLi-XP-PWa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-Oi-VXc" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                <rect key="frame" x="24" y="412" width="272" height="50"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="v1S-0F-bB1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="buyCoffeeTaped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="Yh2-QJ-fTe"/>
-                                    <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="rlG-9w-TMG"/>
-                                    <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="frY-j4-kJj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inw-YF-bNK" customClass="IconButton" customModule="EggTimer" customModuleProvider="target">
-                                <rect key="frame" x="24" y="327" width="60" height="60"/>
-                                <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="F4S-S5-EFC"/>
-                                    <constraint firstAttribute="width" secondItem="inw-YF-bNK" secondAttribute="height" multiplier="1:1" id="Q89-ht-jfn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ks1-B9-fde">
-                                <rect key="frame" x="0.0" y="24" width="320" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="AeH-eM-u3U"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="24" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-os-hs9">
-                                <rect key="frame" x="32" y="190" width="256" height="16"/>
-                                <fontDescription key="fontDescription" name="RobotoMono-Regular" family="Roboto Mono" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffeinated Egg AppIcon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wdo-uB-ru9">
-                                <rect key="frame" x="100" y="336.5" width="192" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffeinated Egg AppIcon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8Y-D5-PrD">
-                                <rect key="frame" x="100" y="361.5" width="192" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="CtY-os-hs9" firstAttribute="centerX" secondItem="5s4-Ow-9uu" secondAttribute="centerX" id="1dN-Ja-Hew"/>
-                            <constraint firstItem="w8Y-D5-PrD" firstAttribute="top" secondItem="Wdo-uB-ru9" secondAttribute="bottom" constant="4" id="2d9-c6-YCj"/>
                             <constraint firstItem="CPy-cZ-JmC" firstAttribute="centerX" secondItem="whh-rK-Cm8" secondAttribute="centerX" id="2hO-9T-z5y"/>
-                            <constraint firstItem="LIa-iK-4o0" firstAttribute="centerX" secondItem="GGx-2s-eRD" secondAttribute="centerX" id="3kl-XL-deg"/>
-                            <constraint firstItem="GGx-2s-eRD" firstAttribute="trailing" secondItem="CtY-os-hs9" secondAttribute="trailing" constant="32" id="427-1o-y5p"/>
-                            <constraint firstItem="CtY-os-hs9" firstAttribute="top" secondItem="Ks1-B9-fde" secondAttribute="bottom" constant="16" id="7hr-eu-7EQ"/>
-                            <constraint firstItem="LIa-iK-4o0" firstAttribute="width" secondItem="LOi-Oi-VXc" secondAttribute="width" id="Arr-8t-s3a"/>
-                            <constraint firstItem="Wdo-uB-ru9" firstAttribute="centerY" secondItem="inw-YF-bNK" secondAttribute="centerY" constant="-10" id="FD6-9e-Lhu"/>
+                            <constraint firstItem="GGx-2s-eRD" firstAttribute="bottom" secondItem="KMm-EZ-EiM" secondAttribute="bottom" id="6We-zy-zRZ"/>
                             <constraint firstItem="CPy-cZ-JmC" firstAttribute="height" secondItem="whh-rK-Cm8" secondAttribute="height" id="Gxg-Z8-oBb"/>
-                            <constraint firstItem="w8Y-D5-PrD" firstAttribute="leading" secondItem="Wdo-uB-ru9" secondAttribute="leading" id="N2s-de-PHV"/>
-                            <constraint firstItem="LOi-Oi-VXc" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CtY-os-hs9" secondAttribute="bottom" constant="32" id="OPI-JZ-WaG"/>
                             <constraint firstItem="CPy-cZ-JmC" firstAttribute="centerY" secondItem="whh-rK-Cm8" secondAttribute="centerY" id="Q7a-hi-Pzf"/>
-                            <constraint firstItem="Ks1-B9-fde" firstAttribute="width" secondItem="5s4-Ow-9uu" secondAttribute="width" id="Qle-pd-dQi"/>
-                            <constraint firstItem="Ks1-B9-fde" firstAttribute="top" secondItem="GGx-2s-eRD" secondAttribute="top" constant="24" id="Uq7-45-PHv"/>
-                            <constraint firstAttribute="bottom" secondItem="LIa-iK-4o0" secondAttribute="bottom" constant="32" id="YTh-iH-S1Z"/>
-                            <constraint firstItem="Wdo-uB-ru9" firstAttribute="leading" secondItem="inw-YF-bNK" secondAttribute="trailing" constant="16" id="aVa-KD-YrD"/>
-                            <constraint firstItem="Ks1-B9-fde" firstAttribute="centerX" secondItem="5s4-Ow-9uu" secondAttribute="centerX" id="adB-is-RNg"/>
-                            <constraint firstItem="GGx-2s-eRD" firstAttribute="trailing" secondItem="LOi-Oi-VXc" secondAttribute="trailing" constant="24" id="ei4-7c-cjL"/>
-                            <constraint firstItem="LOi-Oi-VXc" firstAttribute="leading" secondItem="GGx-2s-eRD" secondAttribute="leading" constant="24" id="mN4-y1-7DK"/>
+                            <constraint firstItem="KMm-EZ-EiM" firstAttribute="top" secondItem="GGx-2s-eRD" secondAttribute="top" id="ROb-cb-W1Y"/>
+                            <constraint firstItem="KMm-EZ-EiM" firstAttribute="leading" secondItem="5s4-Ow-9uu" secondAttribute="leading" id="dRq-AT-yFC"/>
                             <constraint firstItem="whh-rK-Cm8" firstAttribute="leading" secondItem="GGx-2s-eRD" secondAttribute="leading" constant="8" id="ntJ-zL-ZhZ"/>
+                            <constraint firstAttribute="trailing" secondItem="KMm-EZ-EiM" secondAttribute="trailing" id="r8a-XU-0Cz"/>
                             <constraint firstItem="CPy-cZ-JmC" firstAttribute="width" secondItem="whh-rK-Cm8" secondAttribute="width" id="sCy-KU-0Up"/>
-                            <constraint firstItem="inw-YF-bNK" firstAttribute="leading" secondItem="GGx-2s-eRD" secondAttribute="leading" constant="24" id="ud3-kQ-hqD"/>
-                            <constraint firstItem="LOi-Oi-VXc" firstAttribute="top" secondItem="inw-YF-bNK" secondAttribute="bottom" constant="25" id="wi1-KZ-igq"/>
-                            <constraint firstItem="LIa-iK-4o0" firstAttribute="top" secondItem="LOi-Oi-VXc" secondAttribute="bottom" constant="24" id="xb2-EP-pdf"/>
-                            <constraint firstItem="CtY-os-hs9" firstAttribute="leading" secondItem="GGx-2s-eRD" secondAttribute="leading" constant="32" id="zUz-mS-Q6l"/>
                             <constraint firstItem="whh-rK-Cm8" firstAttribute="top" secondItem="GGx-2s-eRD" secondAttribute="top" constant="8" id="zYG-l8-u5s"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="GGx-2s-eRD"/>
                     </view>
                     <connections>
                         <outlet property="animationButtonView" destination="whh-rK-Cm8" id="wtu-vN-sh8"/>
+                        <outlet property="beerIcon" destination="oeC-Yr-uQ6" id="rLN-XG-JRp"/>
+                        <outlet property="beerIconImage" destination="7VO-zd-Qcv" id="sL1-lS-BKw"/>
+                        <outlet property="beernatedLAbel" destination="0Hy-vG-xRG" id="1DD-Vc-KPd"/>
+                        <outlet property="beernatedStatus" destination="eS5-xE-HH1" id="cqT-8b-Ngw"/>
                         <outlet property="coffeeIcon" destination="inw-YF-bNK" id="tIt-ZD-bjU"/>
+                        <outlet property="coffeeIconImage" destination="PTB-TN-Rb3" id="rgZ-2f-FdR"/>
                         <outlet property="coffienatedStatus" destination="w8Y-D5-PrD" id="vES-yt-RzG"/>
                         <outlet property="coffinatedLabel" destination="Wdo-uB-ru9" id="OyH-eG-ehy"/>
                         <outlet property="getBeerButton" destination="LIa-iK-4o0" id="wEb-1n-zbe"/>
