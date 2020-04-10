@@ -15,6 +15,6 @@ class InstructionsSlide: UIView {
 //        animationView.backgroundColor = .red
         }}
     @IBOutlet var instructionLabel: UILabel! { didSet {
-        instructionLabel.textColor = .textOnWhite
+        instructionLabel.textColor = .white
         }}
 }

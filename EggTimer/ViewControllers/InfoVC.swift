@@ -11,17 +11,23 @@ import Lottie
 
 class InfoVC: UIViewController, UIScrollViewDelegate {
 
+    
+    @IBOutlet weak var roundView: UIView! { didSet {
+        roundView.layer.cornerRadius = 25
+        roundView.backgroundColor = .primaryDark
+//        roundView.addShadow(offset: .zero, color: .primaryDark, radius: 5, opacity: 0.8)
+        }}
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var scrollView            : UIScrollView!
     @IBOutlet var animationButtonView   : AnimationView!
     @IBOutlet var animationStepperView  : AnimationView!
     @IBOutlet var gotItBtn              : RBbutton! { didSet {
         gotItBtn.setTitle("i think i got it", for: .normal)
-        gotItBtn.primary = .primaryWhite
-        gotItBtn.primaryDark = .primaryWhite
-        gotItBtn.lightShadow = .lightWhiteShadow
-        gotItBtn.darkShadow = .darkWhiteShadow
-        gotItBtn.setTitleColor(.primary, for: .normal)
+        gotItBtn.primary = .primary
+        gotItBtn.primaryDark = .primary
+        gotItBtn.lightShadow = .lightShadow
+        gotItBtn.darkShadow = .darkShadow
+        gotItBtn.setTitleColor(.white, for: .normal)
         }}
     weak var delegate                   : InfoVCDelegate?
     
@@ -37,7 +43,6 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         setupScrollView()
         gotItBtn.layoutSubviews()
         scrollView.delegate = self
-        
     }
     
     
@@ -47,12 +52,12 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     
     
     private func setupViews() {
-        containerView.backgroundColor = .background
+        containerView.backgroundColor = .primary
 //        buyMeDrinksBtn.titleLabel?.font = UIFont(name: "RobotoMono-Regular", size: 16)
     }
     
     func addMenuAnimation() {
-        animationButtonView.animation = Animation.named("menuBlack")
+        animationButtonView.animation = Animation.named("menu")
         animationButtonView.backgroundColor = .clear
         animationButtonView.contentMode = .scaleAspectFit
         animationButtonView.play(toProgress: 0.5)
@@ -61,10 +66,10 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     }
     
     func setupSlides() {
-        let slide1 = Slide(image: "step1", text: "Eggs in water, 1inch(2.5cm)  deeper than the eggs height.")
+        let slide1 = Slide(image: "step1", text: "Eggs in water, 1inch(2.5cm)\ndeeper than the eggs height.\nDo not turn on the timer yet.")
         let slide2 = Slide(image: "step2", text: "Let the water come to a boil and then REMOVE from the stove.")
         let slide3 = Slide(image: "step3", text: "Start the timer and wait for the notification or a sound.")
-//        instructionSlides = []
+        
         instructionSlides += [slide1, slide2, slide3]
         
         for slide in instructionSlides {
@@ -94,6 +99,17 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var progress = scrollView.contentOffset.x / scrollView.contentSize.width
         // Preventing animation from going under 0
+        
+//        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut , animations: {
+//            self.roundView.transform = CGAffineTransform(scaleX: 2.7, y: 1)
+//        })
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut , animations: {
+            self.roundView.transform = CGAffineTransform(scaleX: 1.01, y: 1.01)
+        })
+        UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseInOut , animations: {
+            self.roundView.transform = CGAffineTransform.identity
+        })
+        
         if progress < 0 {
             progress = 0
         }

@@ -14,62 +14,102 @@ class MenuVC: UIViewController {
     
     var products: [SKProduct] = []
     
+    
+    @IBOutlet weak var bgImgView: UIImageView! { didSet {
+        bgImgView.image = UIImage(named: "menuBg")
+        bgImgView.clipsToBounds = false
+        }}
+    
+    @IBOutlet weak var textFrameImgView: UIImageView! { didSet {
+        textFrameImgView.clipsToBounds = false
+        textFrameImgView.addShadow(offset: .zero, color: .primaryDark, radius: 15, opacity: 1)
+        }}
+    
     @IBOutlet weak var getCoffeeButton: RBbutton! { didSet {
            getCoffeeButton.setTitle("☕️ coffee's on me! 1$", for: .normal)
-           getCoffeeButton.primary = .primaryWhite
-           getCoffeeButton.primaryDark = .primaryWhite
-           getCoffeeButton.lightShadow = .lightWhiteShadow
-           getCoffeeButton.darkShadow = .darkWhiteShadow
-           getCoffeeButton.setTitleColor(.primary, for: .normal)
+           getCoffeeButton.primary = .primary
+           getCoffeeButton.primaryDark = .primary
+           getCoffeeButton.lightShadow = .lightShadow
+           getCoffeeButton.darkShadow = .darkShadow
+           getCoffeeButton.setTitleColor(.white, for: .normal)
            }}
     
     @IBOutlet weak var getBeerButton: RBbutton! { didSet {
            getBeerButton.setTitle("🍺 one beer on me! 5$", for: .normal)
-           getBeerButton.primary = .primaryWhite
-           getBeerButton.primaryDark = .primaryWhite
-           getBeerButton.lightShadow = .lightWhiteShadow
-           getBeerButton.darkShadow = .darkWhiteShadow
-           getBeerButton.setTitleColor(.primary, for: .normal)
+           getBeerButton.primary = .primary
+           getBeerButton.primaryDark = .primary
+           getBeerButton.lightShadow = .lightShadow
+           getBeerButton.darkShadow = .darkShadow
+           getBeerButton.setTitleColor(.white, for: .normal)
            }}
     
     @IBOutlet weak var animationButtonView: AnimationView!
     @IBOutlet weak var infoLabel: UILabel! { didSet {
-        infoLabel.textColor = .textOnWhite
+        infoLabel.textColor = .white
+        infoLabel.font = UIFont(name: "RobotoMono-Bold", size: 14)
         infoLabel.text =
         """
-        Hi! I am Emin and thank you SO MUCH for downloading my first app!
+        Hi! Thank you SO MUCH for downloading the app!
+
         You rock! 🤘
-        
-        If you want to send me some ♥️,
-        do so below ⬇️
-        
-        In return, i will provide with a new app Icon 🤘
+                
+        If you want to send me some ♥️, do so below. In return, i will provide you with a new app Icon!
         """
         }}
     
+    @IBOutlet weak var defaultIconImage: UIImageView! { didSet {
+        defaultIconImage.image = UIImage(named: "defaultIcon")
+        defaultIconImage.alpha = 1
+        defaultIconImage.layer.cornerRadius = 5
+        defaultIconImage.clipsToBounds = true
+        }}
+    @IBOutlet weak var defaultIcon: IconButton! { didSet {
+        defaultIcon.primary = .primary
+        defaultIcon.primaryDark = .primary
+        defaultIcon.lightShadow = .lightShadow
+        defaultIcon.darkShadow = .darkShadow
+        defaultIcon.layer.cornerRadius = 5
+        defaultIcon.setTitleColor(.white, for: .normal)
+        }}
+    @IBOutlet weak var defaultiatedLabel: UILabel! { didSet {
+        defaultiatedLabel.font = UIFont(name: "RobotoMono-Regular", size: 12)
+        defaultiatedLabel.textColor = .white
+        defaultiatedLabel.text = "defaultieted"
+        }
+    }
+    @IBOutlet weak var defaultiatedLabelStatus: UILabel! { didSet {
+        defaultiatedLabelStatus.font = UIFont(name: "RobotoMono-Regular", size: 12)
+        defaultiatedLabelStatus.textColor = .white
+        defaultiatedLabelStatus.text = "✅ UNLOCKED!"
+        }
+    }
+    
+    
+    
+    
     @IBOutlet weak var coffeeIconImage: UIImageView! { didSet {
         coffeeIconImage.image = UIImage(named: "coffeeIcon")?.noir()
-        coffeeIconImage.alpha = 0.5
+        coffeeIconImage.alpha = 0.3
         coffeeIconImage.layer.cornerRadius = 5
         coffeeIconImage.clipsToBounds = true
         }}
     @IBOutlet weak var coffeeIcon: IconButton! { didSet {
-        coffeeIcon.primary = .primaryWhite
-        coffeeIcon.primaryDark = .primaryWhite
-        coffeeIcon.lightShadow = .lightWhiteShadow
-        coffeeIcon.darkShadow = .darkWhiteShadow
+        coffeeIcon.primary = .primary
+        coffeeIcon.primaryDark = .primary
+        coffeeIcon.lightShadow = .lightShadow
+        coffeeIcon.darkShadow = .darkShadow
         coffeeIcon.layer.cornerRadius = 5
-        coffeeIcon.setTitleColor(.primary, for: .normal)
+        coffeeIcon.setTitleColor(.white, for: .normal)
         }}
     @IBOutlet weak var coffinatedLabel: UILabel! { didSet {
         coffinatedLabel.font = UIFont(name: "RobotoMono-Regular", size: 12)
-        coffinatedLabel.textColor = .primary
-        coffinatedLabel.text = "coffienated appIcon"
+        coffinatedLabel.textColor = .white
+        coffinatedLabel.text = "coffienated"
         }
     }
     @IBOutlet weak var coffienatedStatus: UILabel! { didSet {
         coffienatedStatus.font = UIFont(name: "RobotoMono-Regular", size: 12)
-        coffienatedStatus.textColor = .primary
+        coffienatedStatus.textColor = .white
         coffienatedStatus.text = "LOCKED"
         }
     }
@@ -77,31 +117,62 @@ class MenuVC: UIViewController {
     
     @IBOutlet weak var beerIconImage: UIImageView! { didSet {
         beerIconImage.image = UIImage(named: "beerIcon")?.noir()
-        beerIconImage.alpha = 0.5
+        beerIconImage.alpha = 0.3
         beerIconImage.layer.cornerRadius = 5
         beerIconImage.clipsToBounds = true
         }}
     @IBOutlet weak var beerIcon: IconButton! { didSet {
-        beerIcon.primary = .primaryWhite
-        beerIcon.primaryDark = .primaryWhite
-        beerIcon.lightShadow = .lightWhiteShadow
-        beerIcon.darkShadow = .darkWhiteShadow
+        beerIcon.primary = .primary
+        beerIcon.primaryDark = .primary
+        beerIcon.lightShadow = .lightShadow
+        beerIcon.darkShadow = .darkShadow
         beerIcon.layer.cornerRadius = 5
-        beerIcon.setTitleColor(.primary, for: .normal)
+        beerIcon.setTitleColor(.white, for: .normal)
         }}
     @IBOutlet weak var beernatedLAbel: UILabel! { didSet {
         beernatedLAbel.font = UIFont(name: "RobotoMono-Regular", size: 12)
-        beernatedLAbel.textColor = .primary
-        beernatedLAbel.text = "beernated appIcon"
+        beernatedLAbel.textColor = .white
+        beernatedLAbel.text = "beernated"
         }
     }
     @IBOutlet weak var beernatedStatus: UILabel! { didSet {
         beernatedStatus.font = UIFont(name: "RobotoMono-Regular", size: 12)
-        beernatedStatus.textColor = .primary
+        beernatedStatus.textColor = .white
         beernatedStatus.text = "LOCKED"
         }
     }
     
+    
+    @IBOutlet weak var setDefaultButton: RBbutton! { didSet {
+        setDefaultButton.primary = .primary
+        setDefaultButton.primaryDark = .primary
+        setDefaultButton.lightShadow = .lightShadow
+        setDefaultButton.darkShadow = .darkShadow
+        setDefaultButton.layer.cornerRadius = 5
+        setDefaultButton.setTitleColor(.primaryWhite, for: .selected)
+        setDefaultButton.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 14)
+        setDefaultButton.setTitle("🥚", for: .selected)
+        }}
+    @IBOutlet weak var setCoffeeButton: RBbutton! { didSet {
+        setCoffeeButton.primary = .primary
+        setCoffeeButton.primaryDark = .primary
+        setCoffeeButton.lightShadow = .lightShadow
+        setCoffeeButton.darkShadow = .darkShadow
+        setCoffeeButton.layer.cornerRadius = 5
+        setCoffeeButton.setTitleColor(.darkWhiteShadow, for: .selected)
+        setCoffeeButton.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 14)
+        setCoffeeButton.setTitle("☕️", for: .selected)
+        }}
+    @IBOutlet weak var setBeerButton: RBbutton! { didSet {
+        setBeerButton.primary = .primary
+        setBeerButton.primaryDark = .primary
+        setBeerButton.lightShadow = .lightShadow
+        setBeerButton.darkShadow = .darkShadow
+        setBeerButton.layer.cornerRadius = 5
+        setBeerButton.setTitle("🍺", for: .selected)
+        }}
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     
@@ -110,6 +181,7 @@ class MenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        styleButtons()
         setupViews()
         setupIAP()
         // Do any additional setup after loading the view.
@@ -119,31 +191,55 @@ class MenuVC: UIViewController {
         return true
     }
     
+    func styleButtons() {
+        
+        for btn in [setDefaultButton, setCoffeeButton, setBeerButton] {
+            btn!.primary = .primary
+            btn!.primaryDark = .primary
+            btn!.lightShadow = .lightShadow
+            btn!.darkShadow = .darkShadow
+            btn!.layer.cornerRadius = 5
+            btn!.isEnabled = false
+            btn!.alpha = 0.2
+            //        btn.setTitleColor(.darkWhiteShadow, for: .selected)
+            //        btn.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 14)
+        }
+        
+        let currentIcon = UIApplication.shared.alternateIconName
+        
+        switch currentIcon {
+        case "CoffeeIcon": setCoffeeButton.isSelected = true
+        case "BeerIcon": setBeerButton.isSelected = true
+        default: setDefaultButton.isSelected = true
+        }
+        
+
+        
+    }
+    
     func setupViews() {
         addMenuAnimation()
-        self.view.backgroundColor = .background
+        self.view.backgroundColor = .primary
         
         getBeerButton.layoutSubviews()
         getCoffeeButton.layoutSubviews()
         coffeeIcon.layoutSubviews()
         beerIcon.layoutSubviews()
+        defaultIcon.layoutSubviews()
         
         coffinatedLabel.alpha = 1
         beernatedLAbel.alpha = 1
         coffienatedStatus.alpha = 0.3
         beernatedStatus.alpha = 0.3
         
-        if view.frame.width > 320 {
-            infoLabel.font = UIFont(name: "RobotoMono-Regular", size: 16)
-        } else {
-            infoLabel.font = UIFont(name: "RobotoMono-Regular", size: 12)
-        }
-        
         // Disabling buttons
         getCoffeeButton.isEnabled = false
         getCoffeeButton.alpha = 0.5
         getBeerButton.isEnabled = false
         getBeerButton.alpha = 0.5
+        
+        setDefaultButton.isEnabled = true
+        setDefaultButton.alpha = 1
         
     }
     
@@ -164,19 +260,26 @@ class MenuVC: UIViewController {
     func enableButtons() {
         getCoffeeButton.isEnabled = true
         getCoffeeButton.alpha = 1
+        getBeerButton.isEnabled = true
+        getBeerButton.alpha = 1
     }
     
     func setupBoughtButtons() {
+
         for product in products {
             if ShopProducts.store.isProductPurchased(product.productIdentifier) {
                 if product.localizedTitle.contains("Coffee") {
-                    coffienatedStatus.text = "✅ UNLOCKED! Thank you!"
+                    coffienatedStatus.text = "✅ UNLOCKED!"
                     coffeeIconImage.alpha = 1
                     coffienatedStatus.alpha = 1
+                    setCoffeeButton.isEnabled = true
+                    setCoffeeButton.alpha = 1
                 } else if product.localizedTitle.contains("Beer") {
-                    beernatedStatus.text = "✅ UNLOCKED! Thank you!"
+                    beernatedStatus.text = "✅ UNLOCKED!"
                     beerIconImage.alpha = 1
                     beernatedStatus.alpha = 1
+                    setBeerButton.isEnabled = true
+                    setBeerButton.alpha = 1
                 }
                 
             }
@@ -197,7 +300,7 @@ class MenuVC: UIViewController {
     }
     
     func addMenuAnimation() {
-        animationButtonView.animation = Animation.named("menuBlack")
+        animationButtonView.animation = Animation.named("menu")
         animationButtonView.backgroundColor = .clear
         animationButtonView.contentMode = .scaleAspectFit
         animationButtonView.play(toProgress: 0.5)
@@ -210,11 +313,43 @@ class MenuVC: UIViewController {
     
     @IBAction func buyCoffeeTaped(_ sender: Any) {
         purchaseInitiated()
-        ShopProducts.store.buyProduct(products.first!)
+        ShopProducts.store.buyProduct(products[0])
     }
     
     @IBAction func buyBeerTapped(_ sender: Any) {
+        purchaseInitiated()
+        ShopProducts.store.buyProduct(products[1])
     }
+    
+    @IBAction func setIconTapped(_ sender: RBbutton) {
+        
+        var newIconIdentifier: String?
+        
+        switch sender.tag {
+        case 1:
+            newIconIdentifier = "CoffeeIcon"
+        case 2:
+            newIconIdentifier = "BeerIcon"
+        default:
+            newIconIdentifier = nil
+        }
+        
+        if UIApplication.shared.supportsAlternateIcons {
+            UIApplication.shared.setAlternateIconName(newIconIdentifier) { error in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("Success!")
+                }
+            }
+        }
+
+        for btn in [setDefaultButton, setCoffeeButton, setBeerButton] {
+            btn?.isSelected = false
+        }
+        sender.isSelected = true
+    }
+    
     
 
 

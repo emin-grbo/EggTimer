@@ -19,6 +19,9 @@ extension UIColor {
     class var darkWhiteShadow:  UIColor { return UIColor(hex: "#CBD8ECFF")! }
     class var lightWhiteShadow: UIColor { return UIColor(hex: "#EFF8FCFF")! }
     class var primaryWhite:     UIColor { return UIColor(hex: "#E1ECF7FF")! }
+    class var eggOrange:        UIColor { return UIColor(hex: "#FF8412FF")! }
+    class var eggOrangeLight:   UIColor { return UIColor(hex: "#FFA01FFF")! }
+    class var eggOrangeDark:    UIColor { return UIColor(hex: "#D56D0AFF")! }
 }
 
 // MARK: Getting the colors from HEX value

@@ -28,6 +28,10 @@
 		D7CF508A21B6D28300A3CF32 /* RobotoMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7CF508921B6D28300A3CF32 /* RobotoMono-Bold.ttf */; };
 		D7D58509243A1413006ED158 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D58508243A1413006ED158 /* IconButton.swift */; };
 		D7D5850B243A37D1006ED158 /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D5850A243A37D1006ED158 /* UIImage+Ex.swift */; };
+		D7D58511243A481B006ED158 /* coffeeIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D5850D243A481A006ED158 /* coffeeIcon@3x.png */; };
+		D7D58512243A481B006ED158 /* beerIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D5850E243A481A006ED158 /* beerIcon@3x.png */; };
+		D7D58513243A481B006ED158 /* beerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D5850F243A481A006ED158 /* beerIcon@2x.png */; };
+		D7D58514243A481B006ED158 /* coffeeIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7D58510243A481A006ED158 /* coffeeIcon@2x.png */; };
 		D7D6601E24202164005E9610 /* ShopProducts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D6601D24202164005E9610 /* ShopProducts.swift */; };
 		D7DAE83422DB5B3200C19308 /* RobotoMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7DAE83322DB5B3200C19308 /* RobotoMono-Regular.ttf */; };
 		D7DAE83622DB5EA800C19308 /* InstructionsSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7DAE83522DB5EA800C19308 /* InstructionsSlide.swift */; };
@@ -71,6 +75,10 @@
 		D7CF508921B6D28300A3CF32 /* RobotoMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Bold.ttf"; sourceTree = "<group>"; };
 		D7D58508243A1413006ED158 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		D7D5850A243A37D1006ED158 /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		D7D5850D243A481A006ED158 /* coffeeIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffeeIcon@3x.png"; sourceTree = "<group>"; };
+		D7D5850E243A481A006ED158 /* beerIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beerIcon@3x.png"; sourceTree = "<group>"; };
+		D7D5850F243A481A006ED158 /* beerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beerIcon@2x.png"; sourceTree = "<group>"; };
+		D7D58510243A481A006ED158 /* coffeeIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "coffeeIcon@2x.png"; sourceTree = "<group>"; };
 		D7D6601D24202164005E9610 /* ShopProducts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopProducts.swift; sourceTree = "<group>"; };
 		D7DAE83322DB5B3200C19308 /* RobotoMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RobotoMono-Regular.ttf"; sourceTree = "<group>"; };
 		D7DAE83522DB5EA800C19308 /* InstructionsSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsSlide.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 		D7260D2D21AAD88600AC7EA3 = {
 			isa = PBXGroup;
 			children = (
+				D753C86C243E467D00909998 /* AlternateIcons */,
 				D7260D3821AAD88600AC7EA3 /* EggTimer */,
 				D7260D3721AAD88600AC7EA3 /* Products */,
 				872246278ECD21556C19BD0F /* Pods */,
@@ -171,6 +180,17 @@
 				D76A877722DA2738002E9999 /* Assets.xcassets */,
 			);
 			path = EggTimer;
+			sourceTree = "<group>";
+		};
+		D753C86C243E467D00909998 /* AlternateIcons */ = {
+			isa = PBXGroup;
+			children = (
+				D7D5850F243A481A006ED158 /* beerIcon@2x.png */,
+				D7D5850E243A481A006ED158 /* beerIcon@3x.png */,
+				D7D58510243A481A006ED158 /* coffeeIcon@2x.png */,
+				D7D5850D243A481A006ED158 /* coffeeIcon@3x.png */,
+			);
+			path = AlternateIcons;
 			sourceTree = "<group>";
 		};
 		D76A878522DA5122002E9999 /* Delegates */ = {
@@ -292,15 +312,19 @@
 				D7CF508A21B6D28300A3CF32 /* RobotoMono-Bold.ttf in Resources */,
 				D7DAE84B22DB9CC200C19308 /* slider.json in Resources */,
 				D7DAE84422DB720B00C19308 /* step2.json in Resources */,
+				D7D58514243A481B006ED158 /* coffeeIcon@2x.png in Resources */,
 				D72205A922D9E133000C2FD7 /* bear.json in Resources */,
 				D7F0FEE821EB9B2700A0F705 /* data.json in Resources */,
 				D76A877822DA2739002E9999 /* Assets.xcassets in Resources */,
+				D7D58512243A481B006ED158 /* beerIcon@3x.png in Resources */,
 				D7260D3F21AAD88600AC7EA3 /* Main.storyboard in Resources */,
 				D7DAE84722DB785400C19308 /* stepper.json in Resources */,
 				D76A877E22DA3876002E9999 /* menu.json in Resources */,
+				D7D58511243A481B006ED158 /* coffeeIcon@3x.png in Resources */,
 				D7DAE83822DB5EC700C19308 /* InstructionsSlide.xib in Resources */,
 				D7DAE83422DB5B3200C19308 /* RobotoMono-Regular.ttf in Resources */,
 				D7DAE84D22DBA66C00C19308 /* drinks.json in Resources */,
+				D7D58513243A481B006ED158 /* beerIcon@2x.png in Resources */,
 				D7DAE84922DB9A3600C19308 /* step3.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,7 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -536,7 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;

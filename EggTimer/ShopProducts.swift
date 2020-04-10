@@ -11,8 +11,9 @@ import Foundation
 public struct ShopProducts {
   
   public static let OneCoffee = "com.roblack.EggTimer.onecoffee"
+  public static let OneBeer = "com.roblack.EggTimer.onebeer"
   
-  private static let productIdentifiers: Set<ProductIdentifier> = [ShopProducts.OneCoffee]
+  private static let productIdentifiers: Set<ProductIdentifier> = [ShopProducts.OneCoffee, ShopProducts.OneBeer]
   public static let store = IAPHelper(productIds: ShopProducts.productIdentifiers)
 }
 

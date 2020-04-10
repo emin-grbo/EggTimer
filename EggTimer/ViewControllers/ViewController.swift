@@ -30,6 +30,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    #warning("testing app icon")
+    print(UIApplication.shared.alternateIconName ?? "Primary")
+    
     setupScrollView()
     setupTimer()
     addMenuAnimation()
@@ -136,7 +139,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     func addCircleAnim() {
         circleView.alpha = 0
         circleView.isUserInteractionEnabled = false
-        circleView.backgroundColor = .background
+        circleView.backgroundColor = .primaryDark
         circleView.layer.cornerRadius = 25
         self.view.addSubview(circleView)
     }
@@ -185,14 +188,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         menuPage.modalPresentationCapturesStatusBarAppearance = true
         menuPage.delegate = self
         circleView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        
         // MARK: Animate circleThing
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.circleView.alpha = 1
             self.circleView.transform = CGAffineTransform(scaleX: 40, y: 40)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
         self.present(menuPage, animated: true)
         }
     }
@@ -206,9 +208,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         infoPage.modalPresentationCapturesStatusBarAppearance = true
         infoPage.delegate = self
         circleView.frame = CGRect(x: UIScreen.main.bounds.width - 60, y: 50, width: 50, height: 50)
-        
         // MARK: Animate circleThing
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.circleView.alpha = 1
             self.circleView.transform = CGAffineTransform(scaleX: 40, y: 40)
         }
