@@ -13,7 +13,8 @@ import StoreKit
 class MenuVC: UIViewController {
     
     var products: [SKProduct] = []
-    
+    var coverView = UIView(frame: .zero)
+    weak var delegate : InfoVCDelegate?
     
     @IBOutlet weak var bgImgView: UIImageView! { didSet {
         bgImgView.image = UIImage(named: "menuBg")
@@ -149,8 +150,6 @@ class MenuVC: UIViewController {
         setDefaultButton.lightShadow = .lightShadow
         setDefaultButton.darkShadow = .darkShadow
         setDefaultButton.layer.cornerRadius = 5
-        setDefaultButton.setTitleColor(.primaryWhite, for: .selected)
-        setDefaultButton.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 14)
         setDefaultButton.setTitle("🥚", for: .selected)
         }}
     @IBOutlet weak var setCoffeeButton: RBbutton! { didSet {
@@ -159,8 +158,6 @@ class MenuVC: UIViewController {
         setCoffeeButton.lightShadow = .lightShadow
         setCoffeeButton.darkShadow = .darkShadow
         setCoffeeButton.layer.cornerRadius = 5
-        setCoffeeButton.setTitleColor(.darkWhiteShadow, for: .selected)
-        setCoffeeButton.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 14)
         setCoffeeButton.setTitle("☕️", for: .selected)
         }}
     @IBOutlet weak var setBeerButton: RBbutton! { didSet {
@@ -173,10 +170,6 @@ class MenuVC: UIViewController {
         }}
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    
-    
-    weak var delegate                   : InfoVCDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -184,6 +177,8 @@ class MenuVC: UIViewController {
         styleButtons()
         setupViews()
         setupIAP()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(completedPurchase), name: .IAPHelperPurchaseNotification, object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -191,8 +186,14 @@ class MenuVC: UIViewController {
         return true
     }
     
+    @objc func completedPurchase() {
+        if coverView != nil {
+        coverView.removeFromSuperview()
+        }
+        setupIAP()
+    }
+    
     func styleButtons() {
-        
         for btn in [setDefaultButton, setCoffeeButton, setBeerButton] {
             btn!.primary = .primary
             btn!.primaryDark = .primary
@@ -201,20 +202,14 @@ class MenuVC: UIViewController {
             btn!.layer.cornerRadius = 5
             btn!.isEnabled = false
             btn!.alpha = 0.2
-            //        btn.setTitleColor(.darkWhiteShadow, for: .selected)
-            //        btn.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 14)
         }
         
         let currentIcon = UIApplication.shared.alternateIconName
-        
         switch currentIcon {
         case "CoffeeIcon": setCoffeeButton.isSelected = true
         case "BeerIcon": setBeerButton.isSelected = true
         default: setDefaultButton.isSelected = true
         }
-        
-
-        
     }
     
     func setupViews() {
@@ -265,7 +260,6 @@ class MenuVC: UIViewController {
     }
     
     func setupBoughtButtons() {
-
         for product in products {
             if ShopProducts.store.isProductPurchased(product.productIdentifier) {
                 if product.localizedTitle.contains("Coffee") {
@@ -274,20 +268,21 @@ class MenuVC: UIViewController {
                     coffienatedStatus.alpha = 1
                     setCoffeeButton.isEnabled = true
                     setCoffeeButton.alpha = 1
+                    coffeeIconImage.image = UIImage(named: "coffeeIcon")
                 } else if product.localizedTitle.contains("Beer") {
                     beernatedStatus.text = "✅ UNLOCKED!"
                     beerIconImage.alpha = 1
                     beernatedStatus.alpha = 1
                     setBeerButton.isEnabled = true
                     setBeerButton.alpha = 1
+                    beerIconImage.image = UIImage(named: "beerIcon")
                 }
-                
             }
         }
     }
     
     func purchaseInitiated() {
-        let coverView = UIView(frame: view.frame)
+        coverView = UIView(frame: view.frame)
         let spinnerView = UIActivityIndicatorView(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
         spinnerView.style = UIActivityIndicatorView.Style.whiteLarge
         spinnerView.center = view.center
@@ -306,19 +301,28 @@ class MenuVC: UIViewController {
         animationButtonView.play(toProgress: 0.5)
     }
     
+    func showProductUnavailableAlert() {
+        let ac = UIAlertController(title: "Error", message: "Store seems to be closed.\nBear must have been lazy and forgot to open it 🐻", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK, i'll wait", style: .default, handler: nil)
+        ac.addAction(action)
+        present(ac, animated: true, completion: nil)
+    }
+    
     @IBAction func closeTapped(_ sender: Any) {
         delegate?.animate(menuClosed: true)
         self.dismiss(animated: true)
     }
     
     @IBAction func buyCoffeeTaped(_ sender: Any) {
+        guard let productToBuy = products.first(where: {$0.productIdentifier == "com.roblack.EggTimer.onecoffee"}) else { showProductUnavailableAlert(); return }
         purchaseInitiated()
-        ShopProducts.store.buyProduct(products[0])
+        ShopProducts.store.buyProduct(productToBuy)
     }
     
     @IBAction func buyBeerTapped(_ sender: Any) {
+        guard let productToBuy = products.first(where: {$0.productIdentifier == "com.roblack.EggTimer.onebeer"}) else { showProductUnavailableAlert(); return }
         purchaseInitiated()
-        ShopProducts.store.buyProduct(products[1])
+        ShopProducts.store.buyProduct(productToBuy)
     }
     
     @IBAction func setIconTapped(_ sender: RBbutton) {

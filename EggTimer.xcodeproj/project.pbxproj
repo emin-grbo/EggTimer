@@ -20,6 +20,7 @@
 		D76A878222DA4B16002E9999 /* menuBlack.json in Resources */ = {isa = PBXBuildFile; fileRef = D76A878122DA4B16002E9999 /* menuBlack.json */; };
 		D76A878422DA5118002E9999 /* InfoVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A878322DA5118002E9999 /* InfoVCDelegate.swift */; };
 		D7857B6323CCE32A006262DE /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7857B6223CCE32A006262DE /* MenuVC.swift */; };
+		D791B2C924421256007A07E7 /* IncrementBuildVersion.sh in Resources */ = {isa = PBXBuildFile; fileRef = D791B2C824421255007A07E7 /* IncrementBuildVersion.sh */; };
 		D79F092F241ED3FF00F2BA85 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79F092E241ED3FF00F2BA85 /* IAPHelper.swift */; };
 		D79F0931241ED9BF00F2BA85 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79F0930241ED9BF00F2BA85 /* StoreKit.framework */; };
 		D7B077722393F69A00DEF34F /* CALayer+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B077712393F69A00DEF34F /* CALayer+Ex.swift */; };
@@ -67,6 +68,7 @@
 		D76A878122DA4B16002E9999 /* menuBlack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menuBlack.json; sourceTree = "<group>"; };
 		D76A878322DA5118002E9999 /* InfoVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVCDelegate.swift; sourceTree = "<group>"; };
 		D7857B6223CCE32A006262DE /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		D791B2C824421255007A07E7 /* IncrementBuildVersion.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = IncrementBuildVersion.sh; sourceTree = "<group>"; };
 		D79F092E241ED3FF00F2BA85 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		D79F0930241ED9BF00F2BA85 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D7B077712393F69A00DEF34F /* CALayer+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Ex.swift"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 		D7260D3821AAD88600AC7EA3 /* EggTimer */ = {
 			isa = PBXGroup;
 			children = (
+				D791B2C824421255007A07E7 /* IncrementBuildVersion.sh */,
 				D7260D3D21AAD88600AC7EA3 /* Main.storyboard */,
 				D7260D3921AAD88600AC7EA3 /* AppDelegate.swift */,
 				D7DAE83922DB60AE00C19308 /* CustomObjects.swift */,
@@ -306,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D791B2C924421256007A07E7 /* IncrementBuildVersion.sh in Resources */,
 				D76A878222DA4B16002E9999 /* menuBlack.json in Resources */,
 				D7DAE84322DB720B00C19308 /* step1.json in Resources */,
 				D7260D4421AAD88800AC7EA3 /* LaunchScreen.storyboard in Resources */,
@@ -546,7 +550,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -568,7 +572,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

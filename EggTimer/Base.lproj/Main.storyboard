@@ -547,7 +547,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOP-B0-Luu">
-                                        <rect key="frame" x="80" y="150" width="160" height="156"/>
+                                        <rect key="frame" x="80" y="134" width="160" height="156"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-ge-oae">
@@ -571,13 +571,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="4bm-SJ-2Pr" firstAttribute="top" secondItem="OOP-B0-Luu" secondAttribute="bottom" constant="10" id="3BY-zN-Iy3"/>
                                     <constraint firstAttribute="trailing" secondItem="4vE-yX-PT0" secondAttribute="trailing" constant="40" id="3lS-Td-Sx6"/>
                                     <constraint firstItem="eeH-ge-oae" firstAttribute="leading" secondItem="Qds-Hp-AvG" secondAttribute="leading" id="4ux-Ta-N2T"/>
                                     <constraint firstItem="OOP-B0-Luu" firstAttribute="width" secondItem="eeH-ge-oae" secondAttribute="width" multiplier="0.5" id="587-BP-HCr"/>
                                     <constraint firstItem="eeH-ge-oae" firstAttribute="bottom" secondItem="4bm-SJ-2Pr" secondAttribute="bottom" constant="68" id="IDj-uO-Eiw"/>
                                     <constraint firstAttribute="bottom" secondItem="4vE-yX-PT0" secondAttribute="bottom" constant="40" id="Iid-Q4-7tf"/>
                                     <constraint firstAttribute="trailing" secondItem="eeH-ge-oae" secondAttribute="trailing" id="Jle-Vy-XPo"/>
-                                    <constraint firstItem="OOP-B0-Luu" firstAttribute="centerY" secondItem="eeH-ge-oae" secondAttribute="centerY" id="ZKF-Wv-6Ij"/>
                                     <constraint firstItem="OOP-B0-Luu" firstAttribute="centerX" secondItem="eeH-ge-oae" secondAttribute="centerX" id="bUk-s0-Bue"/>
                                     <constraint firstItem="4bm-SJ-2Pr" firstAttribute="centerX" secondItem="Qds-Hp-AvG" secondAttribute="centerX" id="ipa-8s-N60"/>
                                     <constraint firstItem="4vE-yX-PT0" firstAttribute="centerX" secondItem="Qds-Hp-AvG" secondAttribute="centerX" id="jDd-Xi-Rsy"/>

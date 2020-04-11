@@ -75,8 +75,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
     func formattedTime(_ totalSeconds: Int) -> String {
         let seconds = totalSeconds % 60
-        let minutes = (totalSeconds / 60) % 60
+        let minutes = (totalSeconds / 60)
         return String(format: "%02d:%02d", minutes, seconds)
+        
     }
   
   func setupScrollView() {
@@ -125,7 +126,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     switch scrollView.currentPage {
     case 1:
         #warning("testing time")
-      timeRemaining = 5
+      timeRemaining = 121
     case 2:
       timeRemaining = 420
     case 3:
@@ -156,10 +157,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         registerLocalNotification()
         
         Timer.every(0.1.second) { (timer: Timer) in
-            
+
             let elapsed = Date() - startDate
-            self.timeRemaining = duration - (elapsed.second ?? 0)
-            self.timerLabel.text = "\(self.formattedTime(self.timeRemaining))"
+            let remaining = duration - (elapsed.minute! > 0 ? ((elapsed.minute! * 60) + elapsed.second!) : elapsed.second!)
+            self.timerLabel.text = "\(self.formattedTime(remaining))"
             
             if self.startButton.isSelected == false {
                 self.scrollView.isScrollEnabled = true

@@ -146,13 +146,14 @@ extension IAPHelper: SKPaymentTransactionObserver {
         transactionError.code != SKError.paymentCancelled.rawValue {
         print("Transaction Error: \(localizedDescription)")
       }
-
+    deliverPurchaseNotificationFor(identifier: nil)
     SKPaymentQueue.default().finishTransaction(transaction)
   }
 
   private func deliverPurchaseNotificationFor(identifier: String?) {
-    guard let identifier = identifier else { return }
-
+    guard let identifier = identifier else {
+        NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: nil)
+        return }
     purchasedProductIdentifiers.insert(identifier)
     UserDefaults.standard.set(true, forKey: identifier)
     NotificationCenter.default.post(name: .IAPHelperPurchaseNotification, object: identifier)
