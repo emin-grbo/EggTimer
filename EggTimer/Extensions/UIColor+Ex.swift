@@ -22,6 +22,7 @@ extension UIColor {
     class var eggOrange:        UIColor { return UIColor(hex: "#FF8412FF")! }
     class var eggOrangeLight:   UIColor { return UIColor(hex: "#FFA01FFF")! }
     class var eggOrangeDark:    UIColor { return UIColor(hex: "#D56D0AFF")! }
+    class var textOnBlue:       UIColor { return UIColor(hex: "#9EB0C3FF")! }
 }
 
 // MARK: Getting the colors from HEX value

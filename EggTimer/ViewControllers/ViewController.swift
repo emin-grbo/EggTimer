@@ -20,6 +20,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBOutlet weak var startButton: UIButton!
   @IBOutlet var animationButtonView: AnimationView!
     
+    // MARK: Sounds
+    let tapDownSound = URL(fileURLWithPath: Bundle.main.path(forResource: "plunger1", ofType: "wav")!)
+    let tapUpSound = URL(fileURLWithPath: Bundle.main.path(forResource: "plunger2", ofType: "wav")!)
+    var audioPlayer = AVAudioPlayer()
+    
+    
   let notificationCenter = UNUserNotificationCenter.current()
     
   let animationView = AnimationView(name: "data")
@@ -29,9 +35,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    #warning("testing app icon")
-    print(UIApplication.shared.alternateIconName ?? "Primary")
     
     setupScrollView()
     setupTimer()
@@ -126,7 +129,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     switch scrollView.currentPage {
     case 1:
         #warning("testing time")
-      timeRemaining = 121
+      timeRemaining = 6
     case 2:
       timeRemaining = 420
     case 3:
@@ -148,6 +151,17 @@ class ViewController: UIViewController, UIScrollViewDelegate {
   @IBAction func startTimerBTN(_ sender: Any) {
     startButton.isSelected.toggle()
     tickTock()
+    
+    if startButton.isSelected {
+        audioPlayer = try! AVAudioPlayer(contentsOf: tapUpSound)
+    } else {
+        audioPlayer = try! AVAudioPlayer(contentsOf: tapDownSound)
+    }
+    
+    let generator = UIImpactFeedbackGenerator(style: .medium)
+    generator.impactOccurred()
+    
+    audioPlayer.play()
   }
     
     func tickTock() {
@@ -168,7 +182,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 timer.invalidate()
             }
             // MARK: Egg Done
-            if self.timeRemaining <= 0 {
+            if remaining <= 0 {
                 timer.invalidate()
                 self.scrollView.isScrollEnabled = true
                 self.setupTimer()
@@ -186,7 +200,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         menuPage.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         menuPage.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         // Important to use since presentation style does not go fullScreen
-        menuPage.modalPresentationCapturesStatusBarAppearance = true
+//        menuPage.modalPresentationCapturesStatusBarAppearance = true
         menuPage.delegate = self
         circleView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         // MARK: Animate circleThing
@@ -242,7 +256,6 @@ extension ViewController: InfoVCDelegate, AlertVCDelegate {
 extension ViewController: UNUserNotificationCenterDelegate {
 
     func registerLocalNotification() {
-        
         notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 self.scheduleNotification()
@@ -258,7 +271,6 @@ extension ViewController: UNUserNotificationCenterDelegate {
     
     func scheduleNotification() {
         registerCategories()
-        print("Scheduling...")
         
         // not required, but useful for testing!
         notificationCenter.removeAllPendingNotificationRequests()
@@ -269,7 +281,7 @@ extension ViewController: UNUserNotificationCenterDelegate {
         content.body = "Get them out of the hot water for Christs sake!"
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData": "show"]
-        content.sound = UNNotificationSound.default
+        content.sound = UNNotificationSound(named: UNNotificationSoundName("alert.wav"))
         
         let date = Date()
         var dateComponents = DateComponents()
@@ -311,7 +323,6 @@ extension ViewController: UNUserNotificationCenterDelegate {
                 notificationCenter.removeAllPendingNotificationRequests()
             case "show":
                 print("Show more information…")
-                
             default:
                 break
             }

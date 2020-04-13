@@ -170,6 +170,22 @@ class MenuVC: UIViewController {
         }}
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var beerAnimation: AnimationView! { didSet {
+        beerAnimation.animation = Animation.named("beer")
+        beerAnimation.backgroundColor = .clear
+        beerAnimation.loopMode = .loop
+        beerAnimation.play()
+        }}
+    
+    @IBOutlet weak var coffeeAnimation: AnimationView! { didSet {
+        coffeeAnimation.animation = Animation.named("coffee")
+        coffeeAnimation.backgroundColor = .clear
+        coffeeAnimation.loopMode = .loop
+        coffeeAnimation.play()
+        }}
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,9 +198,13 @@ class MenuVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
+//    
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     
     @objc func completedPurchase() {
         if coverView != nil {

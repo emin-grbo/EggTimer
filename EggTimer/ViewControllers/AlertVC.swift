@@ -11,8 +11,17 @@ import Lottie
 
 class AlertVC: UIViewController {
 
-    @IBOutlet var alertView: UIView!
-    @IBOutlet var cancelBtn: UIButton!
+    @IBOutlet var alertView: UIView! { didSet {
+        alertView.backgroundColor = .background
+        }}
+    @IBOutlet var cancelBtn: RBbutton! { didSet {
+        cancelBtn.primary = .primaryWhite
+        cancelBtn.primaryDark = .background
+        cancelBtn.lightShadow = .lightWhiteShadow
+        cancelBtn.darkShadow = .darkWhiteShadow
+        cancelBtn.setTitleColor(.primary, for: .normal)
+        cancelBtn.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 16)
+        }}
     @IBOutlet var animationView: AnimationView!
     
     @IBOutlet weak var alertTitleLabel: UILabel! { didSet {
@@ -25,6 +34,8 @@ class AlertVC: UIViewController {
         super.viewDidLoad()
         setupViews()
         setupAnimation()
+        
+        cancelBtn.layoutSubviews()
     }
     
     private func setupViews() {

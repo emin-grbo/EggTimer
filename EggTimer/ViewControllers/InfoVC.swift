@@ -15,7 +15,6 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var roundView: UIView! { didSet {
         roundView.layer.cornerRadius = 25
         roundView.backgroundColor = .primaryDark
-//        roundView.addShadow(offset: .zero, color: .primaryDark, radius: 5, opacity: 0.8)
         }}
     @IBOutlet weak var containerView: UIView!
     @IBOutlet var scrollView            : UIScrollView!
@@ -29,6 +28,13 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         gotItBtn.darkShadow = .darkShadow
         gotItBtn.setTitleColor(.white, for: .normal)
         }}
+    @IBOutlet weak var attributionBtn: UIButton! { didSet {
+        attributionBtn.tintColor = .primaryWhite
+        attributionBtn.titleLabel?.font = UIFont(name: "RobotoMono-Bold", size: 12)
+        attributionBtn.setTitle("Attribution ⓘ", for: .normal)
+        attributionBtn.alpha = 0.5
+        }}
+    
     weak var delegate                   : InfoVCDelegate?
     
     var instructionSlides: [Slide] = []
@@ -43,17 +49,21 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         setupScrollView()
         gotItBtn.layoutSubviews()
         scrollView.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
-    
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
-    
     
     private func setupViews() {
         containerView.backgroundColor = .primary
 //        buyMeDrinksBtn.titleLabel?.font = UIFont(name: "RobotoMono-Regular", size: 16)
+    }
+    
+    @objc func reload() {
+        viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     func addMenuAnimation() {
@@ -128,6 +138,13 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
         self.dismiss(animated: true)
     }
     
+    @IBAction func attributionTapped(_ sender: Any) {
+        let vc = AttributionScreen()
+//        vc.modalPresentationStyle
+//        vc.modalPresentationStyle = .modalPresentationStyle.
+        presentingViewController?.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true)
+    }
     
 
 }
