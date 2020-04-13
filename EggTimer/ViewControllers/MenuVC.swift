@@ -27,7 +27,8 @@ class MenuVC: UIViewController {
         }}
     
     @IBOutlet weak var getCoffeeButton: RBbutton! { didSet {
-           getCoffeeButton.setTitle("☕️ coffee's on me! 1$", for: .normal)
+           getCoffeeButton.setTitle("coffee's on me! 1$", for: .normal)
+           getCoffeeButton.contentHorizontalAlignment = .left
            getCoffeeButton.primary = .primary
            getCoffeeButton.primaryDark = .primary
            getCoffeeButton.lightShadow = .lightShadow
@@ -36,7 +37,8 @@ class MenuVC: UIViewController {
            }}
     
     @IBOutlet weak var getBeerButton: RBbutton! { didSet {
-           getBeerButton.setTitle("🍺 one beer on me! 5$", for: .normal)
+           getBeerButton.setTitle("one beer on me! 5$", for: .normal)
+           getBeerButton.contentHorizontalAlignment = .left
            getBeerButton.primary = .primary
            getBeerButton.primaryDark = .primary
            getBeerButton.lightShadow = .lightShadow
@@ -84,10 +86,7 @@ class MenuVC: UIViewController {
         defaultiatedLabelStatus.text = "✅ UNLOCKED!"
         }
     }
-    
-    
-    
-    
+
     @IBOutlet weak var coffeeIconImage: UIImageView! { didSet {
         coffeeIconImage.image = UIImage(named: "coffeeIcon")?.noir()
         coffeeIconImage.alpha = 0.3
@@ -174,14 +173,14 @@ class MenuVC: UIViewController {
     @IBOutlet weak var beerAnimation: AnimationView! { didSet {
         beerAnimation.animation = Animation.named("beer")
         beerAnimation.backgroundColor = .clear
-        beerAnimation.loopMode = .loop
+        beerAnimation.loopMode = .autoReverse
         beerAnimation.play()
         }}
     
     @IBOutlet weak var coffeeAnimation: AnimationView! { didSet {
         coffeeAnimation.animation = Animation.named("coffee")
         coffeeAnimation.backgroundColor = .clear
-        coffeeAnimation.loopMode = .loop
+        coffeeAnimation.loopMode = .autoReverse
         coffeeAnimation.play()
         }}
     

@@ -235,6 +235,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="v1S-0F-bB1"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <inset key="titleEdgeInsets" minX="76" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -245,7 +246,7 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Xm-fs-o4o" customClass="AnimationView" customModule="Lottie">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="16" y="0.0" width="50" height="50"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="7Xm-fs-o4o" secondAttribute="height" multiplier="1:1" id="HbV-n7-ELQ"/>
@@ -262,7 +263,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="LOi-Oi-VXc" secondAttribute="trailing" id="Xu1-Jv-eS5"/>
                                                     <constraint firstItem="LOi-Oi-VXc" firstAttribute="leading" secondItem="wgQ-VO-ovS" secondAttribute="leading" id="cC5-wl-L8d"/>
                                                     <constraint firstItem="LOi-Oi-VXc" firstAttribute="top" secondItem="wgQ-VO-ovS" secondAttribute="top" id="hFz-8L-BUL"/>
-                                                    <constraint firstItem="7Xm-fs-o4o" firstAttribute="leading" secondItem="LOi-Oi-VXc" secondAttribute="leading" id="jOI-RC-bEM"/>
+                                                    <constraint firstItem="7Xm-fs-o4o" firstAttribute="leading" secondItem="LOi-Oi-VXc" secondAttribute="leading" constant="16" id="jOI-RC-bEM"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmi-zf-5qh" userLabel="beerContainer">
@@ -275,6 +276,7 @@
                                                             <constraint firstAttribute="height" constant="50" id="APg-F8-P46"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <inset key="titleEdgeInsets" minX="76" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
@@ -285,10 +287,10 @@
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKg-Vx-yWU" customClass="AnimationView" customModule="Lottie">
-                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <rect key="frame" x="20" y="4" width="42" height="42"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="zKg-Vx-yWU" secondAttribute="height" id="sma-V9-21y"/>
+                                                            <constraint firstAttribute="width" secondItem="zKg-Vx-yWU" secondAttribute="height" multiplier="1:1" id="sma-V9-21y"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -299,8 +301,8 @@
                                                     <constraint firstAttribute="bottom" secondItem="LIa-iK-4o0" secondAttribute="bottom" id="UGf-Gs-jJo"/>
                                                     <constraint firstAttribute="trailing" secondItem="LIa-iK-4o0" secondAttribute="trailing" id="WK7-8g-0rt"/>
                                                     <constraint firstItem="LIa-iK-4o0" firstAttribute="top" secondItem="gmi-zf-5qh" secondAttribute="top" id="X5Z-jo-BJP"/>
-                                                    <constraint firstItem="zKg-Vx-yWU" firstAttribute="leading" secondItem="LIa-iK-4o0" secondAttribute="leading" id="cJU-v8-SAH"/>
-                                                    <constraint firstItem="zKg-Vx-yWU" firstAttribute="height" secondItem="LIa-iK-4o0" secondAttribute="height" id="vDA-Mr-fLc"/>
+                                                    <constraint firstItem="zKg-Vx-yWU" firstAttribute="leading" secondItem="LIa-iK-4o0" secondAttribute="leading" constant="20" id="cJU-v8-SAH"/>
+                                                    <constraint firstItem="zKg-Vx-yWU" firstAttribute="height" secondItem="LIa-iK-4o0" secondAttribute="height" constant="-8" id="vDA-Mr-fLc"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -454,7 +456,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtE-Tf-awr">
-                                <rect key="frame" x="100" y="32" width="120.5" height="55"/>
+                                <rect key="frame" x="110" y="32" width="100.5" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="rPQ-GP-JKr"/>
                                 </constraints>
@@ -503,17 +505,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-qG-Ge8">
-                                <rect key="frame" x="40" y="40" width="240" height="468"/>
+                                <rect key="frame" x="40" y="40" width="240" height="442.5"/>
                                 <subviews>
                                     <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-xs-I3a" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="32" width="240" height="161.5"/>
+                                        <rect key="frame" x="0.0" y="32" width="240" height="164.5"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" placeholder="YES" id="NTT-Te-ckZ"/>
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8L-AG-suX" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="384" width="160" height="50"/>
+                                        <rect key="frame" x="40" y="358.5" width="160" height="50"/>
                                         <color key="backgroundColor" red="0.21176470588235294" green="0.035294117647058823" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="160" id="ASR-MR-7e4"/>
@@ -527,13 +529,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bear says you eggs are done!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-K8-2Cw">
-                                        <rect key="frame" x="24" y="217.5" width="192" height="53"/>
+                                        <rect key="frame" x="24" y="220.5" width="192" height="47"/>
                                         <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bears really like eggs, they just lack the ability to grow them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14I-vF-b67">
-                                        <rect key="frame" x="16" y="294.5" width="208" height="55.5"/>
+                                        <rect key="frame" x="16" y="291.5" width="208" height="33"/>
                                         <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="14"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
