@@ -23,6 +23,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // MARK: Sounds
     let tapDownSound = URL(fileURLWithPath: Bundle.main.path(forResource: "plunger1", ofType: "wav")!)
     let tapUpSound = URL(fileURLWithPath: Bundle.main.path(forResource: "plunger2", ofType: "wav")!)
+    let alertSound = URL(fileURLWithPath: Bundle.main.path(forResource: "alert", ofType: "wav")!)
     var audioPlayer : AVAudioPlayer!
     
     
@@ -59,6 +60,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func eggDone() {
+        
+        notificationCenter.getPendingNotificationRequests { (result) in
+            if result.isEmpty {
+                // notification tapped, no need to play a sound
+            } else {
+                self.audioPlayer = try! AVAudioPlayer(contentsOf: self.alertSound)
+                self.audioPlayer.play()
+            }
+        }
+        
         // removing InfoVC if its active
         if let window = UIApplication.shared.delegate?.window {
             if let viewController = window?.rootViewController {
@@ -72,15 +83,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         let alert = AlertViewController(alert: alertModel)
         alert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         alert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-
+        
         self.present(alert, animated: true)
+        
     }
   
     func formattedTime(_ totalSeconds: Int) -> String {
         let seconds = totalSeconds % 60
         let minutes = (totalSeconds / 60)
         return String(format: "%02d:%02d", minutes, seconds)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if audioPlayer != nil {
+            audioPlayer.pause()
+        }
     }
   
   func setupScrollView() {
@@ -177,6 +194,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 self.scrollView.isScrollEnabled = true
                 self.setupTimer()
                 timer.invalidate()
+                self.notificationCenter.removeAllPendingNotificationRequests()
             }
             // MARK: Egg Done
             if remaining <= 0 {
@@ -185,6 +203,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 self.setupTimer()
                 self.eggDone()
                 self.startButton.isSelected = false
+                
             }
         }
     }
@@ -245,6 +264,7 @@ extension ViewController: InfoVCDelegate, AlertVCDelegate {
     func reset() {
         self.scrollView.isScrollEnabled = true
         self.setupTimer()
+        self.notificationCenter.removeAllPendingNotificationRequests()
     }
 }
 

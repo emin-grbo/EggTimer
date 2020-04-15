@@ -43,7 +43,6 @@ class AlertViewController: UIViewController {
         setupViews()
         setupAnimation()
         cancelBtn.layoutSubviews()
-        // Do any additional setup after loading the view.
     }
 
     // MARK: - Initializers

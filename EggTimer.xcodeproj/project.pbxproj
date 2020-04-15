@@ -642,7 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -650,7 +650,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
 				PRODUCT_NAME = RunnyEgg;
 				SWIFT_VERSION = 5.0;
@@ -664,7 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -672,7 +672,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
 				PRODUCT_NAME = RunnyEgg;
 				SWIFT_VERSION = 5.0;
