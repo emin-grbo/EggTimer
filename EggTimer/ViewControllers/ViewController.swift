@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // MARK: Sounds
     let tapDownSound = URL(fileURLWithPath: Bundle.main.path(forResource: "plunger1", ofType: "wav")!)
     let tapUpSound = URL(fileURLWithPath: Bundle.main.path(forResource: "plunger2", ofType: "wav")!)
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer : AVAudioPlayer!
     
     
   let notificationCenter = UNUserNotificationCenter.current()
@@ -66,14 +66,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
                 animate(menuClosed: false)
             }
         }
+
+        let alertModel = alertConfirmModels.randomElement()!
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let customAlert = storyboard.instantiateViewController(withIdentifier: "alert") as! AlertVC
-        customAlert.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-        customAlert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
-        
-        customAlert.delegate = self
-        self.present(customAlert, animated: true)
+        let alert = AlertViewController(alert: alertModel)
+        alert.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        alert.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+
+        self.present(alert, animated: true)
     }
   
     func formattedTime(_ totalSeconds: Int) -> String {
@@ -123,22 +123,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     animationView.clipsToBounds = false
   }
   
-  
-  
-  func setupTimer() {
-    switch scrollView.currentPage {
-    case 1:
-        #warning("testing time")
-      timeRemaining = 6
-    case 2:
-      timeRemaining = 420
-    case 3:
-      timeRemaining = 600
-    default:
-      timeRemaining = 0
+    func setupTimer() {
+        switch scrollView.currentPage {
+        case 1:
+            timeRemaining = 240 // 240
+        case 2:
+            timeRemaining = 420
+        case 3:
+            timeRemaining = 600
+        default:
+            timeRemaining = 0
+        }
+        timerLabel.text = formattedTime(timeRemaining)
     }
-    timerLabel.text = formattedTime(timeRemaining)
-  }
     
     func addCircleAnim() {
         circleView.alpha = 0
@@ -278,22 +275,12 @@ extension ViewController: UNUserNotificationCenterDelegate {
         // Modifying content to show on the alert
         let content = UNMutableNotificationContent()
         content.title = "Your eggs are ready!"
-        content.body = "Get them out of the hot water for Christs sake!"
+        content.body = "Get them into a cold bath for eggs sake!"
         content.categoryIdentifier = "alarm"
         content.userInfo = ["customData": "show"]
         content.sound = UNNotificationSound(named: UNNotificationSoundName("alert.wav"))
         
-        let date = Date()
-        var dateComponents = DateComponents()
-        let calendar = Calendar.current
-        
-        let seconds = calendar.component(.second, from: date)
-        
-        #warning("testing seconds")
-        dateComponents.second = seconds + timeRemaining
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        print(dateComponents)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(timeRemaining), repeats: false)
         
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         notificationCenter.add(request)
@@ -330,7 +317,5 @@ extension ViewController: UNUserNotificationCenterDelegate {
         // you need to call the completion handler when you're done
         completionHandler()
     }
-    
-    
 }
 

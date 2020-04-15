@@ -27,7 +27,7 @@ class MenuVC: UIViewController {
         }}
     
     @IBOutlet weak var getCoffeeButton: RBbutton! { didSet {
-           getCoffeeButton.setTitle("coffee's on me! 1$", for: .normal)
+           getCoffeeButton.setTitle("fetching store price...", for: .normal)
            getCoffeeButton.contentHorizontalAlignment = .left
            getCoffeeButton.primary = .primary
            getCoffeeButton.primaryDark = .primary
@@ -37,7 +37,7 @@ class MenuVC: UIViewController {
            }}
     
     @IBOutlet weak var getBeerButton: RBbutton! { didSet {
-           getBeerButton.setTitle("one beer on me! 5$", for: .normal)
+           getBeerButton.setTitle("fetching store price...", for: .normal)
            getBeerButton.contentHorizontalAlignment = .left
            getBeerButton.primary = .primary
            getBeerButton.primaryDark = .primary
@@ -184,8 +184,6 @@ class MenuVC: UIViewController {
         coffeeAnimation.play()
         }}
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -197,19 +195,19 @@ class MenuVC: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-//    override var preferredStatusBarStyle: UIStatusBarStyle {
-//        return .lightContent
-//    }
-//    
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
-    
-    @objc func completedPurchase() {
-        if coverView != nil {
+    @objc func completedPurchase(_ sender: Notification) {
         coverView.removeFromSuperview()
-        }
         setupIAP()
+        
+        if sender.object != nil {
+            showThankYou()
+        }
+    }
+    
+    func showThankYou() {
+        let alertModel = AlertModel(animation: "cheese", title: "Cheese Louise!", subtitle: "Thank you for that,\nyou awesome person 🤘", buttonString: "Awwwwww")
+        let alert = AlertViewController(alert: alertModel)
+        present(alert, animated: true, completion: nil)
     }
     
     func styleButtons() {
@@ -279,7 +277,18 @@ class MenuVC: UIViewController {
     }
     
     func setupBoughtButtons() {
+        
         for product in products {
+            
+            let productPrice = Double(round(100 * (product.price.doubleValue))/100)
+            let productCurrency = product.priceLocale.currencySymbol != nil ? product.priceLocale.currencySymbol! : product.priceLocale.currencyCode ?? ""
+            
+            if product.localizedTitle.contains("Coffee") {
+                getCoffeeButton.setTitle("coffee's on me! \(productPrice)\(productCurrency)", for: .normal)
+            } else {
+                getBeerButton.setTitle("one beer on me! \(productPrice)\(productCurrency)", for: .normal)
+            }
+            
             if ShopProducts.store.isProductPurchased(product.productIdentifier) {
                 if product.localizedTitle.contains("Coffee") {
                     coffienatedStatus.text = "✅ UNLOCKED!"
@@ -303,7 +312,7 @@ class MenuVC: UIViewController {
     func purchaseInitiated() {
         coverView = UIView(frame: view.frame)
         let spinnerView = UIActivityIndicatorView(frame: CGRect(x: 50, y: 50, width: 50, height: 50))
-        spinnerView.style = UIActivityIndicatorView.Style.whiteLarge
+        spinnerView.style = UIActivityIndicatorView.Style.large
         spinnerView.center = view.center
         spinnerView.startAnimating()
         coverView.backgroundColor = .black

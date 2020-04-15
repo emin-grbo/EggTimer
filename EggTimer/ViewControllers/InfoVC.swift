@@ -59,7 +59,9 @@ class InfoVC: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func reload() {
-        viewDidLoad()
+        for slide in instructionSlideViews {
+            slide.animationView.play()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

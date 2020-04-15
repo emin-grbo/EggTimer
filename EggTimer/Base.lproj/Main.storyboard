@@ -15,7 +15,7 @@
         <!--MenuVC-->
         <scene sceneID="meB-um-Wnv">
             <objects>
-                <viewController storyboardIdentifier="menu" id="cKW-xj-aXR" customClass="MenuVC" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menu" id="cKW-xj-aXR" customClass="MenuVC" customModule="RunnyEgg" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5s4-Ow-9uu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,7 +45,7 @@
                                                         <rect key="frame" x="24" y="0.0" width="272" height="209"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="24" verticalHuggingPriority="251" text="label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-os-hs9">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="24" verticalHuggingPriority="251" text="label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-os-hs9">
                                                         <rect key="frame" x="56" y="24" width="208" height="161"/>
                                                         <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="12"/>
                                                         <nil key="textColor"/>
@@ -67,7 +67,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITN-cx-v4W">
                                                 <rect key="frame" x="24" y="373" width="272" height="272"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-6o-rps" userLabel="Default Icon" customClass="IconButton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ra-6o-rps" userLabel="Default Icon" customClass="IconButton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="12" width="60" height="60"/>
                                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -79,7 +79,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inw-YF-bNK" customClass="IconButton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="inw-YF-bNK" customClass="IconButton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="104" width="60" height="60"/>
                                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -91,7 +91,7 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeC-Yr-uQ6" customClass="IconButton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeC-Yr-uQ6" customClass="IconButton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="196" width="60" height="60"/>
                                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -148,7 +148,7 @@
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7VO-zd-Qcv">
                                                         <rect key="frame" x="8" y="196" width="60" height="60"/>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9X-oz-V5Z" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9X-oz-V5Z" customClass="RBbutton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="204" y="27" width="60" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="mAW-Co-nmc"/>
@@ -157,7 +157,7 @@
                                                             <action selector="setIconTapped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="Ul8-1K-d1n"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQx-eP-Lrb" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQx-eP-Lrb" customClass="RBbutton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="204" y="119" width="60" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="b4P-FT-DTp"/>
@@ -166,7 +166,7 @@
                                                             <action selector="setIconTapped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="LCf-s5-jhT"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMq-Fr-RAA" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMq-Fr-RAA" customClass="RBbutton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="204" y="211" width="60" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="60" id="R4y-Ao-1Of"/>
@@ -228,20 +228,19 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgQ-VO-ovS" userLabel="coffeeContainer">
                                                 <rect key="frame" x="32" y="677" width="256" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-Oi-VXc" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOi-Oi-VXc" customClass="RBbutton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="256" height="50"/>
                                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="v1S-0F-bB1"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <inset key="titleEdgeInsets" minX="76" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="titleEdgeInsets" minX="76" minY="0.0" maxX="16" maxY="0.0"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="buyCoffeeTaped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="Yh2-QJ-fTe"/>
-                                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="rlG-9w-TMG"/>
                                                             <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="frY-j4-kJj"/>
                                                         </connections>
                                                     </button>
@@ -269,20 +268,19 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmi-zf-5qh" userLabel="beerContainer">
                                                 <rect key="frame" x="32" y="759" width="256" height="50"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-iK-4o0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIa-iK-4o0" customClass="RBbutton" customModule="RunnyEgg" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="256" height="50"/>
                                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="APg-F8-P46"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                        <inset key="titleEdgeInsets" minX="76" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="titleEdgeInsets" minX="76" minY="0.0" maxX="16" maxY="0.0"/>
                                                         <state key="normal">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="buyBeerTapped:" destination="cKW-xj-aXR" eventType="touchUpInside" id="00M-4N-t0j"/>
-                                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="x3L-e7-9yM"/>
                                                             <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="VLi-XP-PWa"/>
                                                         </connections>
                                                     </button>
@@ -400,7 +398,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RunnyEgg" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -408,7 +406,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Azb-sr-kid">
                                 <rect key="frame" x="0.0" y="87" width="320" height="481"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-IB-RbI" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd7-IB-RbI" customClass="RBbutton" customModule="RunnyEgg" customModuleProvider="target">
                                 <rect key="frame" x="40" y="478" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vA1-F9-KLn"/>
@@ -456,7 +454,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="04:00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtE-Tf-awr">
-                                <rect key="frame" x="110" y="32" width="100.5" height="55"/>
+                                <rect key="frame" x="100" y="32" width="120.5" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="rPQ-GP-JKr"/>
                                 </constraints>
@@ -469,7 +467,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="wtE-Tf-awr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="2gl-nv-h3X"/>
-                            <constraint firstItem="dd7-IB-RbI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="Isv-7P-5cb"/>
+                            <constraint firstItem="dd7-IB-RbI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="Isv-7P-5cb"/>
                             <constraint firstItem="wtE-Tf-awr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JF2-t2-PbH"/>
                             <constraint firstItem="t88-g5-dvn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Og1-bE-Ux3"/>
                             <constraint firstAttribute="bottom" secondItem="dd7-IB-RbI" secondAttribute="bottom" constant="40" id="Q3D-Ga-pM5"/>
@@ -481,7 +479,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="t88-g5-dvn" secondAttribute="trailing" constant="16" id="nUU-BR-Lp4"/>
                             <constraint firstItem="dd7-IB-RbI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="v95-b2-qxS"/>
                             <constraint firstItem="wvX-9w-Vz0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="ve3-uj-9gz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dd7-IB-RbI" secondAttribute="trailing" constant="40" id="w83-Uw-AGP"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dd7-IB-RbI" secondAttribute="trailing" id="w83-Uw-AGP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -496,92 +494,10 @@
             </objects>
             <point key="canvasLocation" x="63.75" y="32.74647887323944"/>
         </scene>
-        <!--AlertVC-->
-        <scene sceneID="zAY-aB-HBJ">
-            <objects>
-                <viewController storyboardIdentifier="alert" id="dex-d5-bl0" customClass="AlertVC" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="234-gV-44w">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ddc-qG-Ge8">
-                                <rect key="frame" x="40" y="40" width="240" height="442.5"/>
-                                <subviews>
-                                    <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="7Gk-xs-I3a" customClass="AnimationView" customModule="Lottie">
-                                        <rect key="frame" x="0.0" y="32" width="240" height="164.5"/>
-                                        <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="600" placeholder="YES" id="NTT-Te-ckZ"/>
-                                        </constraints>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c8L-AG-suX" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
-                                        <rect key="frame" x="40" y="358.5" width="160" height="50"/>
-                                        <color key="backgroundColor" red="0.21176470588235294" green="0.035294117647058823" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="160" id="ASR-MR-7e4"/>
-                                            <constraint firstAttribute="height" constant="50" id="dmS-XE-H25"/>
-                                        </constraints>
-                                        <state key="normal" title="Yum!">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="tIZ-u9-fWv"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bear says you eggs are done!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-K8-2Cw">
-                                        <rect key="frame" x="24" y="220.5" width="192" height="47"/>
-                                        <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bears really like eggs, they just lack the ability to grow them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14I-vF-b67">
-                                        <rect key="frame" x="16" y="291.5" width="208" height="33"/>
-                                        <fontDescription key="fontDescription" name="RobotoMono-Bold" family="Roboto Mono" pointSize="14"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="14I-vF-b67" firstAttribute="leading" secondItem="ddc-qG-Ge8" secondAttribute="leading" constant="16" id="Aua-qq-sZo"/>
-                                    <constraint firstItem="7Gk-xs-I3a" firstAttribute="width" secondItem="ddc-qG-Ge8" secondAttribute="width" id="EJY-kX-SlO"/>
-                                    <constraint firstAttribute="trailing" secondItem="ywl-K8-2Cw" secondAttribute="trailing" constant="24" id="FYU-Yd-TWK"/>
-                                    <constraint firstItem="7Gk-xs-I3a" firstAttribute="centerX" secondItem="ddc-qG-Ge8" secondAttribute="centerX" id="IaQ-VN-eGG"/>
-                                    <constraint firstItem="c8L-AG-suX" firstAttribute="top" secondItem="14I-vF-b67" secondAttribute="bottom" constant="34" id="PZS-s4-U9O"/>
-                                    <constraint firstItem="ywl-K8-2Cw" firstAttribute="top" secondItem="7Gk-xs-I3a" secondAttribute="bottom" constant="24" id="VCE-Hm-JWP"/>
-                                    <constraint firstItem="c8L-AG-suX" firstAttribute="centerX" secondItem="ddc-qG-Ge8" secondAttribute="centerX" id="WsT-Va-18N"/>
-                                    <constraint firstItem="7Gk-xs-I3a" firstAttribute="top" secondItem="ddc-qG-Ge8" secondAttribute="top" constant="32" id="aTm-EP-IBs"/>
-                                    <constraint firstAttribute="trailing" secondItem="14I-vF-b67" secondAttribute="trailing" constant="16" id="gLA-89-E9t"/>
-                                    <constraint firstAttribute="bottom" secondItem="c8L-AG-suX" secondAttribute="bottom" constant="34" id="gtM-at-cP7"/>
-                                    <constraint firstItem="ywl-K8-2Cw" firstAttribute="leading" secondItem="ddc-qG-Ge8" secondAttribute="leading" constant="24" id="i9A-m0-vbf"/>
-                                    <constraint firstItem="14I-vF-b67" firstAttribute="top" secondItem="ywl-K8-2Cw" secondAttribute="bottom" constant="24" id="x5H-XM-E1A"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="ywl-K8-2Cw" firstAttribute="centerY" secondItem="WBz-Fe-zQa" secondAttribute="centerY" id="0oZ-X2-uym"/>
-                            <constraint firstItem="ywl-K8-2Cw" firstAttribute="centerX" secondItem="WBz-Fe-zQa" secondAttribute="centerX" id="9J0-hB-Ga5"/>
-                            <constraint firstItem="ddc-qG-Ge8" firstAttribute="top" secondItem="WBz-Fe-zQa" secondAttribute="top" constant="40" id="CMA-Vg-lLa"/>
-                            <constraint firstItem="ddc-qG-Ge8" firstAttribute="leading" secondItem="WBz-Fe-zQa" secondAttribute="leading" constant="40" id="VCu-4u-qkp"/>
-                            <constraint firstItem="WBz-Fe-zQa" firstAttribute="trailing" secondItem="ddc-qG-Ge8" secondAttribute="trailing" constant="40" id="q6t-Aa-vjM"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WBz-Fe-zQa"/>
-                    </view>
-                    <connections>
-                        <outlet property="alertTitleLabel" destination="ywl-K8-2Cw" id="k0z-OK-4J3"/>
-                        <outlet property="alertView" destination="ddc-qG-Ge8" id="RkG-2N-8yd"/>
-                        <outlet property="animationView" destination="7Gk-xs-I3a" id="PgE-Pf-rKB"/>
-                        <outlet property="cancelBtn" destination="c8L-AG-suX" id="F5s-Xl-xRS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SsH-UZ-TDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="64" y="765"/>
-        </scene>
         <!--InfoVC-->
         <scene sceneID="tJe-bz-ywa">
             <objects>
-                <viewController storyboardIdentifier="info" id="Fbb-vA-6qS" customClass="InfoVC" customModule="EggTimer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="info" id="Fbb-vA-6qS" customClass="InfoVC" customModule="RunnyEgg" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ok-Z5-MwX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -603,7 +519,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-ge-oae">
                                         <rect key="frame" x="0.0" y="72" width="320" height="312"/>
                                     </scrollView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vE-yX-PT0" customClass="RBbutton" customModule="EggTimer" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vE-yX-PT0" customClass="RBbutton" customModule="RunnyEgg" customModuleProvider="target">
                                         <rect key="frame" x="40" y="460" width="240" height="50"/>
                                         <color key="backgroundColor" red="0.21176470589999999" green="0.035294117649999998" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -614,7 +530,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelTapped:" destination="dex-d5-bl0" eventType="touchUpInside" id="wj2-qS-13s"/>
                                             <action selector="gitItBtnTapped:" destination="Fbb-vA-6qS" eventType="touchUpInside" id="NFi-9m-gty"/>
                                         </connections>
                                     </button>

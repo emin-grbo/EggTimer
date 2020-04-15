@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D72205A522D9D4C7000C2FD7 /* AlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72205A422D9D4C7000C2FD7 /* AlertVC.swift */; };
 		D72205A722D9DA04000C2FD7 /* RBbutton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72205A622D9DA04000C2FD7 /* RBbutton.swift */; };
 		D72205A922D9E133000C2FD7 /* bear.json in Resources */ = {isa = PBXBuildFile; fileRef = D72205A822D9E133000C2FD7 /* bear.json */; };
 		D7260D3A21AAD88600AC7EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7260D3921AAD88600AC7EA3 /* AppDelegate.swift */; };
@@ -18,8 +17,8 @@
 		D7603F9A24437A1A00E0EE63 /* plunger2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D7603F9824437A1900E0EE63 /* plunger2.wav */; };
 		D7603F9B24437A1A00E0EE63 /* plunger1.wav in Resources */ = {isa = PBXBuildFile; fileRef = D7603F9924437A1A00E0EE63 /* plunger1.wav */; };
 		D7603F9D24438AF800E0EE63 /* alert.wav in Resources */ = {isa = PBXBuildFile; fileRef = D7603F9C24438AF800E0EE63 /* alert.wav */; };
-		D7603FA02443937D00E0EE63 /* beerIcon@3.png in Resources */ = {isa = PBXBuildFile; fileRef = D7603F9E2443937C00E0EE63 /* beerIcon@3.png */; };
-		D7603FA12443937D00E0EE63 /* beerIcon@2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7603F9F2443937C00E0EE63 /* beerIcon@2.png */; };
+		D7603FA02443937D00E0EE63 /* beerIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7603F9E2443937C00E0EE63 /* beerIcon@3x.png */; };
+		D7603FA12443937D00E0EE63 /* beerIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7603F9F2443937C00E0EE63 /* beerIcon@2x.png */; };
 		D7603FA42443949800E0EE63 /* AttributionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7603FA22443949800E0EE63 /* AttributionScreen.swift */; };
 		D7603FA52443949800E0EE63 /* AttributionScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7603FA32443949800E0EE63 /* AttributionScreen.xib */; };
 		D7603FA82443A2FB00E0EE63 /* attributionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7603FA62443A2FB00E0EE63 /* attributionTVC.swift */; };
@@ -29,12 +28,14 @@
 		D76A878022DA453D002E9999 /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A877F22DA453D002E9999 /* InfoVC.swift */; };
 		D76A878222DA4B16002E9999 /* menuBlack.json in Resources */ = {isa = PBXBuildFile; fileRef = D76A878122DA4B16002E9999 /* menuBlack.json */; };
 		D76A878422DA5118002E9999 /* InfoVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A878322DA5118002E9999 /* InfoVCDelegate.swift */; };
+		D76BBBE32445019000D421B1 /* cheese.json in Resources */ = {isa = PBXBuildFile; fileRef = D76BBBE22445019000D421B1 /* cheese.json */; };
 		D76D84CA24443D3D0014521F /* beer.json in Resources */ = {isa = PBXBuildFile; fileRef = D76D84C924443D3D0014521F /* beer.json */; };
 		D76D84CC244448550014521F /* coffee.json in Resources */ = {isa = PBXBuildFile; fileRef = D76D84CB244448550014521F /* coffee.json */; };
 		D7857B6323CCE32A006262DE /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7857B6223CCE32A006262DE /* MenuVC.swift */; };
 		D79F092F241ED3FF00F2BA85 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79F092E241ED3FF00F2BA85 /* IAPHelper.swift */; };
 		D79F0931241ED9BF00F2BA85 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79F0930241ED9BF00F2BA85 /* StoreKit.framework */; };
 		D7B077722393F69A00DEF34F /* CALayer+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B077712393F69A00DEF34F /* CALayer+Ex.swift */; };
+		D7B4AEAB2444EEA800336A72 /* AlertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4AEAA2444EEA800336A72 /* AlertModel.swift */; };
 		D7BDB6F923931AC5003AD316 /* UIView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDB6F823931AC5003AD316 /* UIView+Ex.swift */; };
 		D7BDB6FB23931C0D003AD316 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */; };
 		D7CA44E62444346300B55577 /* sound.json in Resources */ = {isa = PBXBuildFile; fileRef = D7CA44E52444346300B55577 /* sound.json */; };
@@ -54,6 +55,12 @@
 		D7DAE84922DB9A3600C19308 /* step3.json in Resources */ = {isa = PBXBuildFile; fileRef = D7DAE84822DB9A3600C19308 /* step3.json */; };
 		D7DAE84B22DB9CC200C19308 /* slider.json in Resources */ = {isa = PBXBuildFile; fileRef = D7DAE84A22DB9CC200C19308 /* slider.json */; };
 		D7F0FEE821EB9B2700A0F705 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F0FEE721EB9B2700A0F705 /* data.json */; };
+		D7F795F32447203800E3D734 /* crazyEgg.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F795EF2447203700E3D734 /* crazyEgg.json */; };
+		D7F795F42447203800E3D734 /* elephant.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F795F02447203800E3D734 /* elephant.json */; };
+		D7F795F52447203800E3D734 /* sun.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F795F12447203800E3D734 /* sun.json */; };
+		D7F795F62447203800E3D734 /* notification.json in Resources */ = {isa = PBXBuildFile; fileRef = D7F795F22447203800E3D734 /* notification.json */; };
+		D7F7F0FB2444FB4100C49D7B /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F7F0F92444FB4100C49D7B /* AlertViewController.swift */; };
+		D7F7F0FC2444FB4100C49D7B /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F7F0FA2444FB4100C49D7B /* AlertViewController.xib */; };
 		F33B51B7970452147E9B5948 /* Pods_EggTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54C6108927BC1D202ABB025B /* Pods_EggTimer.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,10 +68,9 @@
 		288766EC30908F8A0E4FA2A5 /* Pods-EggTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EggTimer/Pods-EggTimer.debug.xcconfig"; sourceTree = "<group>"; };
 		4A3ACC47A014C1F73F688F4F /* Pods-EggTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EggTimer.release.xcconfig"; path = "Pods/Target Support Files/Pods-EggTimer/Pods-EggTimer.release.xcconfig"; sourceTree = "<group>"; };
 		54C6108927BC1D202ABB025B /* Pods_EggTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EggTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D72205A422D9D4C7000C2FD7 /* AlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertVC.swift; sourceTree = "<group>"; };
 		D72205A622D9DA04000C2FD7 /* RBbutton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RBbutton.swift; sourceTree = "<group>"; };
 		D72205A822D9E133000C2FD7 /* bear.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bear.json; sourceTree = "<group>"; };
-		D7260D3621AAD88600AC7EA3 /* EggTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EggTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7260D3621AAD88600AC7EA3 /* RunnyEgg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnyEgg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7260D3921AAD88600AC7EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7260D3B21AAD88600AC7EA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D7260D3E21AAD88600AC7EA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,8 +80,8 @@
 		D7603F9824437A1900E0EE63 /* plunger2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plunger2.wav; sourceTree = "<group>"; };
 		D7603F9924437A1A00E0EE63 /* plunger1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = plunger1.wav; sourceTree = "<group>"; };
 		D7603F9C24438AF800E0EE63 /* alert.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alert.wav; sourceTree = "<group>"; };
-		D7603F9E2443937C00E0EE63 /* beerIcon@3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beerIcon@3.png"; sourceTree = "<group>"; };
-		D7603F9F2443937C00E0EE63 /* beerIcon@2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beerIcon@2.png"; sourceTree = "<group>"; };
+		D7603F9E2443937C00E0EE63 /* beerIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beerIcon@3x.png"; sourceTree = "<group>"; };
+		D7603F9F2443937C00E0EE63 /* beerIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beerIcon@2x.png"; sourceTree = "<group>"; };
 		D7603FA22443949800E0EE63 /* AttributionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionScreen.swift; sourceTree = "<group>"; };
 		D7603FA32443949800E0EE63 /* AttributionScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttributionScreen.xib; sourceTree = "<group>"; };
 		D7603FA62443A2FB00E0EE63 /* attributionTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = attributionTVC.swift; sourceTree = "<group>"; };
@@ -85,12 +91,14 @@
 		D76A877F22DA453D002E9999 /* InfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		D76A878122DA4B16002E9999 /* menuBlack.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menuBlack.json; sourceTree = "<group>"; };
 		D76A878322DA5118002E9999 /* InfoVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoVCDelegate.swift; sourceTree = "<group>"; };
+		D76BBBE22445019000D421B1 /* cheese.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cheese.json; sourceTree = "<group>"; };
 		D76D84C924443D3D0014521F /* beer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beer.json; sourceTree = "<group>"; };
 		D76D84CB244448550014521F /* coffee.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coffee.json; sourceTree = "<group>"; };
 		D7857B6223CCE32A006262DE /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		D79F092E241ED3FF00F2BA85 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		D79F0930241ED9BF00F2BA85 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D7B077712393F69A00DEF34F /* CALayer+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Ex.swift"; sourceTree = "<group>"; };
+		D7B4AEAA2444EEA800336A72 /* AlertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModel.swift; sourceTree = "<group>"; };
 		D7BDB6F823931AC5003AD316 /* UIView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ex.swift"; sourceTree = "<group>"; };
 		D7BDB6FA23931C0D003AD316 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		D7CA44E52444346300B55577 /* sound.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sound.json; sourceTree = "<group>"; };
@@ -110,6 +118,12 @@
 		D7DAE84822DB9A3600C19308 /* step3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = step3.json; sourceTree = "<group>"; };
 		D7DAE84A22DB9CC200C19308 /* slider.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = slider.json; sourceTree = "<group>"; };
 		D7F0FEE721EB9B2700A0F705 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = SOURCE_ROOT; };
+		D7F795EF2447203700E3D734 /* crazyEgg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = crazyEgg.json; sourceTree = "<group>"; };
+		D7F795F02447203800E3D734 /* elephant.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = elephant.json; sourceTree = "<group>"; };
+		D7F795F12447203800E3D734 /* sun.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sun.json; sourceTree = "<group>"; };
+		D7F795F22447203800E3D734 /* notification.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = notification.json; sourceTree = "<group>"; };
+		D7F7F0F92444FB4100C49D7B /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		D7F7F0FA2444FB4100C49D7B /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +160,9 @@
 		D72205AA22D9E138000C2FD7 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
+				D7F795EE2447200D00E3D734 /* SuccessAnimations */,
+				D76BBBE22445019000D421B1 /* cheese.json */,
 				D76D84CB244448550014521F /* coffee.json */,
-				D76D84C924443D3D0014521F /* beer.json */,
 				D7CA44E52444346300B55577 /* sound.json */,
 				D7DAE84A22DB9CC200C19308 /* slider.json */,
 				D7DAE84022DB720B00C19308 /* step1.json */,
@@ -174,7 +189,7 @@
 		D7260D3721AAD88600AC7EA3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D7260D3621AAD88600AC7EA3 /* EggTimer.app */,
+				D7260D3621AAD88600AC7EA3 /* RunnyEgg.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -225,8 +240,8 @@
 		D753C86C243E467D00909998 /* AlternateIcons */ = {
 			isa = PBXGroup;
 			children = (
-				D7603F9F2443937C00E0EE63 /* beerIcon@2.png */,
-				D7603F9E2443937C00E0EE63 /* beerIcon@3.png */,
+				D7603F9F2443937C00E0EE63 /* beerIcon@2x.png */,
+				D7603F9E2443937C00E0EE63 /* beerIcon@3x.png */,
 				D7D58510243A481A006ED158 /* coffeeIcon@2x.png */,
 				D7D5850D243A481A006ED158 /* coffeeIcon@3x.png */,
 			);
@@ -265,8 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				D741413F24442356001DB263 /* Attribution */,
+				D7F7F0FE2444FD4A00C49D7B /* Alert */,
 				D7260D3B21AAD88600AC7EA3 /* ViewController.swift */,
-				D72205A422D9D4C7000C2FD7 /* AlertVC.swift */,
 				D76A877F22DA453D002E9999 /* InfoVC.swift */,
 				D7857B6223CCE32A006262DE /* MenuVC.swift */,
 			);
@@ -296,6 +311,28 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D7F795EE2447200D00E3D734 /* SuccessAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				D76D84C924443D3D0014521F /* beer.json */,
+				D7F795EF2447203700E3D734 /* crazyEgg.json */,
+				D7F795F02447203800E3D734 /* elephant.json */,
+				D7F795F22447203800E3D734 /* notification.json */,
+				D7F795F12447203800E3D734 /* sun.json */,
+			);
+			path = SuccessAnimations;
+			sourceTree = "<group>";
+		};
+		D7F7F0FE2444FD4A00C49D7B /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				D7B4AEAA2444EEA800336A72 /* AlertModel.swift */,
+				D7F7F0F92444FB4100C49D7B /* AlertViewController.swift */,
+				D7F7F0FA2444FB4100C49D7B /* AlertViewController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -315,7 +352,7 @@
 			);
 			name = EggTimer;
 			productName = EggTimer;
-			productReference = D7260D3621AAD88600AC7EA3 /* EggTimer.app */;
+			productReference = D7260D3621AAD88600AC7EA3 /* RunnyEgg.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -357,10 +394,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F795F62447203800E3D734 /* notification.json in Resources */,
+				D76BBBE32445019000D421B1 /* cheese.json in Resources */,
 				D7603F9B24437A1A00E0EE63 /* plunger1.wav in Resources */,
+				D7F795F42447203800E3D734 /* elephant.json in Resources */,
 				D76A878222DA4B16002E9999 /* menuBlack.json in Resources */,
 				D7603F9D24438AF800E0EE63 /* alert.wav in Resources */,
-				D7603FA02443937D00E0EE63 /* beerIcon@3.png in Resources */,
+				D7603FA02443937D00E0EE63 /* beerIcon@3x.png in Resources */,
 				D7DAE84322DB720B00C19308 /* step1.json in Resources */,
 				D76D84CC244448550014521F /* coffee.json in Resources */,
 				D7603FA92443A2FB00E0EE63 /* attributionTVC.xib in Resources */,
@@ -375,14 +415,17 @@
 				D76A877822DA2739002E9999 /* Assets.xcassets in Resources */,
 				D76D84CA24443D3D0014521F /* beer.json in Resources */,
 				D7CA44E62444346300B55577 /* sound.json in Resources */,
-				D7603FA12443937D00E0EE63 /* beerIcon@2.png in Resources */,
+				D7603FA12443937D00E0EE63 /* beerIcon@2x.png in Resources */,
 				D7260D3F21AAD88600AC7EA3 /* Main.storyboard in Resources */,
 				D76A877E22DA3876002E9999 /* menu.json in Resources */,
 				D7603F9A24437A1A00E0EE63 /* plunger2.wav in Resources */,
 				D7D58511243A481B006ED158 /* coffeeIcon@3x.png in Resources */,
 				D7DAE83822DB5EC700C19308 /* InstructionsSlide.xib in Resources */,
+				D7F795F32447203800E3D734 /* crazyEgg.json in Resources */,
 				D7DAE83422DB5B3200C19308 /* RobotoMono-Regular.ttf in Resources */,
 				D7DAE84922DB9A3600C19308 /* step3.json in Resources */,
+				D7F795F52447203800E3D734 /* sun.json in Resources */,
+				D7F7F0FC2444FB4100C49D7B /* AlertViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,12 +478,13 @@
 				D79F092F241ED3FF00F2BA85 /* IAPHelper.swift in Sources */,
 				D7603FA42443949800E0EE63 /* AttributionScreen.swift in Sources */,
 				D7BDB6FB23931C0D003AD316 /* UIColor+Ex.swift in Sources */,
+				D7B4AEAB2444EEA800336A72 /* AlertModel.swift in Sources */,
 				D7260D3C21AAD88600AC7EA3 /* ViewController.swift in Sources */,
 				D7DAE83E22DB6D1800C19308 /* ScrollViewPager.swift in Sources */,
+				D7F7F0FB2444FB4100C49D7B /* AlertViewController.swift in Sources */,
 				D7603FA82443A2FB00E0EE63 /* attributionTVC.swift in Sources */,
 				D7B077722393F69A00DEF34F /* CALayer+Ex.swift in Sources */,
 				D7D58509243A1413006ED158 /* IconButton.swift in Sources */,
-				D72205A522D9D4C7000C2FD7 /* AlertVC.swift in Sources */,
 				D7857B6323CCE32A006262DE /* MenuVC.swift in Sources */,
 				D72205A722D9DA04000C2FD7 /* RBbutton.swift in Sources */,
 				D7DAE83A22DB60AE00C19308 /* CustomObjects.swift in Sources */,
@@ -598,7 +642,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -608,7 +652,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RunnyEgg;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -620,7 +664,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = ZQCK5WLKEQ;
 				INFOPLIST_FILE = EggTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -630,7 +674,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roblack.EggTimer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = RunnyEgg;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

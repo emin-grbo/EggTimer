@@ -23,7 +23,7 @@ let appAttributors: [Attributer] = [
     
     Attributer(name: "Syuji Higa",
                asset: "menu animation",
-               url: "https://lottiefiles.com/user/17996",
+               url: "https://github.com/syuji-higa",
                animationString: "menuBlack"),
     
     Attributer(name: "Dmitry S",
@@ -31,6 +31,31 @@ let appAttributors: [Attributer] = [
                url: "https://lottiefiles.com/kipoed",
                animationString: "bear"),
     
+    Attributer(name: "汪汪",
+               asset: "crazy egg",
+               url: "https://lottiefiles.com/user/258061",
+               animationString: "crazyEgg"),
+    
+    Attributer(name: "the__creador",
+               asset: "notification",
+               url: "https://lottiefiles.com/the__creador",
+               animationString: "notification"),
+    
+    Attributer(name: "weejkqwjlkejlk2",
+               asset: "silly elephant",
+               url: "https://lottiefiles.com/user/266156",
+               animationString: "elephant"),
+    
+    Attributer(name: "elad p",
+               asset: "egg planet",
+               url: "https://lottiefiles.com/user/143196",
+               animationString: "sun"),
+    
+    Attributer(name: "Pavlo Monakhov",
+               asset: "cheese animation",
+               url: "https://lottiefiles.com/pavlo",
+               animationString: "cheese"),
+
     Attributer(name: "LloydEvans09",
                asset: "button sounds",
                url: "https://freesound.org/people/LloydEvans09/",

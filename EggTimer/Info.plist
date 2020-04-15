@@ -2,17 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>runnyEgg.changeIcon</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>Change Icon</string>
-			<key>UIApplicationShortcutItemIconFile</key>
-			<string>changeIcon</string>
-		</dict>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -68,6 +57,17 @@
 	<array>
 		<string>RobotoMono-Bold.ttf</string>
 		<string>RobotoMono-Regular.ttf</string>
+	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>changeIcon</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Change Icon</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>runnyEgg.changeIcon</string>
+		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

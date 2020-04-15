@@ -18,7 +18,7 @@ class AttributionScreen: UIViewController {
         tableView.dataSource = self
         tableView.backgroundColor = .background
         tableView.separatorStyle = .none
-        tableView.clipsToBounds = false
+        tableView.clipsToBounds = true
         tableView.register(UINib(nibName: attrCell, bundle: nil), forCellReuseIdentifier: attrCell)
         }}
     @IBOutlet weak var closeBtn: UIButton! { didSet {
@@ -39,6 +39,11 @@ class AttributionScreen: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .background
         // Do any additional setup after loading the view.
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+ 
+    @objc func reload() {
+        tableView.reloadData()
     }
 
     override var prefersStatusBarHidden: Bool {

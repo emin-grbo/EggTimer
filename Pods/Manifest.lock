@@ -1,5 +1,5 @@
 PODS:
-  - lottie-ios (3.1.5)
+  - lottie-ios (3.1.6)
   - SwiftDate (6.1.0)
   - SwiftyTimer (2.1.0)
 
@@ -15,10 +15,10 @@ SPEC REPOS:
     - SwiftyTimer
 
 SPEC CHECKSUMS:
-  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
   SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
 PODFILE CHECKSUM: 4e1726c1ca6b5f4b8b7aa2d610ae87c8a68b67f8
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.1

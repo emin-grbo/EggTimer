@@ -38,6 +38,8 @@ class RBbutton: UIButton {
         titleLabel?.textAlignment = .center
         setTitleColor(.white, for: .normal)
         setTitleColor(.white, for: .selected)
+        titleLabel?.adjustsFontSizeToFitWidth = true
+        titleLabel?.minimumScaleFactor = 10/UIFont.labelFontSize
     }
     
     func tapDown() {
