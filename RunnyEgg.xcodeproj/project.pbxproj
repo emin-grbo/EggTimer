@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D77A9D2D24C789C7007FEEA4 /* Color+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A9D2C24C789C7007FEEA4 /* Color+Ex.swift */; };
+		D77A9D2F24C7A738007FEEA4 /* NavigationBar+mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D77A9D2E24C7A738007FEEA4 /* NavigationBar+mod.swift */; };
 		D7E4D4D924C4A55E00C510E6 /* RunnyEggApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4D4D824C4A55E00C510E6 /* RunnyEggApp.swift */; };
 		D7E4D4DB24C4A55E00C510E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E4D4DA24C4A55E00C510E6 /* ContentView.swift */; };
 		D7E4D4DD24C4A55E00C510E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E4D4DC24C4A55E00C510E6 /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D77A9D2C24C789C7007FEEA4 /* Color+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ex.swift"; sourceTree = "<group>"; };
+		D77A9D2E24C7A738007FEEA4 /* NavigationBar+mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationBar+mod.swift"; sourceTree = "<group>"; };
 		D7E4D4D524C4A55E00C510E6 /* RunnyEgg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunnyEgg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7E4D4D824C4A55E00C510E6 /* RunnyEggApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnyEggApp.swift; sourceTree = "<group>"; };
 		D7E4D4DA24C4A55E00C510E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +77,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D77A9D3024C7A73C007FEEA4 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D77A9D2E24C7A738007FEEA4 /* NavigationBar+mod.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		D7E4D4CC24C4A55E00C510E6 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +107,7 @@
 				D7E4D51C24C4BDAF00C510E6 /* TestingGround.swift */,
 				D7E4D4D824C4A55E00C510E6 /* RunnyEggApp.swift */,
 				D7E4D4DA24C4A55E00C510E6 /* ContentView.swift */,
+				D77A9D3024C7A73C007FEEA4 /* Modifiers */,
 				D7E4D51B24C4ADF700C510E6 /* CustomObjects */,
 				D7E4D51A24C4ADEF00C510E6 /* Extensions */,
 				D7E4D4DC24C4A55E00C510E6 /* Assets.xcassets */,
@@ -148,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				D7E4D51824C4AD5C00C510E6 /* LottieAnimations.swift */,
+				D77A9D2C24C789C7007FEEA4 /* Color+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,7 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7E4D4DB24C4A55E00C510E6 /* ContentView.swift in Sources */,
+				D77A9D2F24C7A738007FEEA4 /* NavigationBar+mod.swift in Sources */,
 				D7E4D51924C4AD5C00C510E6 /* LottieAnimations.swift in Sources */,
+				D77A9D2D24C789C7007FEEA4 /* Color+Ex.swift in Sources */,
 				D7E4D4D924C4A55E00C510E6 /* RunnyEggApp.swift in Sources */,
 				D7E4D51D24C4BDAF00C510E6 /* TestingGround.swift in Sources */,
 				D7E4D4FD24C4A9D300C510E6 /* LottieView.swift in Sources */,
