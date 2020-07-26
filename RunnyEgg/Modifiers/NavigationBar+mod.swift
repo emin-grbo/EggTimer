@@ -35,8 +35,11 @@ struct NavigationBarModifier: ViewModifier {
 
 extension View {
  
-    func navigationBarColor(_ backgroundColor: Color?) -> some View {
-        self.modifier(NavigationBarModifier(backgroundColor: UIColor(backgroundColor ?? Color.red)))
-    }
+//    func navigationBarColor(_ backgroundColor: Color?) -> some View {
+//        let ui = UIColor(backgroundColor ?? .red)
+//        backgroundColor.getRed(&r, green: &g, blue: &b, alpha: &o)
+//        self.modifier(NavigationBarModifier(backgroundColor: UIColor(backgroundColor)? ))
+//                      UIColor(backgroundColor ?? Color.red)
+//    }
 
 }

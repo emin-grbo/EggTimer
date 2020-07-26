@@ -1,8 +1,15 @@
 import SwiftUI
 
+extension LinearGradient {
+    static var standardGradient = Gradient(colors: [Color.RBpurple, Color.RBpurpleDarkShadow])
+    static var RBLinearGradient = LinearGradient(gradient: standardGradient, startPoint: .topLeading, endPoint: .bottomTrailing)
+}
+
 extension Color {
     
-    static var RBpurple: Color { return Color(hex: "#3804B6") }
+    static var RBpurple:                Color { return Color(hex: "#3804B6") }
+    static var RBpurpleLightShadow:     Color { return Color(hex: "#4716BF") }
+    static var RBpurpleDarkShadow:      Color { return Color(hex: "#300891") }
     
     init(hex: String) {
         let r, g, b: CGFloat

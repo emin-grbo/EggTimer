@@ -12,72 +12,126 @@ struct ContentView: View {
 //    }
     
     @State private var mainAnimProgress: CGFloat = 0
-    
     @State private var dragLocation: CGFloat = 0
+    @State private var timerValue: Int = 65
+    
+    @State private var eggState: EggState = .runny
+    @State private var isRunning: Bool = false
+    
+    @State private var isShowingInfo = false
+    @State private var isShowingMenu = false
+
+    let timer = Timer.publish(every: 1, on: .main, in: .common)
 
     var lottieView = LottieView(animation: .eggMain)
     
     var body: some View {
-        
-//        NavigationView {
+
         ZStack {
             Color.RBpurple
+            Group {
             lottieView
-                .gesture(DragGesture()
-                            .onChanged{ (value) in
-                                dragLocation = value.translation.width
-                                
-                                if dragLocation > 0 {
-                                    lottieView.animationView.currentFrame > 30
-                                        ? lottieView.animationView.play(fromFrame: lottieView.animationView.currentFrame, toFrame: 30)
-                                        : lottieView.animationView.play(fromFrame: lottieView.animationView.currentFrame, toFrame: 20)
-                                } else {
-                                    lottieView.animationView.currentFrame < 30
-                                        ? lottieView.animationView.play(fromFrame: lottieView.animationView.currentFrame, toFrame: 30)
-                                        : lottieView.animationView.play(fromFrame: lottieView.animationView.currentFrame, toFrame: 38)
-                                }
+                .padding(.all, 80)
+            }
+            .contentShape(Rectangle())
+            .gesture(DragGesture()
+                        .onChanged{ (value) in
+                            dragLocation = value.translation.width
+                            
+                            if dragLocation > 0 {
+                                lottieView.animationView.currentFrame > 30
+                                    ? stateChanged(state: .medium)
+                                    : stateChanged(state: .runny)
+                            } else {
+                                lottieView.animationView.currentFrame < 30
+                                    ? stateChanged(state: .medium)
+                                    : stateChanged(state: .hard)
                             }
-                )
+                        }
+            )
             VStack {
-            HStack(alignment: .top) {
-                Image(systemName: "rotate.left.fill")
-                Text("00:00")
-                Image(systemName: "rotate.right.fill")
-            }
-                Spacer()
-                Button {
-                    print("tapped")
-                } label: {
-                    Text("Tap me")
+                HStack(alignment: .top) {
+                    
+                    Button(action: {
+                        isShowingMenu = true
+                    }) {
+                        Image(systemName: "menubar.dock.rectangle")
+                            .font(.title)
+                    }
+
+                    .buttonStyle(RBButton(shape: RoundedRectangle(cornerRadius: 20)))
+                    .aspectRatio(1, contentMode: .fit)
+                    .padding(16)
+                    
+                    Spacer()
+                    Text(timerValue.toTime())
+                        .font(Font.system(size: 34, weight: .semibold, design: .monospaced))
+                        .padding(.all, 24)
+                        .onReceive(timer) { _ in
+                            timerValue -= 1
+                        }
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        isShowingInfo = true
+                    }) {
+                        Image(systemName: "info.circle")
+                            .font(.title)
+                    }
+                    .buttonStyle(RBButton(shape: RoundedRectangle(cornerRadius: 20)))
+                    .aspectRatio(1, contentMode: .fit)
+                    .padding(16)
                 }
-                .buttonStyle(RBButton())
+                .foregroundColor(.white)
+                .padding(.top, 24)
+            .frame(maxWidth: .infinity, maxHeight: 60)
+                Spacer()
+                Toggle("start", isOn: $isRunning)
+                .toggleStyle(RBToggle(shape: Capsule()))
+                    .onTapGesture {
+                        isRunning.toggle()
+                    }
+                    .padding(.all, 24)
             }
+            
         }
         .statusBar(hidden: true)
-//        .navigationBarTitle("Test", displayMode: .inline)
-//        .navigationBarColor(.RBpurple)
-//        }
+        .navigationBarHidden(true)
+        .preferredColorScheme(.dark)
+
+        // MARK: Popovers
+        .sheet(isPresented: $isShowingInfo) {
+            InfoView()
+        }
+        .sheet(isPresented: $isShowingMenu) {
+            Menu()
+        }
+
+    }
+    
+    func stateChanged(state: EggState) {
+        switch state {
+        case .runny:
+            lottieView.animationView.play(fromFrame: lottieView.animationView.currentFrame, toFrame: 20)
+        case .medium:
+            lottieView.animationView.play(fromFrame: lottieView.animationView.currentFrame, toFrame: 30)
+        case .hard:
+            lottieView.animationView.play(fromFrame: lottieView.animationView.currentFrame, toFrame: 38)
+        }
     }
     
 }
 
-struct RBButton: ButtonStyle {
-
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(
-                Group {
-                    Capsule()
-                        .fill(Color.RBpurple)
-                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 5, y: 5)
-                    .shadow(color: Color.white.opacity(0.7), radius: 10, x: -5, y: -5)
-                })
-            .foregroundColor(.white)
-            .frame(height: 60)
-            
-            
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
 
+enum EggState {
+    case runny
+    case medium
+    case hard
+}
 
